@@ -1,4 +1,7 @@
 # H4TC 2022 - SafeBar :beers:
+The Yelp of SafeBars
+
+![SafeBar](/images/Safe-Bar-img.png)
 
 This project includes a full-stack and admin app to help the Sexual Assault Center (SAC) maintain clean data and information on Safe Bars and makes some of the information open to the public.
 
@@ -7,6 +10,12 @@ The **public app** is built for the SAC as a resource to help bar goers find bar
 The **admin app** allows SAC employees to enter in key information for use in the public application such as resources, FAQs, and Safe Bar info. 
 
 ## What we are building:
+
+### ERD
+https://dbdiagram.io/d/622d10c261d06e6eadeed665
+
+<iframe width="560" height="315" src='https://dbdiagram.io/embed/622d10c261d06e6eadeed665'> </iframe>
+
 ### MVP (Backend) - Python/Django
 - An database/admin app that allows SAC employees to:
   - enter resources
@@ -50,8 +59,6 @@ HTML/CSS/JS/Bootstrap with [Django template interpolation](https://docs.djangopr
 ### BE (4): Django/Python
 - Create API for FE consumption
 - Create Admin for SAC employees
-- Bar locator
-- Auto email reminder with dashboard notification of non-certified bars
 - Code reviews
 - Bug tickets
 
@@ -75,3 +82,6 @@ Submit code for review:
 - https://sacenter.org/resources/help-near-you.aspx
 - https://sacenter.org/resources/safe-bar-training-program.aspx
 - Training signup Form: https://sacenter.dm.networkforgood.com/forms/safe-bar-training-sign-up
+
+### Future development
+- Connect Yelp API to get bar info and details
