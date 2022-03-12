@@ -1,15 +1,12 @@
-# H4TC 2022 - SafeBar :beers:
-The Yelp of SafeBars
+# H4TC 2022 - SafeBar :beers: - The Yelp of SafeBars
 
 ![SafeBar](/images/Safe-Bar-img.png)
-
+## What we are building:
 This project includes a full-stack and admin app to help the Sexual Assault Center (SAC) maintain clean data and information on Safe Bars and makes some of the information open to the public.
 
 The **public app** is built for the SAC as a resource to help bar goers find bars near them that are certified as a safebar. Certification for bars happen every 6 months.
 
 The **admin app** allows SAC employees to enter in key information for use in the public application such as resources, FAQs, and Safe Bar info. 
-
-## What we are building:
 
 ### ERD
 https://dbdiagram.io/d/622d10c261d06e6eadeed665
@@ -83,5 +80,5 @@ Submit code for review:
 - https://sacenter.org/resources/safe-bar-training-program.aspx
 - Training signup Form: https://sacenter.dm.networkforgood.com/forms/safe-bar-training-sign-up
 
-### Future development
+### Future development ideas
 - Connect Yelp API to get bar info and details
