@@ -14,7 +14,7 @@ The **admin app** allows SAC employees to enter in key information for use in th
 ### ERD
 https://dbdiagram.io/d/622d10c261d06e6eadeed665
 
-<img width="1392" alt="Screen Shot 2022-03-12 at 3 45 32 PM" src="https://user-images.githubusercontent.com/29741570/158036213-34b768a8-abba-4eec-934c-7c951628c106.png">
+<img width="1271" alt="Screen Shot 2022-03-12 at 4 16 18 PM" src="https://user-images.githubusercontent.com/29741570/158036937-4e24ed4d-5b3d-4bab-bf46-6390698e6be5.png">
 
 ### MVP (Backend) - Python/Django
 - An database/admin app that allows SAC employees to:
