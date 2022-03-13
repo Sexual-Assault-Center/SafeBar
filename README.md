@@ -8,6 +8,21 @@ The **public app** is built for the SAC as a resource to help bar goers find bar
 
 The **admin app** allows SAC employees to enter in key information for use in the public application such as resources, FAQs, and Safe Bar info. 
 
+## Get Started
+Get started with local development.
+
+- Create an account on [GitPod](https://gitpod.io)
+- [Open this repo on GitPod](https://gitpod.io/#)
+
+### Front-End Development
+In Gitpod, navigate to front end directory
+
+```
+$ cd frontend
+```
+
+Navigate to the README.md file in the `frontend` directory and follow instructions
+
 ### ERD
 https://dbdiagram.io/d/622d10c261d06e6eadeed665
 
