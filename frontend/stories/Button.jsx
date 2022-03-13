@@ -1,3 +1,5 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable import/prefer-default-export */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
