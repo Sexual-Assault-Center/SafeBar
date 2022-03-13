@@ -11,6 +11,7 @@ The **admin app** allows SAC employees to enter in key information for use in th
 ## Tech Stack:
 - Frontend:
   - Next JS/React
+  - Storybook for component development
 - Backend
   - Python
   - Django Admin for Admin portal for bar maintenance and resources
