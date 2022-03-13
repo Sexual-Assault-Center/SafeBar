@@ -1,5 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "../styles/globals.css";
 
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import * as NextImage from "next/image";
 
 const OriginalNextImage = NextImage.default;
@@ -17,4 +19,29 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+  layout: "fullscreen",
+  backgrounds: {
+    default: "light",
+    values: [
+      {
+        name: "light",
+        value: "white",
+      },
+      {
+        name: "dark",
+        value: "black",
+      },
+    ],
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
+  options: {
+    storySort: {
+      order: [
+        "Introduction",
+        "Bar Card",
+      ],
+    },
+  },
+};
