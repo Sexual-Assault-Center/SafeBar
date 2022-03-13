@@ -48,19 +48,3 @@ We will not be saving any user info, so the UID will be attached to user specifi
 
 - Setup .env file with secrets
 - update `utils/apiKeys.js` with keys from FB
-
-# Contributors
-
-## Team Leads
-- [Dr. Teresa Vasquez](https://github.com/drteresavasquez) (Project Technical Lead)
-- Jaime Martinez (Project Manager)
-- Trinity Christiana (Backend Lead)
-
-### Frontend Engineers
-- [Dr. Teresa Vasquez](https://github.com/drteresavasquez) (Lead)
-### Backend Engineers
-- Trinity Christiana (Lead)
-### QA
-- Jaime Martinez (Lead)
-
-### Designers and UXI Engineers
