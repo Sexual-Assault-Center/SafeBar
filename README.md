@@ -1,12 +1,49 @@
 # H4TC 2022 - SafeBar :beers: - The Yelp of SafeBars
 
 ![SafeBar](/images/Safe-Bar-img.png)
-## What we are building:
+## What are we building?
 This project includes a full-stack and admin app to help the Sexual Assault Center (SAC) maintain clean data and information on Safe Bars and makes some of the information open to the public.
 
-The **public app** is built for the SAC as a resource to help bar goers find bars near them that are certified as a safebar. Certification for bars happen every 6 months.
+The **public app** is built for the SAC as a resource to help bar goers find bars near them that are certified as a SafeBar - certification for bars happen every 6 months. It also allows them to create lists of bars they may want to visit on a trip and favorite bars.
 
-The **admin app** allows SAC employees to enter in key information for use in the public application such as resources, FAQs, and Safe Bar info. 
+The **admin app** allows SAC employees to enter in key information for use in the public application such as resources, FAQs, and Safe Bar info. It also brings all of their data into one place so that they can keep track of bars that need to recertify.
+
+## Tech Stack:
+- Frontend:
+  - Next JS/React
+- Backend
+  - Python
+  - Django Admin for Admin portal for bar maintenance and resources
+- Deployment
+  - FE - Netlify
+  - BE - Heroku
+- Styles
+  - [React Bootstrap](https://react-bootstrap.github.io/components/alerts)
+
+## Get Started
+Get started with local development.
+
+- Create an account on [GitPod](https://gitpod.io)
+- [Open this repo on GitPod](https://gitpod.io/#)
+
+### Frontend Development
+In Gitpod, navigate to `frontend` directory
+
+```
+$ cd frontend
+```
+
+Navigate to the README.md file in the `frontend` directory and follow instructions
+
+### Backend Development
+In Gitpod, navigate to `backend` directory
+
+```
+$ cd backend
+```
+
+Navigate to the README.md file in the `backend` directory and follow instructions
+
 
 ## Code Reviews
 - Create a branch for the issue you are working on and create all PRs against the development branch.
@@ -29,21 +66,6 @@ We are deploying the FE and BE separately to decouple the deployments and update
 - We are deploying on Heroku
 - INSTRUCTIONS COMING SOON
 
-## Get Started
-Get started with local development.
-
-- Create an account on [GitPod](https://gitpod.io)
-- [Open this repo on GitPod](https://gitpod.io/#)
-
-### Front-End Development
-In Gitpod, navigate to front end directory
-
-```
-$ cd frontend
-```
-
-Navigate to the README.md file in the `frontend` directory and follow instructions
-
 ### ERD
 https://dbdiagram.io/d/622d10c261d06e6eadeed665
 
@@ -51,18 +73,6 @@ https://dbdiagram.io/d/622d10c261d06e6eadeed665
 
 ### LoFi Wireframes
 https://www.figma.com/file/x3MaaSG7B9bIjJ4jfCVrdQ/LoFi-Wireframe?node-id=0%3A1
-
-## Tech Stack:
-- Frontend:
-  - Next JS/React
-- Backend
-  - Python
-  - Django Admin for Admin portal for bar maintenance and resources
-- Deployment
-  - FE - Netlify
-  - BE - Heroku
-- Styles
-  - [React Bootstrap](https://react-bootstrap.github.io/components/alerts)
 
 ### Future development ideas
 - Connect Yelp API to get bar info and details
