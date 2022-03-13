@@ -8,11 +8,45 @@ The **public app** is built for the SAC as a resource to help bar goers find bar
 
 The **admin app** allows SAC employees to enter in key information for use in the public application such as resources, FAQs, and Safe Bar info. 
 
+## Code Reviews
+- Create a branch for the issue you are working on and create all PRs against the development branch.
+  - A preview deploy will be created for testing
+  - Once approved by 2 reviewers, you can merge into development
+- Once the feature has been fully tested with all other code, a PR is created against master and merged into production.
+
+## Deployment
+We are deploying the FE and BE separately to decouple the deployments and updates.
+
+**Frontend**
+
+- For SAC, we chose Netlify, a free resource. Here is a [step-by-step guide](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/) to get that set up. There is continuous deployment set up for the production branch. Netlify also offers deployment logs, rollbacks, and branch deploys for testing.
+
+**Backend**
+
+- We are deploying on Heroku
+- INSTRUCTIONS COMING SOON
+
+## Get Started
+Get started with local development.
+
+- Create an account on [GitPod](https://gitpod.io)
+- [Open this repo on GitPod](https://gitpod.io/#)
+
+### Front-End Development
+In Gitpod, navigate to front end directory
+
+```
+$ cd frontend
+```
+
+Navigate to the README.md file in the `frontend` directory and follow instructions
+
 ### ERD
 https://dbdiagram.io/d/622d10c261d06e6eadeed665
 
 <img width="1271" alt="Screen Shot 2022-03-12 at 4 16 18 PM" src="https://user-images.githubusercontent.com/29741570/158036937-4e24ed4d-5b3d-4bab-bf46-6390698e6be5.png">
 
+## App Features
 ### MVP (Backend) - Python/Django
 - An database/admin app that allows SAC employees to:
   - enter resources
