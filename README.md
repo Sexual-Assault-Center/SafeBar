@@ -46,6 +46,17 @@ https://dbdiagram.io/d/622d10c261d06e6eadeed665
 
 <img width="1271" alt="Screen Shot 2022-03-12 at 4 16 18 PM" src="https://user-images.githubusercontent.com/29741570/158036937-4e24ed4d-5b3d-4bab-bf46-6390698e6be5.png">
 
+## Tech Stack:
+- Frontend:
+  - Next JS/React
+- Backend
+  - Python
+  - Django Admin for Admin portal for bar maintenance and resources
+- Deployment
+  - FE - Netlify
+  - BE - Heroku
+- Styles
+  - [React Bootstrap](https://react-bootstrap.github.io/components/alerts)
 ## App Features
 ### MVP (Backend) - Python/Django
 - An database/admin app that allows SAC employees to:
