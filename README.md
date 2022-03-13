@@ -49,6 +49,9 @@ https://dbdiagram.io/d/622d10c261d06e6eadeed665
 
 <img width="1271" alt="Screen Shot 2022-03-12 at 4 16 18 PM" src="https://user-images.githubusercontent.com/29741570/158036937-4e24ed4d-5b3d-4bab-bf46-6390698e6be5.png">
 
+### LoFi Wireframes
+https://www.figma.com/file/x3MaaSG7B9bIjJ4jfCVrdQ/LoFi-Wireframe?node-id=0%3A1
+
 ## Tech Stack:
 - Frontend:
   - Next JS/React
