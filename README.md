@@ -6,6 +6,8 @@ This project includes a full-stack and admin app to help the Sexual Assault Cent
 
 The **public app** is built for the SAC as a resource to help bar goers find bars near them that are certified as a SafeBar - certification for bars happen every 6 months. It also allows them to create lists of bars they may want to visit on a trip and favorite bars.
 
+The **public app** also gives quick info to bars who may need information from their training quickly and provides them with information on how to get training
+
 The **admin app** allows SAC employees to enter in key information for use in the public application such as resources, FAQs, and Safe Bar info. It also brings all of their data into one place so that they can keep track of bars that need to recertify.
 
 ## Tech Stack:
