@@ -1,4 +1,6 @@
-Below is some text about the 5 D’s of Bystander Intervention. I have also attached the slides about the 5 D’s from the Safe Bar training to this email.
+Below is some text about the 5 D’s of Bystander Intervention. I have also attached the slides about the 5 D’s from the Safe Bar training.
+
+[Slides](https://docs.google.com/document/d/1T-yDqKgWs86y8l8rrloSGxLMbfE7ce1Y/edit?usp=sharing&ouid=103774544794129372733&rtpof=true&sd=true)
 
 - Direct: Step in and address the situation directly. This might look like saying, “That’s not cool. Please stop.” or “Hey, leave them alone.” This technique tends to work better when the person that you’re trying to stop is someone that knows and trusts you.
 - Distract: Distract either person in the situation to intervene by shifting the focus of the situation so that the victim can leave the situation. This might look like spilling a drink on purpose or otherwise diverting attention in another direction.
