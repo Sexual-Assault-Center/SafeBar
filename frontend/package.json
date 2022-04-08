@@ -9,7 +9,8 @@
     "prepare": "cd .. && husky install frontend/.husky",
     "pre-commit": "next lint",
     "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "export": "next export"
   },
   "lint-staged": {
     "*.{js,jsx}": [
