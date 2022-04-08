@@ -27,7 +27,7 @@ The **admin app** allows SAC employees to enter in key information for use in th
 Get started with local development.
 
 - Create an account on [GitPod](https://gitpod.io)
-- [Open this repo on GitPod](https://gitpod.io/#)
+- [Open this repo on GitPod](https://gitpod.io/#https://github.com/Sexual-Assault-Center/SafeBar)
 
 ### Frontend Development
 In Gitpod, navigate to `frontend` directory
