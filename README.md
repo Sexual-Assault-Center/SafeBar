@@ -2,6 +2,8 @@
 
 [Deployed FrontEnd](https://safebartn.netlify.app/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d034434e-3477-4413-a222-df78408355c4/deploy-status)](https://app.netlify.com/sites/safebartn/deploys)
+
 ![SafeBar](/images/Safe-Bar-img.png)
 ## What are we building?
 This project includes a full-stack and admin app to help the Sexual Assault Center (SAC) maintain clean data and information on Safe Bars and makes some of the information open to the public.
