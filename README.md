@@ -87,19 +87,25 @@ https://www.figma.com/file/x3MaaSG7B9bIjJ4jfCVrdQ/LoFi-Wireframe?node-id=0%3A1
 ## Team Leads
 - [Dr. Teresa Vasquez](https://github.com/drteresavasquez) (Project Technical Lead)
 - Jaime Martinez (Project Manager)
-- Trinity Christiana (Backend Lead)
 
 ### Frontend Engineers
 - [Dr. Teresa Vasquez](https://github.com/drteresavasquez) (Team Lead)
-- Katy Fry (UI Lead)
-- Jesse Robinson (FE Lead)
+- [Katy Fry](https://github.com/katherinevfry) (UI Lead)
+- [Jesse Robinson](https://github.com/Jrobinson0529) (FE Lead)
+- [April Watson](https://github.com/Aprilrochelle)
+- [Madden Purcell](https://github.com/pmpurcell)
+- [Austin Parker](https://github.com/Austincparker)
+- [Elle Lawrence](https://github.com/Elle-lawrence)
 
 ### Backend Engineers
-- Trinity Christiana (Team Lead)
-- Eugene Terry
+- [Trinity Christiana](https://github.com/trinitychristiana) (Team Lead)
+- [Eugene Terry](https://github.com/Eugeneterry)
+- [Jurnell Cockhren](https://github.com/jcockhren)
+- [Jacob Chadwell](https://github.com/Jacobchadwell)
 
 
 ### QA
 - Jaime Martinez (Team Lead)
+- Carla Reavis
 
 ### Designers and UXI Engineers
