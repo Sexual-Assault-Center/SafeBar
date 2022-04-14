@@ -76,12 +76,6 @@ We are deploying the FE and BE separately to decouple the deployments and update
 ### ERD
 https://dbdiagram.io/d/622d10c261d06e6eadeed665
 
-### LoFi Wireframes
-https://www.figma.com/file/x3MaaSG7B9bIjJ4jfCVrdQ/LoFi-Wireframe?node-id=0%3A1
-
-### Future development ideas
-- Connect Yelp API to get bar info and details
-
 # Contributors
 
 ## Team Leads
