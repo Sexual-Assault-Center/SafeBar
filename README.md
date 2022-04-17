@@ -86,10 +86,8 @@ https://dbdiagram.io/d/622d10c261d06e6eadeed665
 - [Dr. Teresa Vasquez](https://github.com/drteresavasquez) (Team Lead)
 - [Katy Fry](https://github.com/katherinevfry) (UI Lead)
 - [Jesse Robinson](https://github.com/Jrobinson0529) (FE Lead)
-- [April Watson](https://github.com/Aprilrochelle)
 - [Madden Purcell](https://github.com/pmpurcell)
 - [Austin Parker](https://github.com/Austincparker)
-- [Elle Lawrence](https://github.com/Elle-lawrence)
 
 ### Backend Engineers
 - [Trinity Christiana](https://github.com/trinitychristiana) (Team Lead)
@@ -97,9 +95,12 @@ https://dbdiagram.io/d/622d10c261d06e6eadeed665
 - [Jurnell Cockhren](https://github.com/jcockhren)
 - [Jacob Chadwell](https://github.com/Jacobchadwell)
 
+### Designers and UXI Engineers
+- [Katy Fry](https://github.com/katherinevfry) (UI Lead)
+- [April Watson](https://github.com/Aprilrochelle)
+- [Elle Lawrence](https://github.com/Elle-lawrence)
 
 ### QA
 - Jaime Martinez (Team Lead)
 - Carla Reavis
 
-### Designers and UXI Engineers
