@@ -1,7 +1,5 @@
 import firebase from 'firebase/app';
-import initFirebase from './clientFB';
-
-initFirebase(); // initialize firebase
+import 'firebase/auth';
 
 // These helpers allow you to login and out of FB auth with Google. These are Firebase methods and is broilerplate code.
 const signInUser = () => {

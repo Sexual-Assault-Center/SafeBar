@@ -14,7 +14,6 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to SafeBar App
         </h1>
-
         <h2>This is the main page that is open to all who navigate to the app</h2>
       </main>
     </div>
