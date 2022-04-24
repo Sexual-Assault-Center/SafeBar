@@ -1,5 +1,6 @@
 import React, {
   createContext,
+  useContext,
   useEffect,
   useMemo,
   useState,
@@ -37,4 +38,13 @@ const AuthProvider = (props) => {
 };
 const AuthConsumer = AuthContext.Consumer;
 
-export { AuthProvider, AuthConsumer };
+const useAuth = () => {
+  const context = useContext(AuthContext);
+
+  if (context === undefined) {
+    throw new Error('useAuth must be used within a AuthProvider');
+  }
+  return context;
+};
+
+export { AuthProvider, useAuth, AuthConsumer };
