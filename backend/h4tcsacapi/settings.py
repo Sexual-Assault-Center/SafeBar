@@ -15,13 +15,17 @@ import environ
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-env = environ.Env(
-    DEBUG=(bool, True),
-    SECRET_KEY=(str, ""),
-    IS_HEROKU=(bool, False)
-)
+env = environ.Env()
 
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+env_map = {
+    "SECRET_KEY": env("SECRET_KEY", default=""),
+    "IS_HEROKU": env("IS_HEROKU", default=False),
+    "DEBUG": env("DEBUG", default=False),
+    "FRONTEND_ORIGIN": env("FRONTEND_ORIGIN", default=""),
+    "API_HOST": env("API_HOST", default=""),
+}
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -30,21 +34,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = env_map["SECRET_KEY"]
 
-IS_PROD = env("IS_HEROKU")
+IS_PROD = env_map["IS_HEROKU"]
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DEBUG")
+DEBUG = env_map["DEBUG"]
 
 ALLOWED_HOSTS = [
-    # Add Heroku url here
-    'safebarapi.herokuapp.com',
-    '127.0.0.1'
+    env_map["API_HOST"]
 ]
-CORS_ORIGIN_WHITELIST = (
-    "https://safebar.netlify.app",
-    "https://127.0.0.1",
-)
+CORS_ORIGIN_WHITELIST = [
+    env_map["FRONTEND_ORIGIN"],
+]
 
 # Application definition
 
@@ -154,11 +155,9 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Add this for heroku to collect static files
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
-# Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
@@ -166,7 +165,5 @@ STATICFILES_DIRS = (
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# Heroku needs a postgress database. This establishes it as one if in production.
 
 STATIC_URL = '/static/'

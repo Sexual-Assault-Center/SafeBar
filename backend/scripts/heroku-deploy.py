@@ -59,13 +59,22 @@ if __name__ == "__main__":
             os.system(
                 "pipenv install whitenoise dj_database_url psycopg2-binary gunicorn")
 
-        has_IS_HEROKU = os.popen("heroku config:get IS_HEROKU").read() != "\n"
-        has_SECRET_KEY = os.popen(
-            "heroku config:get SECRET_KEY").read() != "\n"
-        if not has_IS_HEROKU or not has_SECRET_KEY:
+        has_all_variables = False not in [
+            os.popen("heroku config:get IS_HEROKU").read() != "\n",
+            os.popen("heroku config:get API_HOST").read() != "\n",
+            os.popen("heroku config:get FRONTEND_ORIGIN").read() != "\n",
+            os.popen(
+                "heroku config:get SECRET_KEY").read() != "\n"
+        ]
+
+        if not has_all_variables:
             os.system("heroku config:set IS_HEROKU=True")
             os.system("heroku config:set SECRET_KEY={0}".format(
                 env("SECRET_KEY")))
+            os.system("heroku config:set FRONTEND_ORIGIN={0}".format(
+                env("HEROKU_FRONTEND_ORIGIN")))
+            os.system("heroku config:set API_HOST={0}".format(
+                env("HEROKU_API_HOST")))
             os.system("heroku config")
 
         active_branch = repo.active_branch
@@ -85,4 +94,5 @@ if __name__ == "__main__":
 
         if should_deploy_branch:
             os.chdir(GIT_RELATIVE_PATH)
-            os.system("git push --force heroku `git subtree split --prefix {0} {1}`:main".format(DEPLOY_DIR, active_branch))
+            os.system(
+                "git push --force heroku `git subtree split --prefix {0} {1}`:main".format(DEPLOY_DIR, active_branch))
