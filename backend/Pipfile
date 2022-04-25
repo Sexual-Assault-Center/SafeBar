@@ -7,15 +7,17 @@ verify_ssl = true
 pylint = "*"
 pycodestyle = "*"
 autopep8 = "*"
+gitpython = "*"
 
 [packages]
 django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
-whitenoise = "*"
 dj-database-url = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
+django-environ = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.8"

@@ -11,29 +11,37 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import environ
 
-DEVELOPMENT = "DEVELOPMENT"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-app_env = os.environ.get("ENVIRONMENT", DEVELOPMENT)
+env = environ.Env(
+    DEBUG=(bool, True),
+    SECRET_KEY=(str, ""),
+    IS_HEROKU=(bool, False)
+)
 
-if app_env == DEVELOPMENT:
-    import h4tcsacapi.hidden_keys
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY", "")
+SECRET_KEY = env("SECRET_KEY")
 
+IS_PROD = env("IS_HEROKU")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if app_env == DEVELOPMENT else False
+DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = []
 
+CORS_ORIGIN_WHITELIST = (
+    "FRONT_END_DOMAIN_URL",
+    "LOCALHOST_DOMAIN_URL",
+)
 
 # Application definition
 
@@ -52,9 +60,12 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
 }
 
 MIDDLEWARE = [
@@ -65,6 +76,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'h4tcsacapi.urls'
@@ -82,6 +95,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
+
     },
 ]
 
@@ -98,6 +113,10 @@ DATABASES = {
     }
 }
 
+if IS_PROD:
+    import dj_database_url
+    prod_db = dj_database_url.config(conn_max_age=500)
+    DATABASES['default'].update(prod_db)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -132,7 +151,19 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
+# Add this for heroku to collect static files
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Heroku needs a postgress database. This establishes it as one if in production.
 
 STATIC_URL = '/static/'
