@@ -5,8 +5,6 @@ import {
 import Link from 'next/link';
 
 export default function HeaderNav() {
-  // const [expanded, setExpanded] = useState(false);
-
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
