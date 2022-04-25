@@ -39,10 +39,11 @@ DEBUG = env("DEBUG")
 ALLOWED_HOSTS = [
     # Add Heroku url here
     'safebarapi.herokuapp.com',
+    '127.0.0.1'
 ]
 CORS_ORIGIN_WHITELIST = (
-    "FRONT_END_DOMAIN_URL",
-    "LOCALHOST_DOMAIN_URL",
+    "https://safebar.netlify.app",
+    "https://127.0.0.1",
 )
 
 # Application definition
