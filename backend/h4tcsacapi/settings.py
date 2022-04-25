@@ -36,8 +36,10 @@ IS_PROD = env("IS_HEROKU")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    # Add Heroku url here
+    'safebarapi.herokuapp.com',
+]
 CORS_ORIGIN_WHITELIST = (
     "FRONT_END_DOMAIN_URL",
     "LOCALHOST_DOMAIN_URL",

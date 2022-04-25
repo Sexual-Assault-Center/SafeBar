@@ -97,9 +97,6 @@ if __name__ == "__main__":
 
         if should_deploy_branch:
             os.chdir(GIT_RELATIVE_PATH)
-            subtree_key = os.popen("git subtree split --prefix {0} {1}".format(DEPLOY_DIR, active_branch)).read()
-            print(subtree_key)
-            os.system(
-                "git push heroku `git subtree split --prefix {0} {1}`:main".format(DEPLOY_DIR, active_branch))
+            os.system("git push --force heroku `git subtree split --prefix {0} {1}`:main".format(DEPLOY_DIR, active_branch))
 
         # os.system("git push heroku `git subtree split --prefix backend add-backend-code`:main")
