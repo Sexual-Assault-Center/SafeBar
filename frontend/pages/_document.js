@@ -13,6 +13,8 @@ export default class MyDocument extends Document {
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
           />
+          <meta charSet="UTF-8" />
+          <meta name="keywords" content="safe, bars, tn" />
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -25,6 +27,7 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+          <link rel="icon" href="/sac-logo.png" />
         </Head>
         <body>
           <Main />

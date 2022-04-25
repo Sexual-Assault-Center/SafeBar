@@ -1,24 +1,31 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+/* eslint-disable quotes */
+import { useState } from 'react';
+import { Button } from 'react-bootstrap';
+import * as ga from '../utils/ga';
+import HeadDetails from '../components/HeadDetails';
 
-export default function Home() {
+export default function Bars() {
+  const [query, setQuery] = useState('');
+
+  const search = () => {
+    ga.event({
+      action: "search",
+      params: {
+        search_term: query,
+      },
+    });
+  };
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>SafeBar</title>
-        <meta
-          name="description"
-          content="SafeBar is brought to you by the Sexual Assault Center Nashville"
-        />
-        <link rel="icon" href="/sac-logo.png" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to SafeBar App</h1>
-        <h2>
-          This is the main page that is open to all who navigate to the app
-        </h2>
-      </main>
+    <div>
+      <HeadDetails title="Bars" description="Making Nightlife Safer for Everyone" />
+      <h1>Bars Page</h1>
+      <div>
+        <input type="text" onChange={(event) => setQuery(event.target.value)} />
+      </div>
+      <div>
+        <Button onClick={() => search()}>Search</Button>
+      </div>
     </div>
   );
 }
