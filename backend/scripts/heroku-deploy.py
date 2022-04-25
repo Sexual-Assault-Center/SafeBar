@@ -59,7 +59,7 @@ if __name__ == "__main__":
             os.system(
                 "pipenv install whitenoise dj_database_url psycopg2-binary gunicorn")
 
-        has_all_variable = False not in [
+        has_all_variables = False not in [
             os.popen("heroku config:get IS_HEROKU").read() != "\n",
             os.popen("heroku config:get API_HOST").read() != "\n",
             os.popen("heroku config:get FRONTEND_ORIGIN").read() != "\n",
