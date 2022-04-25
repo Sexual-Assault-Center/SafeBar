@@ -16,7 +16,7 @@ export default function FooterNav() {
               key={i}
               className={router.pathname.includes(lc) ? 'activeFooter' : ''}
             >
-              <Link href={`/${lc}`} passHref>
+              <Link href={`/${lc === 'bars' ? '' : lc}`} passHref>
                 <div className="footerBarOption">
                   <p className="footerIcon">
                     <img

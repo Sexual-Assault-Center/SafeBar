@@ -13,7 +13,7 @@ export default function HeaderNav() {
   return (
     <Navbar as="nav" className="nb-fixed" expand={show}>
       <Container fluid>
-        <Navbar.Brand href="/bars">
+        <Navbar.Brand href="/">
           <h1 className="safespace">SafeBar</h1>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShow} />

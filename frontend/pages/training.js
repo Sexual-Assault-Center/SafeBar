@@ -1,3 +1,10 @@
+import HeadDetails from '../components/HeadDetails';
+
 export default function Training() {
-  return <div>Training is great</div>;
+  return (
+    <>
+      <HeadDetails title="Training" description="Making Nightlife Safer for Everyone" />
+      <h1>Training Page</h1>
+    </>
+  );
 }
