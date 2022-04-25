@@ -1,3 +1,10 @@
+import HeadDetails from '../components/HeadDetails';
+
 export default function Help() {
-  return <div>help</div>;
+  return (
+    <>
+      <HeadDetails title="Get Help" description="Making Nightlife Safer for Everyone" />
+      <h1>Help Page</h1>
+    </>
+  );
 }
