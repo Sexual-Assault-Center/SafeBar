@@ -1,11 +1,16 @@
 # H4TC 2022 - SafeBar :beers: - The Yelp of SafeBars
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c7eff59b-ca51-45a8-b353-86253800bf20/deploy-status)](https://app.netlify.com/sites/safebar/deploys)
+
+[Deployed FrontEnd](https://safebar.netlify.app/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d034434e-3477-4413-a222-df78408355c4/deploy-status)](https://app.netlify.com/sites/safebartn/deploys)
 
 ![SafeBar](/images/Safe-Bar-img.png)
 ## What are we building?
 This project includes a full-stack and admin app to help the Sexual Assault Center (SAC) maintain clean data and information on Safe Bars and makes some of the information open to the public.
 
 The **public app** is built for the SAC as a resource to help bar goers find bars near them that are certified as a SafeBar - certification for bars happen every 6 months. It also allows them to create lists of bars they may want to visit on a trip and favorite bars.
+
+The **public app** also gives quick info to bars who may need information from their training quickly and provides them with information on how to get training
 
 The **admin app** allows SAC employees to enter in key information for use in the public application such as resources, FAQs, and Safe Bar info. It also brings all of their data into one place so that they can keep track of bars that need to recertify.
 
@@ -26,7 +31,7 @@ The **admin app** allows SAC employees to enter in key information for use in th
 Get started with local development.
 
 - Create an account on [GitPod](https://gitpod.io)
-- [Open this repo on GitPod](https://gitpod.io/#)
+- [Open this repo on GitPod](https://gitpod.io/#https://github.com/Sexual-Assault-Center/SafeBar)
 
 ### Frontend Development
 In Gitpod, navigate to `frontend` directory
@@ -71,26 +76,30 @@ We are deploying the FE and BE separately to decouple the deployments and update
 ### ERD
 https://dbdiagram.io/d/622d10c261d06e6eadeed665
 
-<img width="1271" alt="Screen Shot 2022-03-12 at 4 16 18 PM" src="https://user-images.githubusercontent.com/29741570/158036937-4e24ed4d-5b3d-4bab-bf46-6390698e6be5.png">
-
-### LoFi Wireframes
-https://www.figma.com/file/x3MaaSG7B9bIjJ4jfCVrdQ/LoFi-Wireframe?node-id=0%3A1
-
-### Future development ideas
-- Connect Yelp API to get bar info and details
-
 # Contributors
 
 ## Team Leads
 - [Dr. Teresa Vasquez](https://github.com/drteresavasquez) (Project Technical Lead)
 - Jaime Martinez (Project Manager)
-- Trinity Christiana (Backend Lead)
 
 ### Frontend Engineers
-- [Dr. Teresa Vasquez](https://github.com/drteresavasquez) (Lead)
+- [Dr. Teresa Vasquez](https://github.com/drteresavasquez) (Team Lead)
+- [Katy Fry](https://github.com/katherinevfry) (UI Lead)
+- [Jesse Robinson](https://github.com/Jrobinson0529) (FE Lead)
+- [Madden Purcell](https://github.com/pmpurcell)
+- [Austin Parker](https://github.com/Austincparker)
+
 ### Backend Engineers
-- Trinity Christiana (Lead)
-### QA
-- Jaime Martinez (Lead)
+- [Trinity Christiana](https://github.com/trinitychristiana) (Team Lead)
+- [Eugene Terry](https://github.com/Eugeneterry)
+- [Jurnell Cockhren](https://github.com/jcockhren)
+- [Jacob Chadwell](https://github.com/Jacobchadwell)
 
 ### Designers and UXI Engineers
+- [Katy Fry](https://github.com/katherinevfry) (UI Lead)
+- [April Watson](https://github.com/Aprilrochelle)
+- [Elle Lawrence](https://github.com/Elle-lawrence)
+
+### QA
+- Jaime Martinez (Team Lead)
+- Carla Reavis
