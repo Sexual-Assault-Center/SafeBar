@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+
 DEVELOPMENT = "DEVELOPMENT"
+
 app_env = os.environ.get("ENVIRONMENT", DEVELOPMENT)
 
 if app_env == DEVELOPMENT:
@@ -28,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("SECRET_KEY", "")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if os.environ.get("SECRET_KEY", DEVELOPMENT) == DEVELOPMENT else False
+DEBUG = True if app_env == DEVELOPMENT else False
 
 ALLOWED_HOSTS = []
 
