@@ -20,6 +20,7 @@ django-environ = "*"
 whitenoise = "*"
 flake8 = "*"
 pre-commit = "*"
+uuid = "*"
 
 [requires]
 python_version = "3.8"

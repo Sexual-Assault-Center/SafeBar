@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d9e9514b1fd473cc8d9b48840538031acb991c58d0089a3d5baf1cf2167cdaf2"
+            "sha256": "bb75fca6cd925027af9b92eee34af39bcb6e132af33f395d055b4a955bfd206a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -310,6 +310,13 @@
             ],
             "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==0.10.2"
+        },
+        "uuid": {
+            "hashes": [
+                "sha256:1f87cc004ac5120466f36c5beae48b4c48cc411968eed0eaecd3da82aa96193f"
+            ],
+            "index": "pypi",
+            "version": "==1.30"
         },
         "virtualenv": {
             "hashes": [
