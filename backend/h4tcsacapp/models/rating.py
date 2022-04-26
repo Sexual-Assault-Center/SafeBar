@@ -1,5 +1,5 @@
 from django.db import models
-from h4tcsacapp.models.bars import Bar
+from h4tcsacapp.models.bar import Bar
 
 
 class Rating(models.Model):

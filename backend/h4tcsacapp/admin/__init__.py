@@ -1,7 +1,7 @@
 from django.contrib import admin
-from h4tcsacapp.models.bars import Bar
-from h4tcsacapp.models.ratings import Rating
-from h4tcsacapp.models.report_types import ReportType
+from h4tcsacapp.models.bar import Bar
+from h4tcsacapp.models.rating import Rating
+from h4tcsacapp.models.report_type import ReportType
 
 
 class BarAdmin(admin.ModelAdmin):
