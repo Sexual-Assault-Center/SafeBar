@@ -1,0 +1,30 @@
+default_language_version:
+  # default language version for each language
+    python: python3.8
+files: ^backend/
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.2.0
+    hooks:
+        # See https://pre-commit.com/hooks.html for more hooks
+    -   id: check-ast
+    -   id: check-case-conflict
+    -   id: check-executables-have-shebangs
+    -   id: check-merge-conflict
+    -   id: debug-statements
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+-   repo: https://gitlab.com/pycqa/flake8
+    rev: 3.8.1
+    hooks:
+    -   id: flake8
+        name: Flake8
+        args:
+            - --config
+            - backend/setup.cfg
+            - --tee
+        # exclude: ''
+    -   id: flake8
+        additional_dependencies: [
+            "flake8-bugbear",
+        ]
