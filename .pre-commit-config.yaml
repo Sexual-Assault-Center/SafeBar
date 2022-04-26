@@ -21,7 +21,7 @@ repos:
         name: Flake8
         args:
             - --config
-            - backend/setup.cfg
+            - setup.cfg
             - --tee
         exclude: '.*/migrations($|/.*)'
     -   id: flake8
