@@ -1,11 +1,11 @@
 import uuid
+
 from django.db import models
 from h4tcsacapp.models.bar import Bar
+from h4tcsacapp.models.list import List
 
 
-class Rating(models.Model):
+class ListBar(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     bar = models.ForeignKey(Bar, on_delete=models.PROTECT)
-    rating_number = models.IntegerField("Rating Number")
-    comment = models.CharField(("Comment"), max_length=254)
-    uid = models.CharField(("User ID"), max_length=25)
+    list = models.ForeignKey(List, on_delete=models.PROTECT)
