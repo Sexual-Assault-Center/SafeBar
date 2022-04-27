@@ -92,7 +92,6 @@ https://dbdiagram.io/d/622d10c261d06e6eadeed665
 ### Backend Engineers
 - [Trinity Christiana](https://github.com/trinitychristiana) (Team Lead)
 - [Eugene Terry](https://github.com/Eugeneterry)
-- [Jurnell Cockhren](https://github.com/jcockhren)
 - [Jacob Chadwell](https://github.com/Jacobchadwell)
 
 ### Designers and UXI Engineers
