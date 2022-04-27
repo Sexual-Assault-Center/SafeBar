@@ -5,6 +5,7 @@ export default function Lists() {
     <>
       <HeadDetails title="Your Lists" description="Making Nightlife Safer for Everyone" />
       <h1>Lists Page</h1>
+      <p>The user will need to be authenticated to view this page</p>
     </>
   );
 }
