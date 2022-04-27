@@ -2,13 +2,14 @@
 /* eslint-disable react/no-array-index-key */
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import NAVIGATION from '../constants/navigation';
 
 export default function FooterNav() {
   const router = useRouter();
   return (
     <footer>
       <ul className="allFooterButtons">
-        {['Bars', 'Lists', 'Help', 'Training', 'FAQs'].map((name, i) => {
+        {NAVIGATION.FOOTER.map((name, i) => {
           const lc = name.toLowerCase();
 
           return (
@@ -16,7 +17,7 @@ export default function FooterNav() {
               key={i}
               className={router.pathname.includes(lc) ? 'activeFooter' : ''}
             >
-              <Link href={`/${lc === 'bars' ? '' : lc}`} passHref>
+              <Link href={`/${lc}`} passHref>
                 <div className="footerBarOption">
                   <p className="footerIcon">
                     <img
