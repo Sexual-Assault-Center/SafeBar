@@ -5,7 +5,7 @@ from rest_framework.viewsets import ModelViewSet
 
 class ResourceViewSet(ModelViewSet):
     """
-    A simple ViewSet for viewing and editing accounts.
+    A simple ViewSet for viewing resoures
     """
     queryset = Resource.objects.all()
     serializer_class = ResourceSerializer

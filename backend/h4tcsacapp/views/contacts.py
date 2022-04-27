@@ -5,7 +5,7 @@ from rest_framework.viewsets import ModelViewSet
 
 class ContactViewSet(ModelViewSet):
     """
-    A simple ViewSet for viewing and editing accounts.
+    A simple ViewSet for viewing Contacts
     """
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer

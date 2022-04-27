@@ -5,7 +5,7 @@ from rest_framework.viewsets import ModelViewSet
 
 class FAQViewSet(ModelViewSet):
     """
-    A simple ViewSet for viewing and editing accounts.
+    A simple ViewSet for viewing FAQ's
     """
     queryset = FAQ.objects.all()
     serializer_class = FAQSerializer
