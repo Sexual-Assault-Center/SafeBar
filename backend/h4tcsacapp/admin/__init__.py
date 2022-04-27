@@ -7,8 +7,6 @@ from h4tcsacapp.models.rating import Rating
 from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.sponser import Sponser
-# from h4tcsacapp.models.list import List
-# from h4tcsacapp.models.list_bar import ListBar
 
 
 class BarAdmin(admin.ModelAdmin):
@@ -55,8 +53,6 @@ admin.site.register(Bar, BarAdmin)
 admin.site.register(BarReport, BarReportAdmin)
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(FAQ, FAQAdmin)
-# admin.site.register(List, ListAdmin)
-# admin.site.register(ListBar, ListBarAdmin)
 admin.site.register(Rating, RatingAdmin)
 admin.site.register(ReportType, ReportTypeAdmin)
 admin.site.register(Resource, ResourceAdmin)
