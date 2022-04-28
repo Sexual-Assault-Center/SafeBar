@@ -1,0 +1,33 @@
+{% extends "admin/base_site.html" %}
+
+{% block bodyheader %} {{ header_text }}{% endblock %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.20.0/dist/bootstrap-table.min.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/list.css">
+{% endblock %}
+
+{% block customjs %}
+ <!-- DataTable -->
+ <script type="text/javascript" src="https://cdn.datatables.net/s/bs/dt-1.10.10,r-2.0.0/datatables.min.js"></script>
+
+ <script>
+     var myData = [];
+     {% for item in items %}
+             myData.push([
+                 '{{ item.date|date:"Y-m-d H:m" }}',
+                 '{{ item.value }}'
+             ]);
+     {% endfor %}
+     var myTable = $('#my-table').DataTable({
+         order: [[0, "asc"]],
+         pageLength: 25,
+         responsive: true,
+         columns: [
+             {sTitle: "Date", sWidth: "100px"},
+             {sTitle: "Vakue", sWidth: "50px"}
+         ],
+         data: myData
+     });
+ </script>
+{% endblock customjs %}
