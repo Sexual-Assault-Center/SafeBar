@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'h4tcsacapp',
     'corsheaders',
-    'h4tcsacrecertify'
+    'h4tcsacrecertify',
     'h4tcsacadmin'
 ]
 
