@@ -59,7 +59,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'h4tcsacapp',
-    'corsheaders'
+    'corsheaders',
+    'h4tcsacrecertify'
 ]
 
 REST_FRAMEWORK = {
