@@ -1,6 +1,6 @@
 from django.contrib import admin
-from django.http import HttpResponse
 from django.urls import path
+from h4tcsacadmin.views.dashboard import dashboard
 from h4tcsacapp.models.bar import Bar
 from h4tcsacapp.models.bar_report import BarReport
 from h4tcsacapp.models.contact import Contact
@@ -15,13 +15,13 @@ class CustomAdminSite(admin.AdminSite):
     def get_urls(self):
         urls = super().get_urls()
         my_urls = [
-            path(r'my_view/', self.admin_view(self.my_view))
+            path(r'dashboard/', self.admin_view(self.dashboard_view))
         ]
         urls = my_urls + urls
         return urls
 
-    def my_view(self, request):
-        return HttpResponse("Hello, world.")
+    def dashboard_view(self, request):
+        return dashboard(request)
 
 
 admin_site = CustomAdminSite(name='myadmin')
