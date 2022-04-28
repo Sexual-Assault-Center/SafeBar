@@ -106,5 +106,5 @@ if __name__ == "__main__":
             os.chdir(GIT_RELATIVE_PATH)
             os.system(
                 "git push --force heroku `git subtree split \
-                    --prefix {0} {1}`:main"
+                    --prefix {0} {1}`:refs/heads/main"
                 .format(DEPLOY_DIR, active_branch))
