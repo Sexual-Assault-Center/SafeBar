@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.http import HttpResponse
+from django.urls import path
 from h4tcsacapp.models.bar import Bar
 from h4tcsacapp.models.bar_report import BarReport
 from h4tcsacapp.models.contact import Contact
@@ -9,41 +11,73 @@ from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.sponser import Sponser
 
 
-@admin.register(Bar)
+class CustomAdminSite(admin.AdminSite):
+    def get_urls(self):
+        urls = super().get_urls()
+        my_urls = [
+            path(r'my_view/', self.admin_view(self.my_view))
+        ]
+        urls = my_urls + urls
+        return urls
+
+    def my_view(self, request):
+        return HttpResponse("Hello, world.")
+
+
+admin_site = CustomAdminSite(name='myadmin')
+
+
 class BarAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(BarReport)
+admin_site.register(Bar, BarAdmin)
+
+
 class BarReportAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Contact)
+admin_site.register(BarReport, BarReportAdmin)
+
+
 class ContactAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(FAQ)
+admin_site.register(Contact, ContactAdmin)
+
+
 class FAQAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Rating)
+admin_site.register(FAQ, FAQAdmin)
+
+
 class RatingAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(ReportType)
+admin_site.register(Rating, RatingAdmin)
+
+
 class ReportTypeAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Resource)
+admin_site.register(ReportType, ReportTypeAdmin)
+
+
 class ResourceAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Sponser)
+admin_site.register(Resource, ResourceAdmin)
+
+
 class SponserAdmin(admin.ModelAdmin):
     pass
+
+
+admin_site.register(Sponser, SponserAdmin)
