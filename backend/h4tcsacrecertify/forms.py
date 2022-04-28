@@ -6,3 +6,11 @@ class BarForm(ModelForm):
     class Meta:
         model = Bar
         fields = ['name','contact_name', 'phone_number', 'street_address', 'city', 'zip_code', 'email', 'description', 'website']
+
+class RecertifyForm(ModelForm):
+    class Meta:
+        model = Bar
+        fields = ['is_safebar']
+        labels = {
+            'is_safebar': ('I agree'),
+        }
