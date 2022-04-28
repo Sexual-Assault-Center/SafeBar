@@ -16,8 +16,8 @@ Install pipenv if you do not currently have it. This will allow you to install t
 
 ```shell
 pipenv --python 3.8
-pipenv shell
 pipenv install
+pipenv shell
 ```
 
 ## Run migration
