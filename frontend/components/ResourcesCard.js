@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function ResourcesCard({ ...props }) {
   return (
-    <Card key={props.uuid} className="my-2">
+    <Card className="my-2">
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>

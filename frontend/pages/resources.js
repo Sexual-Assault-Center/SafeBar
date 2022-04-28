@@ -18,7 +18,7 @@ export default function Resources() {
       <h1>Resources Page</h1>
       <div>
         {
-          resources.map((resource) => <ResourcesCard {...resource} />)
+          resources.map((resource) => <ResourcesCard key={resource.uuid} {...resource} />)
         }
       </div>
     </>
