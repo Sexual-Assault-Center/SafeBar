@@ -12,19 +12,24 @@ from h4tcsacapp.models.rating import Rating
 from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.sponser import Sponser
+from h4tcsacapp.serializers import ResourceSerializer
 
 
 class CustomAdminSite(admin.AdminSite):
     def get_urls(self):
-        urls = super().get_urls()
-        my_urls = [
+        site_urls = []
+        site_urls = site_urls + ResourceViews(
+            Resource,
+            ResourceSerializer,
+            "resources",
+            self.admin_view,
+            "Resources"
+        ).urls()
+        site_urls = site_urls + [
             path(r'dashboard/', self.admin_view(dashboard), name="dashboard-view"),
-            path(r'resources/', self.admin_view(ResourceViews().run), name="resources-list"),
-            path(r'resources/create/', self.admin_view(ResourceViews().create), name="resources-create"),
-            path(r'resources/delete/<slug:uuid>', self.admin_view(ResourceViews().delete), name="resources-delete"),
-            path(r'resources/update/<slug:uuid>', self.admin_view(ResourceViews().update), name="resources-update"),
         ]
-        return my_urls + urls
+        site_urls = site_urls + super().get_urls()
+        return site_urls
 
 
 admin_site = CustomAdminSite(name='myadmin')
