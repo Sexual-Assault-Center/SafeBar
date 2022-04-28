@@ -5,13 +5,13 @@ import HeadDetails from '../components/HeadDetails';
 import resourcesData from '../resourcesData.json';
 
 const ResourceComponent = ({ ...props }) => (
-    <>
-      <h2>{props.title}</h2>
-      <br />
-      <p>{props.description}</p>
-      <Button variant="primary" href={props.url} value="Link">Link</Button>
-      <hr />
-    </>
+  <>
+    <h2>{props.title}</h2>
+    <br />
+    <p>{props.description}</p>
+    <Button variant="primary" href={props.url} value="Link">Link</Button>
+    <hr />
+  </>
 );
 
 export default function Resources() {
