@@ -19,6 +19,7 @@ from h4tcsacapp.urls import router
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('admin/', admin_site.urls),
-    path('api-auth/', include('rest_framework.urls'))
+    path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
+    path('submitBar/', include('h4tcsacrecertify.urls'))
 ]
