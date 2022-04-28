@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+// import firebase from 'firebase';
 import { AuthConsumer, AuthProvider } from '../utils/context/authContext';
-
 import * as ga from '../utils/ga';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
@@ -10,7 +10,21 @@ import FooterNav from '../components/FooterNav';
 import HeaderNav from '../components/HeaderNav';
 
 function MyApp({ Component, pageProps }) {
+  // const [user, setUser] = useState(null);
   const router = useRouter();
+
+  // useEffect(() => {
+  //   firebase.auth().onAuthStateChanged((authed) => {
+  //     if (authed) {
+  //       const userInfoObj = {
+  //         uid: authed.uid,
+  //       };
+  //       setUser(userInfoObj);
+  //     } else if (user || user === null) {
+  //       setUser(false);
+  //     }
+  //   });
+  // }, [user]);
 
   useEffect(() => {
     const handleRouteChange = (url) => {
