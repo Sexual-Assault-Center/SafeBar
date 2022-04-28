@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function ResourcesCard({ ...props }) {
   return (
-    <Card key={props.id} className="my-2">
+    <Card key={props.uuid} className="my-2">
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>
@@ -17,7 +17,7 @@ function ResourcesCard({ ...props }) {
 }
 
 ResourcesCard.propTypes = {
-  id: PropTypes.string.isRequired,
+  uuid: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
