@@ -9,6 +9,17 @@
 
 
 {% block content %}
+{% if success_create %}
+<div class="alert alert-success" role="alert">
+    {{ name }} Created!
+</div>
+{% endif %}
+{% if success_delete %}
+<div class="alert alert-danger" role="alert">
+    {{ name }} Deleted!
+</div>
+{% endif %}
+<a class="btn btn-success btn-lg active" href="{% url create_url %}">Create</a>
 <table id="example" class="display" style="width:100%">
     <thead>
         <tr>
@@ -22,9 +33,7 @@
         <tr>
             {% for value in item.values %}
             <td>
-                {% comment %} <a href="/{{ url_dir }}/{{  }}/"> {% endcomment %}
-                    {{ value }}
-                    {% comment %} </a> {% endcomment %}
+                {{ value }}
             </td>
             {% endfor %}
         </tr>
@@ -48,17 +57,22 @@
 
 {{ headers|json_script:"headers" }}
 {{ data|json_script:"data" }}
+{{ success|json_script:"success" }}
 
 <script>
     const headers = JSON.parse(document.getElementById('headers').textContent);
     const data_list = JSON.parse(document.getElementById('data').textContent);
+    const success = JSON.parse(document.getElementById('success').textContent);
 
     $(document).ready(function () {
-        console.log(data_list)
+        if (success) {
+            setTimeout(() => $(".alert").alert('close'), 3000)
+        }
         $('#example').DataTable({
             "columns": headers.map((header, i) =>
                 ({
-                    render: (data) => i === 1 ? `<a href="create/${data_list[i].uuid}">${data}</a>` : data,
+                    render: (data) => i === 1 ?
+                        `<a href="update/${data_list[i].uuid}">${data}</a>` : data,
                     visible: i !== 0
                 })
             ),

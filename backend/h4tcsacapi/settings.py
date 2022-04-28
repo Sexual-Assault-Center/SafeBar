@@ -45,6 +45,9 @@ ALLOWED_HOSTS = [
     "localhost"
 ]
 CORS_ORIGIN_WHITELIST = [
+    "https://localhost:3000",
+    "https://127.0.0.1:3000",
+    "https://3001-sexualassaultce-safebar-sv7et9b59z2.ws-us43.gitpod.io",
     env_map["FRONTEND_ORIGIN"],
 ]
 
@@ -60,7 +63,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'h4tcsacapp',
     'h4tcsacadmin',
-    'corsheaders'
+    'corsheaders',
+    'django_extensions'
 ]
 
 REST_FRAMEWORK = {

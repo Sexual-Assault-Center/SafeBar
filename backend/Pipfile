@@ -23,6 +23,7 @@ flake8 = "*"
 pre-commit = "*"
 uuid = "*"
 ipdb = "*"
+django-extensions = "*"
 
 [requires]
 python_version = "3.8"
