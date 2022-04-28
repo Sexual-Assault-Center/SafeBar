@@ -7,7 +7,7 @@ export default function Contacts() {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    getContacts().then(setContacts)
+    getContacts().then(setContacts);
   }, []);
   return (
     <>
