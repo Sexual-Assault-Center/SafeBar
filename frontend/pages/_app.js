@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
     <AuthProvider>
       <AuthConsumer>
         {({ user, userLoading }) => (
-          <div>
+          <div className="layout-cont">
             {/* all pages have access to the user object */}
             {userLoading ? 'Loading...'
               : (
