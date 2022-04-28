@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from h4tcsacapp.models.contact import Contact
+from h4tcsacapp.models.list import List
 
 from h4tcsacapp.models.faq import FAQ
 from h4tcsacapp.models.resource import Resource
@@ -20,4 +21,9 @@ class ContactSerializer(serializers.ModelSerializer):
 class ResourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Resource
+        fields = '__all__'
+
+class ListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = List
         fields = '__all__'
