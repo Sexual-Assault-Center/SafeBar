@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import HeadDetails from '../components/HeadDetails';
-import contacts from '../contacts.json';
 import Contact from '../components/Contact';
+import { getContacts } from '../utils/api';
 
 export default function Contacts() {
-  const [contactsList, setContacts] = useState([]);
+  const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    setContacts(contacts.contacts);
+    getContacts().then(setContacts)
   }, []);
   return (
     <>
       <HeadDetails title="Contacts" description="Making Nightlife Safer for Everyone" />
       <h1>Contacts Page</h1>
-      {contactsList.map((contact) => (
+      {contacts.map((contact) => (
         <Contact
           key={contact.id}
           contact={contact}
