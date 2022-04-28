@@ -1,0 +1,21 @@
+{% extends "admin/base_site.html" %}
+
+{% block title %}Django with Bootstrap | Admin site{% endblock %}
+
+{% block branding %}{% endblock %}
+{% block breadcrumbs %}{% endblock %}
+
+{% block bodyclass %}bg-light{% endblock %}
+
+{% block bodyheader %}
+<div class="bg-white container">
+
+  <div class="jumbotron">
+    <h1 class="display-4">Hacking the Django Admin with Bootstrap</h1>
+    <p class="lead">
+      The <a ref="https://docs.djangoproject.com/en/dev/ref/contrib/admin/">Django administration site</a> is
+      great—full-featured, easy to use, secure by design, rock solid… and somewhat ugly, which can be something of a
+      downside when you want to integrate it with the look-and-feel of the rest of the website. Let’s sort that out.
+    </p>
+  </div>
+  {% endblock %}

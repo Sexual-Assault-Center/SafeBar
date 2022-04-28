@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'h4tcsacapp',
     'corsheaders',
     'h4tcsacrecertify'
+    'h4tcsacadmin'
 ]
 
 REST_FRAMEWORK = {
