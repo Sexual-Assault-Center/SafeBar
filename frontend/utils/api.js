@@ -11,6 +11,6 @@ const getContacts = () => {
 }
 
 const getAllFAQs = () => {
-  return fetch(`${urlBase}faqs`).then((res) => res.json());
+  return fetch(`${urlBase}faqs/`).then((res) => res.json());
 }
 export { getResources, getContacts, getAllFAQs }

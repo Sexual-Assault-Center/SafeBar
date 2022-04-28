@@ -7,9 +7,10 @@ export default function Faqs() {
 
   useEffect(() => {
     let isMounted = true;
-    getAllFAQs().then((array) => {
+    getAllFAQs().then((faqsArray) => {
       if (isMounted) {
-        setFaqs(array);
+        setFaqs(faqsArray);
+        console.warn(faqsArray);
       }
     });
     return () => {
