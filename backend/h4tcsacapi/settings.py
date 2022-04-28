@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'h4tcsacapp',
+    'h4tcsacadmin',
     'corsheaders'
 ]
 
