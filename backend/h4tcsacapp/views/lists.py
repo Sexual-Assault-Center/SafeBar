@@ -5,8 +5,6 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from rest_framework import status
 
-
-
 class ListViewSet(ModelViewSet):
   def create(self, request):
     try:
@@ -31,3 +29,11 @@ class ListViewSet(ModelViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
     except List.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+          
+  def list(self, request):
+    list = List.objects.all()
+   
+    serializer = ListSerializer(
+      list, many=True, context={'request': request}
+      )
+    return Response(serializer.data)
