@@ -1,4 +1,5 @@
 import os
+import sys
 
 import environ
 from git import Repo
@@ -8,6 +9,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEPLOY_DIR = "backend"
 
 GIT_RELATIVE_PATH = "../"
+
+QA_APP_NAME = "safebarapi-qa"
+PROD_APP_NAME = "safebarapi"
+
+QA_GIT_REPO = "https://git.heroku.com/safebarapi-qa.git"
+PROD_GIT_REPO = "https://git.heroku.com/safebarapi.git"
 
 
 def has_tool(name):
@@ -23,6 +30,8 @@ if __name__ == "__main__":
     # Check to see if user has Heroku CLI installed
 
     has_heroku = has_tool("heroku")
+    app = QA_APP_NAME if "qa" in sys.argv else PROD_APP_NAME
+
     if not has_heroku:
         print("You need access to the Heroku CLI to use this script")
         print("Instructions are here: \
@@ -46,8 +55,11 @@ if __name__ == "__main__":
             os.chdir(backend_path)
 
         repo = Repo(GIT_RELATIVE_PATH)
-        if "heroku" not in repo.remotes:
-            os.system("heroku git:remote -a safebarapi")
+        if "safebarapi" not in repo.remotes:
+            repo.create_remote('safebarapi', PROD_GIT_REPO)
+
+        if "safebarapi-qa" not in repo.remotes:
+            repo.create_remote('safebarapi-qa', QA_GIT_REPO)
 
         dependencies_installed = [
             os.popen("pip freeze | grep whitenoise").read(),
@@ -65,22 +77,22 @@ if __name__ == "__main__":
                     gunicorn")
 
         has_all_variables = False not in [
-            os.popen("heroku config:get IS_HEROKU").read() != "\n",
-            os.popen("heroku config:get API_HOST").read() != "\n",
-            os.popen("heroku config:get FRONTEND_ORIGIN").read() != "\n",
+            os.popen("heroku config:get IS_HEROKU  --app {0}".format(app)).read() != "\n",
+            os.popen("heroku config:get API_HOST  --app {0}".format(app)).read() != "\n",
+            os.popen("heroku config:get FRONTEND_ORIGIN  --app {0}".format(app)).read() != "\n",
             os.popen(
-                "heroku config:get SECRET_KEY").read() != "\n"
+                "heroku config:get SECRET_KEY  --app {0}".format(app)).read() != "\n"
         ]
 
         if not has_all_variables:
-            os.system("heroku config:set IS_HEROKU=True")
-            os.system("heroku config:set SECRET_KEY={0}".format(
-                env("SECRET_KEY")))
-            os.system("heroku config:set FRONTEND_ORIGIN={0}".format(
-                env("HEROKU_FRONTEND_ORIGIN")))
-            os.system("heroku config:set API_HOST={0}".format(
-                env("HEROKU_API_HOST")))
-            os.system("heroku config")
+            os.system("heroku config:set IS_HEROKU=True  --app {0}".format(app))
+            os.system("heroku config:set SECRET_KEY={0} --app {1}".format(
+                env("SECRET_KEY"), app))
+            os.system("heroku config:set FRONTEND_ORIGIN={0} --app {1}".format(
+                env("HEROKU_FRONTEND_ORIGIN"), app))
+            os.system("heroku config:set API_HOST={0} --app {1}".format(
+                env("HEROKU_API_HOST_QA" if app == "safebarapi-qa" else "HEROKU_API_HOST"), app))
+            os.system("heroku config  --app {0}".format(app))
 
         active_branch = repo.active_branch
         should_deploy_branch = False
@@ -105,6 +117,6 @@ if __name__ == "__main__":
         if should_deploy_branch:
             os.chdir(GIT_RELATIVE_PATH)
             os.system(
-                "git push --force heroku `git subtree split \
+                "git push --force {2} `git subtree split \
                     --prefix {0} {1}`:refs/heads/main"
-                .format(DEPLOY_DIR, active_branch))
+                .format(DEPLOY_DIR, active_branch, app))
