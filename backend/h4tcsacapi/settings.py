@@ -41,7 +41,8 @@ IS_PROD = env_map["IS_HEROKU"]
 DEBUG = env_map["DEBUG"]
 
 ALLOWED_HOSTS = [
-    env_map["API_HOST"]
+    env_map["API_HOST"],
+    "localhost"
 ]
 CORS_ORIGIN_WHITELIST = [
     env_map["FRONTEND_ORIGIN"],
