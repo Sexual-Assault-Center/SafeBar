@@ -5,6 +5,7 @@ from django.db import models
 class Bar(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     is_safebar = models.BooleanField("Is Safe Bar")
+    is_approved = models.BooleanField("Is Approved", default=False)
     name = models.CharField("Name", max_length=254,)
     contact_name = models.CharField("Contact Name", max_length=255,)
     phone_number = models.IntegerField("Phone Number")
