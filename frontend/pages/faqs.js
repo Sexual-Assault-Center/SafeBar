@@ -18,7 +18,7 @@ export default function Faqs() {
             <p className="faq-question">{item.question}</p>
             <p className="faq-answer">{item.answer}</p>
           </div>
-        ))};
+        ))}
       </div>
     </>
   );
