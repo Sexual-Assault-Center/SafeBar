@@ -1,0 +1,7 @@
+Hello {{ contact_name }}, your bar {{ bar_name }} is up for recertification.
+
+Your SafeBar certification expires on {{ exp_date }}
+
+To register for for training, start here: "https://sacenter.dm.networkforgood.com/forms/safe-bar-training-sign-up"
+
+Navigate to "http://127.0.0.1:8000/submit-bar/recertify/{{ token }}/" to attest your certification!
