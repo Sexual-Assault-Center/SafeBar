@@ -44,12 +44,8 @@ ALLOWED_HOSTS = [
     env_map["API_HOST"],
     "localhost"
 ]
-CORS_ORIGIN_WHITELIST = [
-    "https://localhost:3000",
-    "https://127.0.0.1:3000",
-    "https://3001-sexualassaultce-safebar-sv7et9b59z2.ws-us43.gitpod.io",
-    env_map["FRONTEND_ORIGIN"],
-]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
