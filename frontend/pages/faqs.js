@@ -10,7 +10,6 @@ export default function Faqs() {
     getAllFAQs().then((faqsArray) => {
       if (isMounted) {
         setFaqs(faqsArray);
-        console.warn(faqsArray);
       }
     });
     return () => {
