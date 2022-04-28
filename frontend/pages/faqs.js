@@ -6,8 +6,17 @@ export default function Faqs() {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
-    getAllFAQs().then(setFaqs);
-  }, [faqs]);
+    let isMounted = true;
+    getAllFAQs().then((array) => {
+      if (isMounted) {
+        setFaqs(array);
+      }
+    });
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <>
       <HeadDetails title="FAQs" description="Making Nightlife Safer for Everyone" />
