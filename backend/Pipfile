@@ -22,6 +22,7 @@ whitenoise = "*"
 flake8 = "*"
 pre-commit = "*"
 uuid = "*"
+ipdb = "*"
 
 [requires]
 python_version = "3.8"
