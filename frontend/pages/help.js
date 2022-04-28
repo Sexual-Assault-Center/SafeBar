@@ -13,7 +13,7 @@ export default function Help() {
           <li><a href="https://na0messaging.icarol.com/ConsumerRegistration.aspx?org=143110&pid=640&cc=en-US">Chat</a></li>
         </ul>
       </div>
-      <div id="Bar Help">
+      <div id="barHelp">
         <h4>Help Someone Else</h4>
         <div id="fiveDsDiv">
           <ul>
