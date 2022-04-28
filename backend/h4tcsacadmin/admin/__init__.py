@@ -26,58 +26,11 @@ class CustomAdminSite(admin.AdminSite):
 
 admin_site = CustomAdminSite(name='myadmin')
 
-
-class BarAdmin(admin.ModelAdmin):
-    pass
-
-
-admin_site.register(Bar, BarAdmin)
-
-
-class BarReportAdmin(admin.ModelAdmin):
-    pass
-
-
-admin_site.register(BarReport, BarReportAdmin)
-
-
-class ContactAdmin(admin.ModelAdmin):
-    pass
-
-
-admin_site.register(Contact, ContactAdmin)
-
-
-class FAQAdmin(admin.ModelAdmin):
-    pass
-
-
-admin_site.register(FAQ, FAQAdmin)
-
-
-class RatingAdmin(admin.ModelAdmin):
-    pass
-
-
-admin_site.register(Rating, RatingAdmin)
-
-
-class ReportTypeAdmin(admin.ModelAdmin):
-    pass
-
-
-admin_site.register(ReportType, ReportTypeAdmin)
-
-
-class ResourceAdmin(admin.ModelAdmin):
-    pass
-
-
-admin_site.register(Resource, ResourceAdmin)
-
-
-class SponserAdmin(admin.ModelAdmin):
-    pass
-
-
-admin_site.register(Sponser, SponserAdmin)
+admin_site.register(Bar)
+admin_site.register(BarReport)
+admin_site.register(Contact)
+admin_site.register(FAQ)
+admin_site.register(Rating)
+admin_site.register(ReportType)
+admin_site.register(Resource)
+admin_site.register(Sponser)
