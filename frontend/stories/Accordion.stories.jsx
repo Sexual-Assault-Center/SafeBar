@@ -12,7 +12,7 @@ export const Accordion = (args) => <AccordionComp {...args} />;
 Accordion.args = {
     title: "title",
     text: "text",
-}
+};
 
 
 
