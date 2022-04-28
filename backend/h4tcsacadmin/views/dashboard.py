@@ -3,4 +3,4 @@ from django.shortcuts import render
 
 
 def dashboard(request):
-    return render(request, "dashboard.html", {'poll': "Sdfsd"})
+    return render(request, "dashboard/index.html", {'poll': "Sdfsd"})
