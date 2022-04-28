@@ -13,12 +13,14 @@ function ResourcesCard({ ...props }) {
         <Button variant="primary" href={props.url}>Learn More</Button>
       </Card.Body>
     </Card>
-  )
+  );
 }
 
 ResourcesCard.propTypes = {
-  props: PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
 
-  })
-}
 export default ResourcesCard;
