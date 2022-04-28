@@ -1,0 +1,34 @@
+{
+  "resources": [
+    {
+      "id": "abcasdf1231",
+      "title": "Sexual Assault Center",
+      "description": "Get information on the center for sexual assault",
+      "url": "https://sacenter.org/"
+    },
+    {
+      "id": "a1234155111",
+      "title": "SafeBar Stuff",
+      "description": "Get information on the safebar application process",
+      "url": "https://sacenter.org/"
+    },
+    {
+      "id": "a1234155111",
+      "title": "SafeBar Stuff",
+      "description": "Get information on the safebar application process",
+      "url": "https://sacenter.org/"
+    },
+    {
+      "id": "a1234155111",
+      "title": "SafeBar Stuff",
+      "description": "Get information on the safebar application process",
+      "url": "https://sacenter.org/"
+    },
+    {
+      "id": "a1234155111",
+      "title": "SafeBar Stuff",
+      "description": "Get information on the safebar application process",
+      "url": "https://sacenter.org/"
+    }
+  ]
+}
