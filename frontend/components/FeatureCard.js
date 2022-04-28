@@ -12,7 +12,7 @@ const FeatureCard = ({
         <Card.Text>{text}</Card.Text>
         <ButtonComp buttonText={buttonText} onClick={onClick} outline />
       </Card.Body>
-      <img src={img} alt={text} className="img-fit w-50 card-border-radius gradient-bg" />
+      <Card.Img src={img} alt={text} className="img-fit w-50 card-border-radius gradient-bg" />
     </Card>
   </>
 );
