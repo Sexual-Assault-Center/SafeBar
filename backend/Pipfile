@@ -9,6 +9,8 @@ pycodestyle = "*"
 autopep8 = "*"
 gitpython = "*"
 django-environ = "*"
+django-extensions = "*"
+ipdb = "*"
 
 [packages]
 django = "*"
@@ -22,8 +24,6 @@ whitenoise = "*"
 flake8 = "*"
 pre-commit = "*"
 uuid = "*"
-ipdb = "*"
-django-extensions = "*"
 
 [requires]
 python_version = "3.8"
