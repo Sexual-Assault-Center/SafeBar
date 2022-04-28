@@ -12,5 +12,7 @@ export const FeatureCard = (args) => <FeatureCardComp {...args} />;
 
 FeatureCard.args = {
   img: `${Image}`,
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud "
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ",
+  onClick: () => {},
+  buttonText: "LEARN MORE",
 };
