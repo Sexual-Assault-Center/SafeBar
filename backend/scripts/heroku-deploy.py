@@ -25,7 +25,8 @@ if __name__ == "__main__":
     has_heroku = has_tool("heroku")
     if not has_heroku:
         print("You need access to the Heroku CLI to use this script")
-        print("Instructions are here: https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli")
+        print("Instructions are here: \
+        https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli")  # noqa: E501
     else:
         env = environ.Env(
             DEBUG=(bool, True),
@@ -57,7 +58,11 @@ if __name__ == "__main__":
 
         if "" in dependencies_installed:
             os.system(
-                "pipenv install whitenoise dj_database_url psycopg2-binary gunicorn")
+                "pipenv install \
+                    whitenoise \
+                    dj_database_url \
+                    psycopg2-binary \
+                    gunicorn")
 
         has_all_variables = False not in [
             os.popen("heroku config:get IS_HEROKU").read() != "\n",
@@ -82,9 +87,14 @@ if __name__ == "__main__":
         while True:
             try:
                 deploy_branch = input(
-                    "Do you want to deploy the {0} branch? \n y = Yes \n n = No \n".format(active_branch))
-                if deploy_branch.lower() == "n" or deploy_branch.lower() == "y":
-                    should_deploy_branch = False if deploy_branch.lower() == "n" else True
+                    "Do you want to deploy the {0} branch? \
+                    \n y = Yes \
+                    \n n = No \
+                    \n".format(active_branch))
+                if deploy_branch.lower() == "n" \
+                        or deploy_branch.lower() == "y":
+                    deploy_input_no = deploy_branch.lower() == "n"
+                    should_deploy_branch = False if deploy_input_no else True
                     break
                 else:
                     print("Please enter y/n")
@@ -95,4 +105,6 @@ if __name__ == "__main__":
         if should_deploy_branch:
             os.chdir(GIT_RELATIVE_PATH)
             os.system(
-                "git push --force heroku `git subtree split --prefix {0} {1}`:main".format(DEPLOY_DIR, active_branch))
+                "git push --force heroku `git subtree split \
+                    --prefix {0} {1}`:refs/heads/main"
+                .format(DEPLOY_DIR, active_branch))

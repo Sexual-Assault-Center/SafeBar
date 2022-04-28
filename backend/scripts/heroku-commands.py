@@ -4,7 +4,8 @@ import sys
 
 def create_superuser(command_map):
     os.system(
-        "heroku run python manage.py createsuperuser --email safebartn@gmail.com --username safebartn")
+        "heroku run python manage.py createsuperuser \
+            --email safebartn@gmail.com --username safebartn")
 
 
 def migrate_db(command_map):
