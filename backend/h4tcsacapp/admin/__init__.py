@@ -9,51 +9,41 @@ from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.sponser import Sponser
 
 
+@admin.register(Bar)
 class BarAdmin(admin.ModelAdmin):
     pass
 
 
-class RatingAdmin(admin.ModelAdmin):
-    pass
-
-
-class ReportTypeAdmin(admin.ModelAdmin):
-    pass
-
-
+@admin.register(BarReport)
 class BarReportAdmin(admin.ModelAdmin):
     pass
 
 
-class ResourceAdmin(admin.ModelAdmin):
-    pass
-
-
-class FAQAdmin(admin.ModelAdmin):
-    pass
-
-
+@admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     pass
 
 
+@admin.register(FAQ)
+class FAQAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Rating)
+class RatingAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(ReportType)
+class ReportTypeAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Resource)
+class ResourceAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Sponser)
 class SponserAdmin(admin.ModelAdmin):
     pass
-
-
-class ListAdmin(admin.ModelAdmin):
-    pass
-
-
-class ListBarAdmin(admin.ModelAdmin):
-    pass
-
-
-admin.site.register(Bar, BarAdmin)
-admin.site.register(BarReport, BarReportAdmin)
-admin.site.register(Contact, ContactAdmin)
-admin.site.register(FAQ, FAQAdmin)
-admin.site.register(Rating, RatingAdmin)
-admin.site.register(ReportType, ReportTypeAdmin)
-admin.site.register(Resource, ResourceAdmin)
-admin.site.register(Sponser, SponserAdmin)
