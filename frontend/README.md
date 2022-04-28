@@ -10,9 +10,19 @@ This starter also includes a branch [without Storybook](https://github.com/drter
 
 First, do the installations, then run the development server:
 
+Install Yarn
+```bash
+npm install --global yarn
+```
+Then run the following commands in order
+
 ```bash
 yarn install
+```
+```bash
 npm run prepare
+```
+```bash
 npm run dev
 ```
 
