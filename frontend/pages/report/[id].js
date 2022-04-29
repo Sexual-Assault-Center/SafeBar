@@ -72,7 +72,7 @@ export default function Report() {
                 type="radio"
                 label={reportObject.name}
                 id={reportObject.uuid}
-                className="textName"
+                // className="textName"
               />
             ))
           )
