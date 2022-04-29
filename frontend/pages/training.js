@@ -50,7 +50,13 @@ export default function Training() {
             </li>
           </ul>
         </Card.Body>
-        <ButtonComp buttonText="SIGN UP FOR TRAINING" href={NAVIGATION.TRAINING_LINK} />
+        <ButtonComp
+          buttonText="SIGN UP FOR TRAINING"
+          onClick={(e) => {
+            e.preventDefault();
+            window.open(NAVIGATION.TRAINING_LINK, '_blank');
+          }}
+        />
       </Card>
     </>
   );
