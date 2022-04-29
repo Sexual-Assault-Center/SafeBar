@@ -14,14 +14,3 @@ class BarViewSet(ModelViewSet):
     queryset = Bar.objects.all()
     serializer_class = BarSerializer
     http_method_names = ['get']
-
-    @action(methods=['get'], detail=False, url_path='highlight/(?P<uid>[^/.]+)')
-    def highlight(self, request, uid):
-        print(uid)
-        ratings = Rating.objects.all()
-        return JSONRenderer.render(RatingSerializer(ratings).data)
-
-# Grab all bars
-# Grab ratings by user
-# Structure response by safe or other
-# Join user ratings 
