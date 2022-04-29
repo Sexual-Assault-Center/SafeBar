@@ -28,9 +28,10 @@ export default function Home() {
   return (
     <div>
       <HeadDetails
-        title="Welcome"
+        title="SAFEBAR"
         description="Making Nightlife Safer for Everyone"
       />
+      <h2>GET INVOLVED</h2>
       {/* <div mediaUrl={landing.mediaUrl} isVideo={landing.isVideo} clickUrl="foobar">
         {landing.isVideo
           ? <ReactPlayer url={landing.mediaUrl} />
@@ -48,7 +49,7 @@ export default function Home() {
             buttonText={card.buttonText}
             img={card.image}
             text={card.text}
-            href={card.href}
+            onClick={(e) => { e.preventDefault(); window.open(card.href, 'target'); }}
             disabledButton={card.disabledButton}
           />
         ))}

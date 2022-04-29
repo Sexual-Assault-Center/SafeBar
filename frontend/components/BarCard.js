@@ -1,55 +1,82 @@
+/* eslint-disable camelcase */
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
-import { Button, ButtonGroup } from 'react-bootstrap';
 import { BsShieldFillCheck } from 'react-icons/bs';
+import { useRouter } from 'next/router';
+import ButtonComp from './Button';
 
 const BarCard = ({
-  // img,
-  safebar,
+  uuid,
+  is_safebar,
   name,
-  street,
+  street_address,
   city,
   zip,
   phone,
   func,
-}) => (
-  <Card style={{ width: '18rem' }}>
-    {/* <Card.Img variant="top" src={img} /> */}
-    <Card.Body>
-      <Card.Title>
-        {safebar ? <BsShieldFillCheck color="yellow" size={25} /> : ''}{' '}
-        {name}
-      </Card.Title>
-      <Card.Text>
-        {street}, {city} {zip}
-        <br />
-        <a href={`tel:${phone}`}>{phone}</a>
-      </Card.Text>
-      <div># of Reports</div>
-      <ButtonGroup aria-label="Basic example">
-        {/* <Button variant="secondary" onClick={func}>LIKE</Button>
-        <Button variant="secondary" onClick={func}>DISLIKE</Button> */}
-        <Button variant="secondary">REPORT</Button>
-        <Button variant="secondary" onClick={func}>FAVORITE</Button>
-      </ButtonGroup>
-    </Card.Body>
-  </Card>
-);
+  bar_report_count,
+}) => {
+  const router = useRouter();
+
+  const handleClick = (id) => {
+    router.push(`/report/${id}`);
+  };
+
+  return (
+    <Card className="card-style" style={{ width: '18rem' }}>
+      <Card.Body>
+        <Card.Title className="d-flex flex-row no-wrap align-items-center">
+          {is_safebar ? (
+            <BsShieldFillCheck className="shieldIcon me-2" size={25} />
+          ) : (
+            ''
+          )}{' '}
+          {name}
+        </Card.Title>
+        <Card.Text>
+          {street_address}, {city} {zip}
+          <br />
+          <a href={`tel:${phone}`}>{phone}</a>
+        </Card.Text>
+        <div>{bar_report_count} Reports</div>
+        <div className="d-flex flex-row no-wrap align-items-center mt-2">
+          <ButtonComp
+            className="me-2"
+            buttonText="report"
+            type="button"
+            outline
+            onClick={() => handleClick(uuid)}
+          />
+          <ButtonComp
+            buttonText="favorite"
+            type="button"
+            outline
+            onClick={func}
+          />
+        </div>
+      </Card.Body>
+    </Card>
+  );
+};
 
 export default BarCard;
 
 BarCard.propTypes = {
-  // img: PropTypes.string,
-  safebar: PropTypes.bool,
+  uuid: PropTypes.string.isRequired,
+  is_safebar: PropTypes.bool,
   name: PropTypes.string.isRequired,
-  street: PropTypes.string.isRequired,
+  street_address: PropTypes.string,
   city: PropTypes.string.isRequired,
-  zip: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
+  zip: PropTypes.string,
+  phone: PropTypes.string,
   func: PropTypes.func.isRequired,
+  bar_report_count: PropTypes.number,
 };
 
 BarCard.defaultProps = {
-  // img: '/sac-logo.png',
-  safebar: false,
+  is_safebar: false,
+  street_address: '',
+  zip: '',
+  phone: '',
+  bar_report_count: 0,
 };
