@@ -71,8 +71,3 @@ class ListSerializer(serializers.ModelSerializer):
             data["list_bar_id"] = list_bar.uuid
             bars.append(data)
         return bars
-
-class RatingSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Rating
-        fields = '__all__'
