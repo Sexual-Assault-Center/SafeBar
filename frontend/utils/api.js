@@ -10,4 +10,7 @@ const getContacts = () => {
   return fetch(`${urlBase}contacts/`).then((res) => res.json());
 }
 
-export { getResources, getContacts }
+const getAllFAQs = () => {
+  return fetch(`${urlBase}faqs/`).then((res) => res.json());
+}
+export { getResources, getContacts, getAllFAQs }
