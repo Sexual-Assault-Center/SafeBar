@@ -47,7 +47,7 @@ class BarSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Bar
-        fields = ['is_safebar', 'name', 'street_address', "city", "zip_code", "image", "website"]
+        fields = ['uuid', 'is_safebar', 'name', 'street_address', "city", "zip_code", "image", "website"]
 
 
 class ListSerializer(serializers.ModelSerializer):
