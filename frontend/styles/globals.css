@@ -77,6 +77,11 @@ h1, h2, h2 {
   padding-right: 0 !important;
 }
 
+.cardBodyText {
+  padding: 0 !important;
+}
+
+
 .training-style {
   background-image: radial-gradient(#2B1F47, #001022);
   color: #F1EDF1 !important;
@@ -87,6 +92,10 @@ h1, h2, h2 {
     width: 100% !important;
   }
 
+}
+.menuButton{
+  min-height: 50px !important;
+  font-family: 'Ubuntu', sans-serif !important;
 }
 
 .img-fit {
@@ -99,44 +108,49 @@ h1, h2, h2 {
 }
 
 .outline-button {
-  border: 2px solid #F1EDF1;
-  border-radius: 8px;
-  color: #F1EDF1;
+  border: 2px solid #F1EDF1 !important;
+  border-radius: 8px !important;
+  color: #F1EDF1 !important;
   background: none;
   font-family: 'Oswald', sans-serif;
 }
 
 .outline-button:hover {
-  background: #38285D;
-  border: 2px solid #F1EDF1;
+  background: #38285D !important;
+  border: 2px solid #F1EDF1 !important;
   font-family: 'Oswald', sans-serif;
 }
 
 .button-style {
-  background: #38285D;
-  color: #C1A6FF;
+  background: #38285D !important;
+  color: #C1A6FF !important;
   font-family: 'Oswald', sans-serif;
-  border: none;
-  border-radius: 8px;
+  border: none!important;
+  border-radius: 8px !important;
 }
 
 .button-style:hover {
-  background: #C1A6FF;
-  color: #2B1F47;
+  background: #C1A6FF !important;
+  color: #2B1F47 !important;
   font-family: 'Oswald', sans-serif;
-  border: none;
-  border-radius: 8px;
-  opacity: 80%;
+  border: none !important;
+  border-radius: 8px !important;
+  opacity: 80% !important;
 }
 
 .social-banner {
-  background-color: #3F285F;
+  background-image: radial-gradient(#8570B5, #2B1F47) !important;
   border-radius: 25px;
   border: none;
-  width: 67%;
+  width: 80%;
   height: 5rem;
   margin: auto;
   opacity: 80%;
+}
+
+.helpAccord {
+  padding-top: 60%;
+  padding-bottom: 10vh;
 }
 
 /* OFF CANVAS NAV  */
@@ -145,17 +159,19 @@ h1, h2, h2 {
   text-align: left !important;
   padding: 0 !important;
   margin: 0 !important;
-  color: white !important;
+  color: #F1EDF1 !important;
 }
 
 .offcanvas-body, .offcanvas-header {
-  background-color: #2B1F47;
-  color: white;
+  /* background-color: #2B1F47; */
+  color: #F1EDF1;
+  background-image: linear-gradient(#001022, #2B1F47) !important;
 }
 
 .navbar-toggler {  
   margin-left: auto !important;
   border: none !important;
+  padding-top: 10px;
 }
 
 .icon-circle-style {
@@ -163,6 +179,11 @@ h1, h2, h2 {
   height: 60px;
   background-color: #2B1F47;
 }
+
+/* label.textName {
+  font-family: 'Ubuntu', sans-serif !important;
+  color: #F1EDF1 !important;
+} */
 
 /******  FOOTER NAVIGATION  *******/
 

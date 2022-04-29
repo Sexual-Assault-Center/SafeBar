@@ -2,8 +2,6 @@ from h4tcsacapp.models.bar import Bar  # noqa
 from h4tcsacapp.models.bar_report import BarReport  # noqa
 from h4tcsacapp.models.contact import Contact  # noqa
 from h4tcsacapp.models.faq import FAQ  # noqa
-from h4tcsacapp.models.list import List  # noqa
-from h4tcsacapp.models.list_bar import ListBar  # noqa
 from h4tcsacapp.models.rating import Rating  # noqa
 from h4tcsacapp.models.report_type import ReportType  # noqa
 from h4tcsacapp.models.resource import Resource  # noqa
