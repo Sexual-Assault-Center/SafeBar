@@ -18,7 +18,7 @@ const NAVIGATION = {
     },
   ],
   TRAINING_LINK:
-    'https://sacenter.org/resources/safe-bar-training-program.aspx',
+    'https://sacenter.dm.networkforgood.com/forms/safe-bar-training-sign-up',
 };
 
 export default NAVIGATION;
