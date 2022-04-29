@@ -1,5 +1,5 @@
 const NAVIGATION = {
-  FOOTER: ['Bars', 'Lists', 'Help', 'Training', 'FAQs'],
+  FOOTER: ['Home', 'Explore', 'HELP', 'Lists', 'Login'],
 };
 
 export default NAVIGATION;
