@@ -24,8 +24,8 @@ const BarCard = ({
         {street}, {city} {zip}
         <br />
         <a href={`tel:${phone}`}>{phone}</a>
-        <p># of Reports</p>
       </Card.Text>
+      <div># of Reports</div>
       <ButtonGroup aria-label="Basic example">
         {/* <Button variant="secondary" onClick={func}>LIKE</Button>
         <Button variant="secondary" onClick={func}>DISLIKE</Button> */}
