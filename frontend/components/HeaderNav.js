@@ -38,7 +38,7 @@ export default function HeaderNav() {
                 <Button variant="link" onClick={handleClose}>FAQs</Button>
               </Link>
               <Link href="/training" passHref>
-                <Button variant="link" onClick={handleClose}>Training</Button>
+                <Button variant="link" onClick={handleClose}>Get Safebar Training</Button>
               </Link>
               <a href="https://safebartn.org" target="_blank" rel="noreferrer">SafeBar website</a>
             </Nav>
