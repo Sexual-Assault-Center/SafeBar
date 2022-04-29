@@ -100,11 +100,11 @@ h1, h2, h2 {
 
 /* OFF CANVAS NAV  */
 .btn-link {
-  text-decoration: none;
-  text-align: left;
-  padding: 0;
-  margin: 0;
-  color: black;
+  text-decoration: none !important;
+  text-align: left !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: black !important;
 }
 
 
