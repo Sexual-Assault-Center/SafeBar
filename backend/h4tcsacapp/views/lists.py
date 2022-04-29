@@ -32,11 +32,13 @@ class ListViewSet(ModelViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
     def list(self, request):
-        uid = request.GET.get('uid', '')
-        list = List.objects.filter(uid=uid)
+        uid = request.GET.get('uid', None)
+
+        list_set = List.objects.filter(uid=uid) \
+            if uid else List.objects.all()
 
         serializer = ListSerializer(
-            list, many=True, context={'request': request}
+            list_set, many=True, context={'request': request}
         )
         return Response(serializer.data)
 
