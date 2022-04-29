@@ -50,7 +50,7 @@ export default function Training() {
             </li>
           </ul>
         </Card.Body>
-        <ButtonComp buttonText="train now!" href={NAVIGATION.TRAINING_LINK} />
+        <ButtonComp buttonText="SIGN UP FOR TRAINING" href={NAVIGATION.TRAINING_LINK} />
       </Card>
     </>
   );
