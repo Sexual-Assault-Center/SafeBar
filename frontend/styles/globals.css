@@ -47,7 +47,7 @@ h1, h2, h2 {
 }
 
 .card {
-  background: #231A42;
+  background-color: #231A42 !important;
   color: white;
   border: 1px solid white;
   margin: 5px;
