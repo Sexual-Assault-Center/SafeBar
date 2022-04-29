@@ -18,7 +18,7 @@ const postReport = (reportObj) => fetch(`${urlBase}bar-report/`, {
   headers: {
     "Content-Type": "application/json"
   }
-}).then((resp) => console.warn(resp));
+});
 
 // const getSearch = (query) => {
 //   // return fetch(`${urlBase}search?query=${query}/`) Placeholder until endpoint exists

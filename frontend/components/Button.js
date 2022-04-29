@@ -8,8 +8,8 @@ const ButtonComp = ({
   const isOutline = Boolean(outline);
   return (
     <>
-      { hasHref ?
-        (
+      {hasHref
+        ? (
           <Button href={href} onClick={onClick} type={type} className={`${isOutline ? 'outline-button' : 'button-style'}`}>
             {buttonText.toUpperCase()}{' '}
           </Button>
@@ -17,10 +17,8 @@ const ButtonComp = ({
           <Button onClick={onClick} type={type} className={`${isOutline ? 'outline-button' : 'button-style'}`}>
             {buttonText.toUpperCase()}{' '}
           </Button>
-        )
-      }
+        )}
     </>
-    
   );
 };
 
@@ -39,5 +37,5 @@ ButtonComp.defaultProps = {
   outline: false,
   type: 'button',
   href: '',
-  onClick: () => {},
+  onClick: () => { },
 };
