@@ -1,4 +1,4 @@
-{% extends "admin/base_site.html" %} {% block title %}Django with Bootstrap | Admin site{% endblock %} {% block branding %}{% endblock %} {% block breadcrumbs %}{% endblock %} {% block bodyclass %}bg-light{% endblock %} {% block bodyheader %} Header Here {% endblock %} {% block pagecss %} <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css" /> {% endblock %} {% block content %}
+{% extends "admin/base_site.html" %} {% block title %}Django with Bootstrap | Admin site{% endblock %} {% block branding %}{% endblock %} {% block breadcrumbs %}{% endblock %} {% block bodyclass %}bg-light{% endblock %} {% block bodyheader %} {% include "admin/admin_navigation.html" %}{% endblock %} {% block pagecss %} <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css" /> {% endblock %} {% block content %}
 <div class="container">
   <div class="d-flex flex-wrap card-container">
     <img src="/static/images/SAC_logo.png" alt="sac-logo" class="logo" />

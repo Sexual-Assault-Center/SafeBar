@@ -14,9 +14,15 @@ from h4tcsacapp.models.rating import Rating
 from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.sponser import Sponser
+from django.template.response import TemplateResponse
 
 
 class CustomAdminSite(admin.AdminSite):
+
+    def index(self, request, extra_context=None):
+
+        return TemplateResponse(request, self.index_template or 'dashboard/index.html')
+
     def get_urls(self):
         site_urls = []
         site_urls = site_urls + CustomDjangoViews(
