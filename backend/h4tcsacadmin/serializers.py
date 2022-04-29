@@ -8,7 +8,12 @@ from h4tcsacapp.models.resource import Resource
 class AdminResourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Resource
-        fields = "__all__"
+        fields = [
+            "uuid",
+            "title",
+            "description",
+            "url"
+        ]
 
 
 class AdminContactSerializer(serializers.ModelSerializer):
