@@ -48,7 +48,7 @@ export default function Home() {
             buttonText={card.buttonText}
             img={card.image}
             text={card.text}
-            href={card.href}
+            onClick={(e) => { e.preventDefault(); window.open(card.href, 'target'); }}
             disabledButton={card.disabledButton}
           />
         ))}
