@@ -11,6 +11,7 @@ const RadioCheck = ({
       type="radio"
       label={label}
       id={id}
+      name={label}
     />
   </Form>
 );
