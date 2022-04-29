@@ -23,9 +23,9 @@ export default function Report() {
 
   useEffect(() => {
     if (user) {
-      report.uid = user.uid
-    };
-    getAllReportTypes().then(setReportTypes)
+      report.uid = user.uid;
+    }
+    getAllReportTypes().then(setReportTypes);
   }, [report, user]);
 
   const handleChange = (e) => {
@@ -33,7 +33,7 @@ export default function Report() {
     setReport((prevState) => (
       {
         ...prevState,
-        comment: value
+        comment: value,
       }
     ));
   };
@@ -48,32 +48,37 @@ export default function Report() {
   };
 
   const handleKeyDown = (e) => {
-    if (e.keyCode === 13 ) {
+    if (e.keyCode === 13) {
       e.preventDefault();
-    };
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     router.push('/bars');
     postReport(report);
-  }
+  };
 
   return (
     <>
       <HeadDetails title="Resources" description="Making Nightlife Safer for Everyone" />
       <Form onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
-        {reportTypes.map((report) => <Form.Check
-          name='report-check'
-          onClick={(e) => handleClick(e)}
-          type="radio"
-          label={report.name}
-          id={report.uuid}
-        />
-        )}
+        {
+          (
+            reportTypes.map((reportObject) => (
+              <Form.Check
+                name="report-check"
+                onClick={(e) => handleClick(e)}
+                type="radio"
+                label={reportObject.name}
+                id={reportObject.uuid}
+              />
+            ))
+          )
+        }
         <TextArea onChange={(e) => handleChange(e)} value={value} />
-        <Button type='submit' buttonText='report'/>
+        <Button type="submit" buttonText="report" />
       </Form>
     </>
   );
-};
+}

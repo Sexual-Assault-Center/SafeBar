@@ -8,13 +8,24 @@ const ButtonComp = ({
   const isOutline = Boolean(outline);
   return (
     <>
-      {hasHref ?
-        <Button href={href} target='_blank' onClick={onClick} type={type} className={`${isOutline ? 'outline-button' : 'button-style'}`}>
-          {buttonText.toUpperCase()}{' '}
-        </Button> : <Button onClick={onClick} type={type} className={`${isOutline ? 'outline-button' : 'button-style'}`}>
-          {buttonText.toUpperCase()}{' '}
-        </Button>
-      }
+      {hasHref
+        ? (
+          <Button
+            href={href}
+            target="_blank"
+            onClick={onClick}
+            type={type}
+            className={`${isOutline
+              ? 'outline-button' : 'button-style'}`}
+          >
+            {buttonText.toUpperCase()}{' '}
+          </Button>
+        )
+        : (
+          <Button onClick={onClick} type={type} className={`${isOutline ? 'outline-button' : 'button-style'}`}>
+            {buttonText.toUpperCase()}{' '}
+          </Button>
+        )}
     </>
 
   );
