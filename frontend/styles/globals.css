@@ -38,9 +38,15 @@ h1, h2, h2 {
 }
 
 .card-width {
-  width: 24rem;
-  height: auto;
+  width: 26rem;
+  height: 18rem;
 }
+
+.card-title{
+  font-family: 'Oswald', sans-serif;
+  font: bold;
+}
+
 .card-border-radius {
   border-radius: 25px;
   border: none;
@@ -49,7 +55,6 @@ h1, h2, h2 {
 .card {
   background-color: #231A42 !important;
   color: white;
-  border: 1px solid white !important;
   margin: 5px;
 }
 
@@ -57,6 +62,7 @@ h1, h2, h2 {
   .card {
     width: 100% !important;
   }
+
 }
 
 .img-fit {
@@ -96,6 +102,15 @@ h1, h2, h2 {
   font-family: 'Oswald', sans-serif;
   border: none;
   border-radius: 8px;
+}
+
+.social-banner {
+  background-color: #3F285F;
+  border-radius: 25px;
+  border: none;
+  width: 70%;
+  height: 5rem;
+  margin: auto;
 }
 
 /* OFF CANVAS NAV  */
