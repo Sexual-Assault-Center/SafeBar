@@ -38,9 +38,15 @@ h1, h2, h2 {
 }
 
 .card-width {
-  width: 24rem;
-  height: auto;
+  width: 26rem;
+  height: 18rem;
 }
+
+.card-title{
+  font-family: 'Oswald', sans-serif;
+  font: bold;
+}
+
 .card-border-radius {
   border-radius: 25px;
   border: none;
@@ -49,7 +55,6 @@ h1, h2, h2 {
 .card {
   background-color: #231A42 !important;
   color: white;
-  border: 1px solid white !important;
   margin: 5px;
 }
 
@@ -57,6 +62,7 @@ h1, h2, h2 {
   .card {
     width: 100% !important;
   }
+
 }
 
 .img-fit {
@@ -98,15 +104,33 @@ h1, h2, h2 {
   border-radius: 8px;
 }
 
+.social-banner {
+  background-color: #3F285F;
+  border-radius: 25px;
+  border: none;
+  width: 70%;
+  height: 5rem;
+  margin: auto;
+}
+
 /* OFF CANVAS NAV  */
 .btn-link {
   text-decoration: none !important;
   text-align: left !important;
   padding: 0 !important;
   margin: 0 !important;
-  color: black !important;
+  color: white !important;
 }
 
+.offcanvas-body, .offcanvas-header {
+  background-color: #2B1F47;
+  color: white;
+}
+
+.navbar-toggler {  
+  margin-left: auto !important;
+  border: none !important;
+}
 
 .icon-circle-style {
   width: 60px;
@@ -136,6 +160,7 @@ footer {
   cursor: pointer;
   padding: 0 5px;
 }
+
 
 p.footerIcon {
   display: flex;
