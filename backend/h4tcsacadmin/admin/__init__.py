@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from h4tcsacadmin.forms import ResourceForm
+from h4tcsacadmin.forms import BarForm, ContactForm, FAQForm, ResourceForm
+from h4tcsacadmin.serializers import AdminBarSerializer, AdminContactSerializer, AdminFAQSerializer, AdminResourceSerializer
 from h4tcsacadmin.views.dashboard import dashboard
-from h4tcsacadmin.views.resources import CustomDjangoViews
+from h4tcsacadmin.views.custom_crud_view import CustomDjangoViews
 from h4tcsacapp.models.bar import Bar
 from h4tcsacapp.models.bar_report import BarReport
 from h4tcsacapp.models.contact import Contact
@@ -13,24 +14,50 @@ from h4tcsacapp.models.rating import Rating
 from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.sponser import Sponser
-from h4tcsacapp.serializers import ResourceSerializer
+from django.template.response import TemplateResponse
 
 
 class CustomAdminSite(admin.AdminSite):
+
+    def index(self, request, extra_context=None):
+
+        return TemplateResponse(request, self.index_template or 'dashboard/index.html')
+
     def get_urls(self):
         site_urls = []
         site_urls = site_urls + CustomDjangoViews(
             Resource,
-            ResourceSerializer,
+            AdminResourceSerializer,
             "resources",
             self.admin_view,
             "Resource",
             ResourceForm
         ).urls()
-        # Contacts
-        # FAQ
-        # Resources
+        site_urls = site_urls + CustomDjangoViews(
+            Contact,
+            AdminContactSerializer,
+            "contacts",
+            self.admin_view,
+            "Contact",
+            ContactForm
+        ).urls()
+        site_urls = site_urls + CustomDjangoViews(
+            FAQ,
+            AdminFAQSerializer,
+            "faqs",
+            self.admin_view,
+            "FAQ",
+            FAQForm
+        ).urls()
         # Bars
+        site_urls = site_urls + CustomDjangoViews(
+            Bar,
+            AdminBarSerializer,
+            "bars",
+            self.admin_view,
+            "Bar",
+            BarForm
+        ).urls()
         site_urls = site_urls + [
             path(r'dashboard/', self.admin_view(dashboard), name="dashboard-view"),
         ]

@@ -43,17 +43,11 @@ class CustomDjangoViews():
         success_delete = request.GET.get('success_delete', '')
         success_create = request.GET.get('success_create', '')
         data = self.serializer(query_set, many=True).data
-        headers = []
-        try:
-            headers = list(data[0].keys())
-        except IndexError:
-            headers = []
-        print(headers)
         return render(request, "admin/list.html", {
             'success_create': success_create,
             'success_delete': success_delete,
             'data': data,
-            "headers": headers,
+            "headers": self.serializer.Meta.fields,
             'name': self.title,
             'create_url': 'myadmin:%s-create' % self.base_path,
             "header_text": "All %ss" % self.title
