@@ -8,3 +8,4 @@ from h4tcsacapp.models.rating import Rating  # noqa
 from h4tcsacapp.models.report_type import ReportType  # noqa
 from h4tcsacapp.models.resource import Resource  # noqa
 from h4tcsacapp.models.sponser import Sponser  # noqa
+from h4tcsacapp.models.landing_content import LandingContent  # noqa
