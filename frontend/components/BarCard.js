@@ -26,9 +26,9 @@ const BarCard = ({
         <a href={`tel:${phone}`}>{phone}</a>
       </Card.Text>
       <ButtonGroup aria-label="Basic example">
-        <Button variant="secondary" onClick={func}>LIKE</Button>
-        <Button variant="secondary" onClick={func}>DISLIKE</Button>
-        <Button variant="secondary" onClick={func}>REPORT</Button>
+        {/* <Button variant="secondary" onClick={func}>LIKE</Button>
+        <Button variant="secondary" onClick={func}>DISLIKE</Button> */}
+        <Button variant="secondary">REPORT</Button>
         <Button variant="secondary" onClick={func}>FAVORITE</Button>
       </ButtonGroup>
     </Card.Body>

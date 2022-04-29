@@ -47,9 +47,9 @@ h1, h2, h2 {
 }
 
 .card {
-  background: #231A42;
+  background-color: #231A42 !important;
   color: white;
-  border: 1px solid white;
+  border: 1px solid white !important;
   margin: 5px;
 }
 
@@ -100,11 +100,11 @@ h1, h2, h2 {
 
 /* OFF CANVAS NAV  */
 .btn-link {
-  text-decoration: none;
-  text-align: left;
-  padding: 0;
-  margin: 0;
-  color: black;
+  text-decoration: none !important;
+  text-align: left !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: black !important;
 }
 
 
@@ -216,8 +216,8 @@ p.footerIcon {
   color: black !important;
 }
 .login-btn {
-  background-color: #38285D;
-  border: none;
+  background-color: #38285D !important;
+  border: none !important;
 }
 .sign-in {
   position: absolute;
