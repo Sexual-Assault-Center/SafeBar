@@ -16,7 +16,7 @@ class Bar(models.Model):
     )
     zip_code = models.CharField(
         "ZIP / Postal code",
-        max_length=12, blank=True, default=""
+        max_length=100, blank=True, default=""
     )
     latitude = models.CharField(
         "Latitude", max_length=10, blank=True, default="")

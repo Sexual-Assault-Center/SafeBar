@@ -8,4 +8,4 @@ class Rating(models.Model):
     bar = models.ForeignKey(Bar, on_delete=models.PROTECT)
     rating_number = models.IntegerField("Rating Number")
     comment = models.CharField(("Comment"), max_length=254)
-    uid = models.CharField(("User ID"), max_length=25)
+    uid = models.CharField(("User ID"), max_length=100)
