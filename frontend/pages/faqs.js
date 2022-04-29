@@ -37,11 +37,11 @@ export default function Faqs() {
       />
       <h1>FAQs</h1>
       <div id="faqDiv">
-        <Accordion>
+        <Accordion className="accord">
           {faqs.map((item) => (
             <Accordion.Item eventKey={item.uuid} key={item.uuid}>
               <Accordion.Header>{item.question}</Accordion.Header>
-              <Accordion.Body>{item.answer}</Accordion.Body>
+              <Accordion.Body className="accord-text">{item.answer}</Accordion.Body>
             </Accordion.Item>
           ))}
         </Accordion>
