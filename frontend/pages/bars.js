@@ -15,7 +15,6 @@ export default function Bars() {
   const [safebars, setSafebars] = useState([]);
   const [bars, setBars] = useState([]);
   // const [value, setValue] = useState('');
-
   const { user } = useAuth();
 
   useEffect(() => {

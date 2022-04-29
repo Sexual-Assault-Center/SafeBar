@@ -3,9 +3,11 @@ import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { BsShieldFillCheck } from 'react-icons/bs';
+import { useRouter } from 'next/router';
 
 const BarCard = ({
   // img,
+  uuid,
   is_safebar,
   name,
   street_address,
@@ -14,34 +16,38 @@ const BarCard = ({
   phone,
   func,
   bar_report_count,
-}) => (
-  <Card style={{ width: '18rem' }}>
-    {/* <Card.Img variant="top" src={img} /> */}
-    <Card.Body>
-      <Card.Title>
-        {is_safebar ? <BsShieldFillCheck color="yellow" size={25} /> : ''}{' '}
-        {name}
-      </Card.Title>
-      <Card.Text>
-        {street_address}, {city} {zip}
-        <br />
-        <a href={`tel:${phone}`}>{phone}</a>
-      </Card.Text>
-      <div>{bar_report_count} Reports</div>
-      <ButtonGroup aria-label="Basic example">
-        {/* <Button variant="secondary" onClick={func}>LIKE</Button>
+}) => {
+
+  return (
+    <Card style={{ width: '18rem' }}>
+      {/* <Card.Img variant="top" src={img} /> */}
+      <Card.Body>
+        <Card.Title>
+          {is_safebar ? <BsShieldFillCheck color="yellow" size={25} /> : ''}{' '}
+          {name}
+        </Card.Title>
+        <Card.Text>
+          {street_address}, {city} {zip}
+          <br />
+          <a href={`tel:${phone}`}>{phone}</a>
+        </Card.Text>
+        <div>{bar_report_count} Reports</div>
+        <ButtonGroup aria-label="Basic example">
+          {/* <Button variant="secondary" onClick={func}>LIKE</Button>
         <Button variant="secondary" onClick={func}>DISLIKE</Button> */}
-        <Button variant="secondary">REPORT</Button>
-        <Button variant="secondary" onClick={func}>FAVORITE</Button>
-      </ButtonGroup>
-    </Card.Body>
-  </Card>
-);
+          <Button variant="secondary" href={`/report/${uuid}`}>REPORT</Button>
+          <Button variant="secondary" onClick={func}>FAVORITE</Button>
+        </ButtonGroup>
+      </Card.Body>
+    </Card>
+  )
+};
 
 export default BarCard;
 
 BarCard.propTypes = {
   // img: PropTypes.string,
+  uuid: PropTypes.string.isRequired,
   is_safebar: PropTypes.bool,
   name: PropTypes.string.isRequired,
   street_address: PropTypes.string,

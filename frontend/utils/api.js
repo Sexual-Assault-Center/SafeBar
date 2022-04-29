@@ -15,7 +15,10 @@ const getAllReportTypes = () => fetch(`${urlBase}reporttypes/`).then((res) => re
 const postReport = (reportObj) => fetch(`${urlBase}bar-report/`, {
   body: JSON.stringify(reportObj),
   method: 'POST',
-});
+  headers: {
+    "Content-Type": "application/json"
+  }
+}).then((resp) => console.warn(resp));
 
 // const getSearch = (query) => {
 //   // return fetch(`${urlBase}search?query=${query}/`) Placeholder until endpoint exists
