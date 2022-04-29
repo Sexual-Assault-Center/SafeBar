@@ -11,7 +11,7 @@ export default function Lists() {
 
   useEffect(() => {
     let isMounted = true;
-    getBarsByUid().then((favArray) => {
+    getBarsByUid(user.uid).then((favArray) => {
       if (isMounted) {
         setFavs(favArray);
       }
@@ -19,7 +19,7 @@ export default function Lists() {
     return () => {
       isMounted = false;
     };
-  }, [favs]);
+  }, [user.uid]);
 
   return (
     <>
@@ -31,12 +31,12 @@ export default function Lists() {
         <>
           <h1 className="text-center">Favorites</h1>
           <div>
-            {favs.map((fav) => (
-            <BarCard
-              key={fav.id}
-              fav={fav}
-            />
-          ))}
+            {favs.map((favObj) => (
+              <BarCard
+                key={favObj.id}
+                fav={favObj}
+              />
+            ))}
           </div>
         </>
       ) : (
