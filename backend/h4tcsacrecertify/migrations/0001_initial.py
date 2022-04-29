@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('uuid', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
                 ('token', models.UUIDField(editable=False)),
-                ('bar', models.IntegerField()),
+                ('bar_id', models.UUIDField()),
             ],
         ),
     ]
