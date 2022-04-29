@@ -7,6 +7,7 @@ import BarCard from '../components/BarCard';
 import HeadDetails from '../components/HeadDetails';
 import { useAuth } from '../utils/context/authContext';
 import { signInUser } from '../utils/auth';
+import { getAllBars } from '../utils/api';
 
 // import { getSearch } from '../utils/api';
 
@@ -19,6 +20,7 @@ export default function Bars() {
   const { user } = useAuth();
 
   useEffect(() => {
+    getAllBars().then(console.log);
     setSafebars(barsData.filter((bar) => bar.safebar));
     setBars(barsData.filter((bar) => !bar.safebar));
   }, []);
