@@ -1,24 +1,88 @@
-{% extends "admin/base_site.html" %}
-{% block title %}Django with Bootstrap | Admin site{% endblock %}
+{% extends "admin/base_site.html" %} {% block title %}Django with Bootstrap | Admin site{% endblock %} {% block branding %}{% endblock %} {% block breadcrumbs %}{% endblock %} {% block bodyclass %}bg-light{% endblock %} {% block bodyheader %} Header Here {% endblock %} {% block pagecss %} <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css" /> {% endblock %} {% block content %}
+<div class="container">
+  <div class="d-flex flex-wrap card-container">
+    <img src="/static/images/SAC_logo.png" alt="sac-logo" class="logo" />
+    <div class="dash-square">
+      <h3>33</h3>
+      <p>Reports</p>
+    </div>
+    <div class="dash-square">
+      <p>Avg Safe Bar Rating</p>
+      <h3>4.7</h3>
+      <small>out of 5 stars</small>
+    </div>
+    <div class="dash-square">
+      <h3>18</h3>
+      <p>Safe Bars</p>
+    </div>
+    <div class="dash-square">
+      <h3>386</h3>
+      <p>Users</p>
+    </div>
+  </div>
 
-{% block branding %}{% endblock %}
-
-{% block breadcrumbs %}{% endblock %}
-
-{% block bodyclass %}bg-light{% endblock %}
-
-{% block bodyheader %} Header Here {% endblock %}
-
-{% block pagecss %}
-<link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css"> {% endblock %}
-{% block content %}
-<div>
-  <div># reports</div>
-  <div>Avg safebar rating</div>
-  <div># safebars</div>
-  <div># of users</div>
-  <div>Reports / No New Reports</div>
-  <div>List of bars whose cert expires in 30 days </div>
-  <div>List of bars over due</div>
+  <div class="list-container">
+    <div class="left">
+      <div class="container-primary">
+        <h4>Reports</h4>
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div>
+                <small class="small-header">SUBMITTED</small>
+                <div>4/23/22</div>
+              </div>
+              <div>
+                <small class="small-header">BAR</small>
+                <div>Red Phone Booth</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-grid gap-2 mt-3">
+          <a href="#" target="_blank" class="btn btn-primary btn-lg analytics-btn" type="button">View Reports</a>
+        </div>
+      </div>
+      <div class="container-primary">
+        <h4>Recertifications Due within 30 days</h4>
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div>
+                <div>Ole Red</div>
+                <small class="small-header">Contact: Bryan Harris</small>
+              </div>
+              <div>
+                <small class="small-header">due on</small>
+                <div>5/1/22</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="container-secondary">
+        <h4 class="dark">Overdue Certifications</h4>
+        <div class="card overdue-card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div>
+                <div>Ole Red</div>
+                <small class="small-header">Contact: Bryan Harris</small>
+              </div>
+              <div>
+                <small class="small-header">due on</small>
+                <div>5/1/22</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid gap-2">
+        <a href="https://analytics.google.com/analytics/web/#/p312699576/realtime/overview?params=_u..nav%3Dmaui&collectionId=life-cycle" target="_blank" class="btn btn-primary btn-lg analytics-btn" type="button">Google Analytics</a>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
 </div>
-{% endblock %}
