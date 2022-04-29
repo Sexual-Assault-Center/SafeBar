@@ -20,6 +20,14 @@ const postReport = (reportObj) => fetch(`${urlBase}bar-report/`, {
   }
 });
 
+const addFav = (favObj) => fetch(`${urlBase}favorite/`, { body: JSON.stringify(favObj),
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json"
+  }
+
+}).then(() => console.warn(JSON.stringify(favObj)));
+
 // const getSearch = (query) => {
 //   // return fetch(`${urlBase}search?query=${query}/`) Placeholder until endpoint exists
 //   return null;
@@ -28,5 +36,5 @@ const postReport = (reportObj) => fetch(`${urlBase}bar-report/`, {
 const getLanding = () => fetch(`${urlBase}landing/`).then((res) => res.json());
 
 export {
-  getResources, getContacts, getAllFAQs, getLanding, getAllBars, getAllReportTypes, postReport
+  getResources, getContacts, getAllFAQs, getLanding, getAllBars, getAllReportTypes, postReport, addFav
 };

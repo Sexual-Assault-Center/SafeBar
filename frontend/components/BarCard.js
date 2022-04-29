@@ -1,9 +1,12 @@
 /* eslint-disable camelcase */
+import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { BsShieldFillCheck } from 'react-icons/bs';
 import { useRouter } from 'next/router';
+import { useAuth } from '../utils/context/authContext';
+import { addFav } from '../utils/api';
 
 const BarCard = ({
   // img,
@@ -14,11 +17,20 @@ const BarCard = ({
   city,
   zip,
   phone,
-  func,
   bar_report_count,
 }) => {
+  const [favClick, setFavClick] = useState(false);
   const router = useRouter();
+  const { user } = useAuth();
 
+  const handleFav = () => {
+    const favObj = {
+      uid: user.uid,
+      bar: uuid,
+    };
+    addFav(favObj).then(() => setFavClick((prevState) => !prevState));
+  };
+  
   const handleClick = (id) => {
     router.push(`/report/${id}`);
   };
@@ -41,7 +53,15 @@ const BarCard = ({
           {/* <Button variant="secondary" onClick={func}>LIKE</Button>
         <Button variant="secondary" onClick={func}>DISLIKE</Button> */}
           <Button variant="secondary" onClick={() => handleClick(uuid)}>REPORT</Button>
-          <Button variant="secondary" onClick={func}>FAVORITE</Button>
+          {!favClick
+            ? (
+              <Button
+                variant="secondary"
+                onClick={handleFav}
+              >FAVORITE
+              </Button>
+            )
+            : console.warn('fav')}
         </ButtonGroup>
       </Card.Body>
     </Card>
