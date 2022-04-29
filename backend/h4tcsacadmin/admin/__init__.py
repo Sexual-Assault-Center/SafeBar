@@ -1,6 +1,13 @@
+from datetime import date
+
+from dateutil.relativedelta import *
 from django.contrib import admin
+from django.template.response import TemplateResponse
 from h4tcsacadmin.forms import BarForm, ContactForm, FAQForm, ResourceForm
-from h4tcsacadmin.serializers import AdminBarSerializer, AdminContactSerializer, AdminFAQSerializer, AdminResourceSerializer
+from h4tcsacadmin.serializers import (AdminBarSerializer,
+                                      AdminContactSerializer,
+                                      AdminFAQSerializer,
+                                      AdminResourceSerializer)
 from h4tcsacadmin.views.custom_crud_view import CustomDjangoViews
 from h4tcsacapp.models.bar import Bar
 from h4tcsacapp.models.bar_report import BarReport
@@ -13,19 +20,25 @@ from h4tcsacapp.models.rating import Rating
 from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.sponser import Sponser
-from django.template.response import TemplateResponse
-
-from h4tcsacapp.serializers import BarReportSerializer
+from h4tcsacapp.serializers import BarReportExpandedSerializer
 
 
 class CustomAdminSite(admin.AdminSite):
 
     def index(self, request, extra_context=None):
         bar_reports = BarReport.objects.all()
-        report_count = bar_reports.count()
-        safebar_count = Bar.objects.filter(is_safebar=True).count()
-        bar_reports_data = BarReportSerializer(bar_reports, many=True).data[:-4]
-        return TemplateResponse(request, self.index_template or 'dashboard/index.html', {"report_count": report_count, 'safebar_count': safebar_count, "bar_reports_data": bar_reports_data})
+        bars = Bar.objects.filter(is_safebar=True)
+        bar_reports_data = BarReportExpandedSerializer(bar_reports, many=True).data[:-4]
+
+        for (index, report) in enumerate(bar_reports_data):
+            y, m, d = report['date_submitted'].split("T")[0].split("-")
+            bar_reports_data[index]['date_submitted'] = "%s/%s/%s" % (m, d, y)
+
+        needs_certif = bars.filter(certification_date__lte=date.today() - relativedelta(months=5))
+
+        print([bar.certification_date for bar in needs_certif])
+
+        return TemplateResponse(request, self.index_template or 'dashboard/index.html', {"report_count": bar_reports.count(), 'safebar_count': bars.count(), "bar_reports_data": bar_reports_data})
 
     def get_urls(self):
         site_urls = []

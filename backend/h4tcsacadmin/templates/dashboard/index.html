@@ -30,12 +30,15 @@
         <h4>Reports</h4>
         {% for bar_report in bar_reports_data  %}
 
+
+
         <div class="card">
           <div class="card-body">
             <div class="d-flex justify-content-between">
               <div>
                 <small class="small-header">SUBMITTED</small>
-                <div>{{bar_report.date_submitted}}</div>
+                <div>{{ bar_report.date_submitted }}
+                </div>
               </div>
               <div>
                 <small class="small-header">BAR</small>

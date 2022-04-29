@@ -79,6 +79,13 @@ class BarReportSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class BarReportExpandedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BarReport
+        fields = '__all__'
+        depth = 1
+
+
 class FavoriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Favorite
