@@ -25,7 +25,18 @@ env_map = {
     "DEBUG": env("DEBUG", default=False),
     "FRONTEND_ORIGIN": env("FRONTEND_ORIGIN", default=""),
     "API_HOST": env("API_HOST", default=""),
+    "EMAIL_HOST_USER": env("EMAIL_USER", default=""),
+    "EMAIL_HOST_PASSWORD": env("EMAIL_PASSWORD", default=""),
+    "EMAIL_HOST": env("EMAIL_HOST", default=""),
+    "EMAIL_PORT": env("EMAIL_PORT", default=""),
+    "EMAIL_USE_TLS": env("EMAIL_USE_TLS", default="")
 }
+
+EMAIL_HOST_USER = env_map["EMAIL_HOST_USER"]
+EMAIL_HOST_PASSWORD = env_map["EMAIL_HOST_PASSWORD"]
+EMAIL_HOST = env_map["EMAIL_HOST"]
+EMAIL_PORT = env_map["EMAIL_PORT"]
+EMAIL_USE_TLS=env_map["EMAIL_USE_TLS"]
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -60,7 +71,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'h4tcsacapp',
     'corsheaders',
-    'h4tcsacrecertify'
+    'h4tcsacrecertify',
     'h4tcsacadmin'
 ]
 

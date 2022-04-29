@@ -1,23 +1,23 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Card } from 'react-bootstrap';
+import ButtonComp from './Button';
 
-function ResourcesCard({ ...props }) {
+function ResourcesCard({ title, description, url }) {
   return (
-    <Card key={props.id} className="my-2">
+    <Card className="my-2">
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
+        <Card.Title>{title}</Card.Title>
         <Card.Text>
-          {props.description}
+          {description}
         </Card.Text>
-        <Button variant="primary" href={props.url}>Learn More</Button>
+        <ButtonComp variant="primary" href={url} buttonText="Learn More" />
       </Card.Body>
     </Card>
   );
 }
 
 ResourcesCard.propTypes = {
-  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,

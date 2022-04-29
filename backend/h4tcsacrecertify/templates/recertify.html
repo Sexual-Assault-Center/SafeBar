@@ -1,0 +1,9 @@
+<h1>Recertify</h1>
+
+<p>I have completed the neccesary requirements to recertify {{ bar_name }} as a Safe Bar.</p>
+
+<form action="/submit-bar/recertify/{{ token }}/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
