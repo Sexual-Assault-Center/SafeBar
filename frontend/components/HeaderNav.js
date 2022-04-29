@@ -17,16 +17,16 @@ export default function HeaderNav() {
         <Navbar.Offcanvas
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
-          placement="end"
           show={show}
           onHide={handleClose}
+          placement="end"
         >
-          <Offcanvas.Header closeButton>
+          <Offcanvas.Header className="offcanvas-header" closeButton>
             <Offcanvas.Title id="offcanvasNavbarLabel">
               <h1 className="safespace">SafeBar</h1>
             </Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body>
+          <Offcanvas.Body className="offcanvas-body">
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Link href="/resources" passHref>
                 <Button variant="link" onClick={handleClose}>Resources</Button>
@@ -36,6 +36,9 @@ export default function HeaderNav() {
               </Link>
               <Link href="/faqs" passHref>
                 <Button variant="link" onClick={handleClose}>FAQs</Button>
+              </Link>
+              <Link href="/training" passHref>
+                <Button variant="link" onClick={handleClose}>Get Safebar Training</Button>
               </Link>
               <a href="https://safebartn.org" target="_blank" rel="noreferrer">SafeBar website</a>
             </Nav>

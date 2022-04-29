@@ -9,4 +9,4 @@ class BarReport(models.Model):
     bar = models.ForeignKey(Bar, on_delete=models.PROTECT)
     report_type = models.ForeignKey(ReportType, on_delete=models.PROTECT)
     comment = models.CharField(("Comment"), max_length=254)
-    uid = models.CharField(("User ID"), max_length=25)
+    uid = models.CharField(("User ID"), max_length=100)
