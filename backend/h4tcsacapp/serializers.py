@@ -3,12 +3,10 @@ from h4tcsacapp.models.bar import Bar
 from h4tcsacapp.models.contact import Contact
 from h4tcsacapp.models.landing_content import LandingContent
 from h4tcsacapp.models.list import List
-from h4tcsacapp.models.bar import Bar
 from h4tcsacapp.models.faq import FAQ
 from h4tcsacapp.models.list_bar import ListBar
 from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
-from h4tcsacapp.models.rating import Rating
 from h4tcsacapp.models.bar_report import BarReport
 from h4tcsacapp.models.favorite import Favorite
 
@@ -74,10 +72,12 @@ class ListSerializer(serializers.ModelSerializer):
             bars.append(data)
         return bars
 
+
 class BarReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = BarReport
         fields = '__all__'
+
 
 class FavoriteSerializer(serializers.ModelSerializer):
     class Meta:
