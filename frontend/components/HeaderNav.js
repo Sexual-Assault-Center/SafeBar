@@ -37,6 +37,9 @@ export default function HeaderNav() {
               <Link href="/faqs" passHref>
                 <Button variant="link" onClick={handleClose}>FAQs</Button>
               </Link>
+              <Link href="/training" passHref>
+                <Button variant="link" onClick={handleClose}>Training</Button>
+              </Link>
               <a href="https://safebartn.org" target="_blank" rel="noreferrer">SafeBar website</a>
             </Nav>
           </Offcanvas.Body>
