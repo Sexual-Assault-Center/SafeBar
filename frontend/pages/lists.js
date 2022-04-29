@@ -13,7 +13,7 @@ export default function Lists() {
     let isMounted = true;
     getBarsByUid(user.uid).then((favArray) => {
       if (isMounted) {
-        setFavs(favArray);
+        setFavs([favArray]);
       }
     });
     return () => {

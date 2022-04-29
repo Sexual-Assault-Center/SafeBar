@@ -33,7 +33,7 @@ const addFav = (favObj) => fetch(`${urlBase}favorite/`, { body: JSON.stringify(f
 //   return null;
 // }
 
-const getBarsByUid = (uid) => fetch(`${urlBase}favorite/${uid}/`).then((res) => res.json)
+const getBarsByUid = (uid) => fetch(`${urlBase}favorite/${uid}/`).then((res) => res.json());
 
 const getLanding = () => fetch(`${urlBase}landing/`).then((res) => res.json());
 
