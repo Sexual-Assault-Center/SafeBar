@@ -13,8 +13,16 @@ const getAllFAQs = () => fetch(`${urlBase}faqs/`).then((res) => res.json());
 //   return null;
 // }
 
+const getAllReportTypes = () => fetch(`${urlBase}reporttypes/`).then((res) => res.json());
+
+const postReport = (reportObj) => fetch(`${urlBase}bar-report/`, { 
+    body: JSON.stringify(reportObj), 
+    method: 'POST',
+    headers: {"Content-Type": "application/json"}
+}).then(() => console.warn(JSON.stringify(reportObj)));
+
 const getLanding = () => fetch(`${urlBase}landing/`).then((res) => res.json());
 
 export {
-  getResources, getContacts, getAllFAQs, getLanding,
+  getResources, getContacts, getAllFAQs, getLanding, postReport, getAllReportTypes,
 };

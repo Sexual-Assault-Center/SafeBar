@@ -2,17 +2,21 @@ import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
 
 const RadioCheck = ({
-  label, id, checked, onChange,
+  label, id, checked, onClick
 }) => (
-  <Form className="m-2 radio-form">
-    <Form.Check
-      value={checked}
-      onChange={() => onChange(!checked)}
-      type="radio"
-      label={label}
-      id={id}
-    />
-  </Form>
+  <>
+    <div className="m-2 radio-form">
+      <Form.Check
+        name='report-check'
+        checked={checked}
+        onClick={onClick}
+        type="radio"
+        label={label}
+        id={id}
+      />
+    </div>
+  </>
+
 );
 
 export default RadioCheck;
@@ -28,5 +32,5 @@ RadioCheck.defaultProps = {
   label: '',
   id: '',
   checked: false,
-  onChange: () => {},
+  onChange: () => { },
 };

@@ -5,6 +5,7 @@ import { BsShieldFillCheck } from 'react-icons/bs';
 
 const BarCard = ({
   // img,
+  id,
   safebar,
   name,
   street,
@@ -12,7 +13,8 @@ const BarCard = ({
   zip,
   phone,
   func,
-}) => (
+}) => {
+  return (
   <Card style={{ width: '18rem' }}>
     {/* <Card.Img variant="top" src={img} /> */}
     <Card.Body>
@@ -29,12 +31,12 @@ const BarCard = ({
       <ButtonGroup aria-label="Basic example">
         {/* <Button variant="secondary" onClick={func}>LIKE</Button>
         <Button variant="secondary" onClick={func}>DISLIKE</Button> */}
-        <Button variant="secondary">REPORT</Button>
+        <Button variant="secondary" href={`/report/${id}`}>REPORT</Button>
         <Button variant="secondary" onClick={func}>FAVORITE</Button>
       </ButtonGroup>
     </Card.Body>
   </Card>
-);
+)};
 
 export default BarCard;
 
