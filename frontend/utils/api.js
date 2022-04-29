@@ -6,7 +6,11 @@ const getResources = () => {
   return fetch(`${urlBase}resources/`).then((res) => res.json());
 }
 
-const getSingleResource = (id) => {
-  return fetch(`${urlBase}resource`).then((res) => res.json());
+const getContacts = () => {
+  return fetch(`${urlBase}contacts/`).then((res) => res.json());
 }
-export { getResources, getSingleResource }
+
+const getAllFAQs = () => {
+  return fetch(`${urlBase}faqs/`).then((res) => res.json());
+}
+export { getResources, getContacts, getAllFAQs }

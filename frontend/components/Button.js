@@ -6,8 +6,8 @@ const ButtonComp = ({
 }) => {
   const isOutline = Boolean(outline);
   return (
-    <Button onClick={onClick} type={type} variant={`${isOutline ? 'outline-dark' : 'dark'}`}>
-      {buttonText}{' '}
+    <Button onClick={onClick} type={type} className={`${isOutline ? 'outline-button' : 'button-style'}`}>
+      {buttonText.toUpperCase()}{' '}
     </Button>
   );
 };
