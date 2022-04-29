@@ -4,12 +4,16 @@ import barsData from '../barsData.json';
 import Searchbar from '../components/Searchbar';
 import BarCard from '../components/BarCard';
 import HeadDetails from '../components/HeadDetails';
+import { useAuth } from '../utils/context/authContext';
+
 // import { getSearch } from '../utils/api';
 
 export default function Bars() {
   const [query, setQuery] = useState('');
   const [bars, setBars] = useState([]);
   const [value, setValue] = useState('');
+
+  const { user } = useAuth();
 
   useEffect(() => {
     setBars(barsData);
@@ -33,11 +37,10 @@ export default function Bars() {
   return (
     <>
       <HeadDetails title="Bars" description="Making Nightlife Safer for Everyone" />
-      <h1>Bars Page</h1>
       <Searchbar onClick={() => search()} onChange={(e) => handleChange(e)} value={value}>Search</Searchbar>
-      <div className="card-cont">
+      <div className="card-cont d-flex flex-wrap">
         {
-          bars.map((bar) => <BarCard key={bar.id} {...bar} />)
+          bars.map((bar) => <BarCard key={bar.id} {...bar} user={user} />)
         }
       </div>
     </>

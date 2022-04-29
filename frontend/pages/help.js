@@ -1,7 +1,7 @@
 /* eslint-disable react/no-danger */
 import Accordion from 'react-bootstrap/Accordion';
 import HeadDetails from '../components/HeadDetails';
-import { userHelp, barHelp } from '../data/help.json';
+import { userHelp, barHelp } from '../data/help';
 
 export default function Help() {
   return (

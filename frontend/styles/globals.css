@@ -30,6 +30,7 @@ p {
 }
 h1, h2, h2 {
   color: white;
+  font-family: 'Oswald', sans-serif;
 }
 
 .layout-cont {
@@ -45,8 +46,17 @@ h1, h2, h2 {
   border: none;
 }
 
-.card-background {
+.card {
   background: #231A42;
+  color: white;
+  border: 1px solid white;
+  margin: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 100% !important;
+  }
 }
 
 .img-fit {
@@ -204,4 +214,14 @@ p.footerIcon {
 }
 .accordion-body {
   color: black !important;
+}
+.login-btn {
+  background-color: #38285D;
+  border: none;
+}
+.sign-in {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -58px 0 0 -116px;
 }

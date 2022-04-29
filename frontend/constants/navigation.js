@@ -14,7 +14,7 @@ const NAVIGATION = {
     },
     {
       path: 'lists',
-      text: 'Lists',
+      text: 'List',
     },
   ],
   TRAINING_LINK:
