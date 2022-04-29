@@ -1,7 +1,10 @@
+import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { BsShieldFillCheck } from 'react-icons/bs';
+import { useAuth } from '../utils/context/authContext';
+import { addFav } from '../utils/api';
 
 const BarCard = ({
   // img,
@@ -13,9 +16,18 @@ const BarCard = ({
   zip,
   phone,
 }) => {
-  const stopLinter = () => {
-    console.warn('linterssuck');
+  const { user } = useAuth();
+
+  const [favClick, setFavClick] = useState(false);
+
+  const handleFav = () => {
+    const favObj = {
+      uid: user.id,
+      barId: safebar.id,
+    };
+    addFav(favObj).then(() => setFavClick(!favClick));
   };
+
   return (
     <Card style={{ width: '18rem' }}>
       {/* <Card.Img variant="top" src={img} /> */}
@@ -28,20 +40,24 @@ const BarCard = ({
           {street}, {city} {zip}
           <br />
           <a href={`tel:${phone}`}>{phone}</a>
-          <p># of Reports</p>
         </Card.Text>
+        <div># of Reports</div>
         <ButtonGroup aria-label="Basic example">
-          {/* <Button variant="secondary" onClick={func}>LIKE</Button>
-        <Button variant="secondary" onClick={func}>DISLIKE</Button> */}
           <Button variant="secondary" href={`/report/${id}`}>REPORT</Button>
-          <Button variant="secondary" onClick={stopLinter}>FAVORITE</Button>
+          {!favClick
+            ? (
+              <Button
+                variant="secondary"
+                onClick={handleFav}
+              >FAVORITE
+              </Button>
+            )
+            : console.warn('fav')}
         </ButtonGroup>
       </Card.Body>
     </Card>
   );
 };
-
-export default BarCard;
 
 BarCard.propTypes = {
   // img: PropTypes.string,
@@ -56,5 +72,8 @@ BarCard.propTypes = {
 
 BarCard.defaultProps = {
   // img: '/sac-logo.png',
+
   safebar: false,
 };
+
+export default BarCard;
