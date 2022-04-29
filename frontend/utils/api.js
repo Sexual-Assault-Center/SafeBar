@@ -28,7 +28,7 @@ const addFav = (favObj) => fetch(`${urlBase}favorite/`, { body: JSON.stringify(f
 
 }).then(() => console.warn(JSON.stringify(favObj)));
 
-const getFavsByUid = (uid) => fetch(`${urlBase}favorite/${uid}`).then((res) => res.json());
+const getFavsByUid = (uid) => fetch(`${urlBase}favorite/${uid}/`).then((res) => res.json());
 
 // const getSearch = (query) => {
 //   // return fetch(`${urlBase}search?query=${query}/`) Placeholder until endpoint exists

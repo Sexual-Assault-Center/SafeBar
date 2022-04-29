@@ -24,8 +24,8 @@ const BarCard = ({
   const { user } = useAuth();
 
   useEffect(() => {
-    getFavsByUid(user.id).then(setFavs);
-  }, [user.id]);
+    getFavsByUid(user.uid).then(setFavs);
+  }, [user.uid]);
 
   const handleFav = () => {
     const favObj = {
@@ -34,6 +34,7 @@ const BarCard = ({
     };
 
     const barMatch = favs.filter((bar) => bar.uuid === uuid);
+    console.warn(favs);
     if (!(barMatch.length > 0)) {
       addFav(favObj).then(() => setFavClick((prevState) => !prevState));
     }
