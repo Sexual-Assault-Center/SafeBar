@@ -1,0 +1,118 @@
+body {
+  background-color: #F1EDF1;
+}
+h4 {
+  font-family: 'Oswald', sans-serif;
+  color: #73308B;
+  font-size: 20px;
+}
+
+h4.dark {
+  color: white;
+}
+.card-container {
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.logo {
+  margin: 10px 50px 0 0;
+}
+.dash-square {
+  background-color: #73308b;
+  filter: drop-shadow(0 0 0.75rem gray);
+  width: 175px;
+  margin: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.dash-square > h3 {
+  font-size: 60px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+}
+.dash-square > p {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+small {
+  font-family: 'Ubuntu', sans-serif;
+}
+.small-header {
+  color: lightgray;
+}
+
+.list-container {
+  display: flex;
+}
+
+.left {
+  width: 60%;
+  padding: 20px;
+}
+.right {
+  width: 40%;
+  padding: 20px;
+}
+.container-primary {
+  background-color: white;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 0.43rem lightgray);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.container-secondary {
+  filter: drop-shadow(0 0 0.43rem lightgray);
+  background-color: #38285D;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.overdue-card {
+  background-color: #38285D !important;
+  border: 2px solid #BC90BA !important;
+}
+.analytics-btn {
+  background-color: #38285D !important;
+  border-color: #38285D !important;
+  font-family: 'Ubuntu', sans-serif;
+  color: white !important;
+  text-decoration: none;
+}
+.card-body {
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .dash-square {
+    width: 100%;
+  }
+  .logo {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .list-container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .container {
+    width: 90% !important;
+  }
+  .left {
+    width: 100%;
+  }
+  .right {
+    width: 100%;
+  }
+}
