@@ -23,7 +23,7 @@ export default function Bars() {
       setBars(barData.filter((bar) => !bar.safebar));
       setBarsData(bars.concat(safebars));
     });
-  }, []);
+  }, [bars, safebars]);
 
   const search = () => {
     ga.event({
@@ -34,8 +34,7 @@ export default function Bars() {
     });
     setBarsData(() => {
       barsData.filter((bar) => bar.city.includes(query.toLowerCase()) || bar.name.includes(query.toLowerCase()));
-    })
-    
+    });
   };
 
   const handleChange = (e) => {

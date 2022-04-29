@@ -63,7 +63,7 @@ BarCard.propTypes = {
   // img: PropTypes.string,
   id: PropTypes.string.isRequired,
   safebar: PropTypes.bool,
-  street: PropTypes.string,
+  street: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   zip: PropTypes.string.isRequired,
