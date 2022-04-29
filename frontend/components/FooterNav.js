@@ -3,10 +3,10 @@
 /* eslint-disable react/no-array-index-key */
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FaHome, FaSearch, FaExclamation } from 'react-icons/fa';
+import { FaHome, FaSearch } from 'react-icons/fa';
 import { Button } from 'react-bootstrap';
 import { BiDrink } from 'react-icons/bi';
-import { BsPersonCircle } from 'react-icons/bs';
+import { BsPersonCircle, BsExclamationCircle } from 'react-icons/bs';
 import NAVIGATION from '../constants/navigation';
 import { useAuth } from '../utils/context/authContext';
 import { signInUser, signOutUser } from '../utils/auth';
@@ -27,7 +27,7 @@ export default function FooterNav() {
         icon = <FaSearch className="footerIcon" size={25} />;
         break;
       case 'HELP':
-        icon = <FaExclamation className="m-0 footerIcon" size={40} />;
+        icon = <BsExclamationCircle className="m-0 footerIcon" size={40} />;
         break;
       case 'Lists':
         icon = <BiDrink className="footerIcon" size={25} />;
