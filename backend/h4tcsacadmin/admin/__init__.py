@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from h4tcsacadmin.forms import ResourceForm
+from h4tcsacadmin.forms import ContactForm, ResourceForm
 from h4tcsacadmin.views.dashboard import dashboard
-from h4tcsacadmin.views.resources import CustomDjangoViews
+from h4tcsacadmin.views.custom_crud_view import CustomDjangoViews
 from h4tcsacapp.models.bar import Bar
 from h4tcsacapp.models.bar_report import BarReport
 from h4tcsacapp.models.contact import Contact
@@ -13,7 +13,7 @@ from h4tcsacapp.models.rating import Rating
 from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.sponser import Sponser
-from h4tcsacapp.serializers import ResourceSerializer
+from h4tcsacapp.serializers import ContactSerializer, ResourceSerializer
 
 
 class CustomAdminSite(admin.AdminSite):
@@ -28,9 +28,41 @@ class CustomAdminSite(admin.AdminSite):
             ResourceForm
         ).urls()
         # Contacts
+        site_urls = site_urls + CustomDjangoViews(
+            Contact,
+            ContactSerializer,
+            "contacts",
+            self.admin_view,
+            "Contact",
+            ContactForm
+        ).urls()
         # FAQ
+        # site_urls = site_urls + CustomDjangoViews(
+        #     Resource,
+        #     ResourceSerializer,
+        #     "resources",
+        #     self.admin_view,
+        #     "Resource",
+        #     ResourceForm
+        # ).urls()
         # Resources
+        # site_urls = site_urls + CustomDjangoViews(
+        #     Resource,
+        #     ResourceSerializer,
+        #     "resources",
+        #     self.admin_view,
+        #     "Resource",
+        #     ResourceForm
+        # ).urls()
         # Bars
+        # site_urls = site_urls + CustomDjangoViews(
+        #     Resource,
+        #     ResourceSerializer,
+        #     "resources",
+        #     self.admin_view,
+        #     "Resource",
+        #     ResourceForm
+        # ).urls()
         site_urls = site_urls + [
             path(r'dashboard/', self.admin_view(dashboard), name="dashboard-view"),
         ]

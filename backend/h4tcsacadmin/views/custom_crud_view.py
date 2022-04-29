@@ -43,12 +43,8 @@ class CustomDjangoViews():
         success_delete = request.GET.get('success_delete', '')
         success_create = request.GET.get('success_create', '')
         data = self.serializer(query_set, many=True).data
-        headers = []
-        try:
-            headers = list(data[0].keys())
-        except IndexError:
-            headers = []
-        print(headers)
+        headers = [f.verbose_name for f in self.model._meta.get_fields()]
+
         return render(request, "admin/list.html", {
             'success_create': success_create,
             'success_delete': success_delete,
