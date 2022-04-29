@@ -119,9 +119,18 @@ h1, h2, h2 {
   text-align: left !important;
   padding: 0 !important;
   margin: 0 !important;
-  color: black !important;
+  color: white !important;
 }
 
+.offcanvas-body, .offcanvas-header {
+  background-color: #2B1F47;
+  color: white;
+}
+
+.navbar-toggler {  
+  margin-left: auto !important;
+  border: none !important;
+}
 
 .icon-circle-style {
   width: 60px;
@@ -151,6 +160,7 @@ footer {
   cursor: pointer;
   padding: 0 5px;
 }
+
 
 p.footerIcon {
   display: flex;
