@@ -10,7 +10,7 @@ export default function Resources() {
     getResources().then((res) => {
       setResources(res);
     });
-  }, [resources]);
+  }, []);
 
   return (
     <>
