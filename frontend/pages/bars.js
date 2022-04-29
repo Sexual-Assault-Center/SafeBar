@@ -9,6 +9,7 @@ import { getSearch } from '../utils/api';
 export default function Bars() {
   const [query, setQuery] = useState('');
   const [bars, setBars] = useState([]);
+  const [value, setValue] = useState('');
 
   useEffect(() => {
     setBars(barsData);
@@ -24,11 +25,16 @@ export default function Bars() {
     getSearch(query).then((res) => res);
   };
 
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+    setValue(e.target.value);
+  };
+
   return (
     <>
       <HeadDetails title="Bars" description="Making Nightlife Safer for Everyone" />
       <h1>Bars Page</h1>
-      <Searchbar onClick={() => search()} onChange={(event) => setQuery(event.target.value)}>Search</Searchbar>
+      <Searchbar onClick={() => search()} onChange={(e) => handleChange(e)} value={value}>Search</Searchbar>
       <div className="card-cont">
         {
           bars.map((bar) => <BarCard key={bar.id} {...bar} />)
