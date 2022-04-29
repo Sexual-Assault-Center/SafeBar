@@ -31,14 +31,12 @@ export default function Lists() {
         <>
           <h1 className="text-center">Favorites</h1>
           <div>
-            {
-          favs.map((fav) => (
+            {favs.map((fav) => (
             <BarCard
               key={fav.id}
               fav={fav}
             />
-          ))
-            }
+          ))}
           </div>
         </>
       ) : (
