@@ -11,7 +11,7 @@ function ResourcesCard({ title, description, url }) {
         <Card.Text>
           {description}
         </Card.Text>
-        <ButtonComp variant="primary" href={url} buttonText="Learn More" />
+        <ButtonComp variant="primary" onClick={(e) => { e.PreventDefault(); window.open(url, '_blank'); }} buttonText="Learn More" />
       </Card.Body>
     </Card>
   );
