@@ -52,7 +52,6 @@ const BarCard = ({
         </Card.Text>
         <div>{bar_report_count} Reports</div>
 
-
         <div className="d-flex flex-row no-wrap align-items-center mt-2">
           <ButtonComp
             className="me-2"
