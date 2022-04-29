@@ -33,3 +33,6 @@ class Bar(models.Model):
 
     def needs_recertification(self):
         print(self.certification_date)
+
+    class Meta:
+        ordering = ['certification_date']

@@ -50,46 +50,49 @@
         {% endfor %}
 
         <div class="d-grid gap-2 mt-3">
-          <a href="#" target="_blank" class="btn btn-primary btn-lg analytics-btn" type="button">View Reports</a>
+          <a href={% url "myadmin:reports-list" %} class="btn btn-primary btn-lg analytics-btn" type="button">View Reports</a>
         </div>
       </div>
       <div class="container-primary">
         <h4>Recertifications Due within 30 days</h4>
         {% for bar in recert_bars %}
-          <div class="card">
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <div>{{ bar.name }}</div>
-                  <small class="small-header">Contact: {{ bar.contact_name }}</small>
-                </div>
-                <div>
-                  <small class="small-header">due on</small>
-                  <div>{{ bar.expiration }}</div>
-                </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div>
+                <div>{{ bar.name }}</div>
+                <small class="small-header">Contact: {{ bar.contact_name }}</small>
+              </div>
+              <div>
+                <small class="small-header">due on</small>
+                <div>{{ bar.expiration }}</div>
               </div>
             </div>
           </div>
+        </div>
         {% endfor %}
       </div>
     </div>
     <div class="right">
       <div class="container-secondary">
         <h4 class="dark">Overdue Certifications</h4>
+        {% for bar in expired_bars  %}
+
         <div class="card overdue-card">
           <div class="card-body">
             <div class="d-flex justify-content-between">
               <div>
-                <div>Ole Red</div>
-                <small class="small-header">Contact: Bryan Harris</small>
+                <div>{{ bar.name }}</div>
+                <small class="small-header">Contact: {{ bar.contact_name }}</small>
               </div>
               <div>
-                <small class="small-header">due on</small>
-                <div>5/1/22</div>
+                <small class="small-header">expired on</small>
+                <div>{{ bar.expiration }}</div>
               </div>
             </div>
           </div>
         </div>
+        {% endfor %}
       </div>
       <div class="d-grid gap-2">
         <a href="https://analytics.google.com/analytics/web/#/p312699576/realtime/overview?params=_u..nav%3Dmaui&collectionId=life-cycle"

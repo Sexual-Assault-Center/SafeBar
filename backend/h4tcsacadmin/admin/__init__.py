@@ -4,11 +4,11 @@ from dateutil.relativedelta import *
 from django.contrib import admin
 from django.template.response import TemplateResponse
 from h4tcsacadmin.forms import BarForm, ContactForm, FAQForm, ResourceForm
-from h4tcsacadmin.serializers import (AdminBarSerializer,
+from h4tcsacadmin.serializers import (AdminBarReportSerializer, AdminBarSerializer,
                                       AdminContactSerializer,
                                       AdminFAQSerializer,
                                       AdminResourceSerializer)
-from h4tcsacadmin.views.custom_crud_view import CustomDjangoViews
+from h4tcsacadmin.views.custom_crud_view import CustomDjangoListViews, CustomDjangoViews
 from h4tcsacapp.models.bar import Bar
 from h4tcsacapp.models.bar_report import BarReport
 from h4tcsacapp.models.contact import Contact
@@ -44,10 +44,21 @@ class CustomAdminSite(admin.AdminSite):
                     bar_data["expiration"] = "%s/%s/%s" % (m, d, y)
                     recert_bars.append(bar_data)
 
+        expired_bars = Bar.objects.filter(certification_date__lte=date.today() - relativedelta(months=+6))
+        context_expired_bars = []
+        for bar in expired_bars:
+            expiration = bar.certification_date + relativedelta(months=6)
+            bar_data = BarContactSerializer(bar).data
+            (y, m, d) = str(expiration).split("-")
+            bar_data["expiration"] = "%s/%s/%s" % (m, d, y)
+            print(bar_data["expiration"])
+            context_expired_bars.append(bar_data)
+
         return TemplateResponse(request, self.index_template or 'dashboard/index.html', {
             "report_count": bar_reports.count(),
             'safebar_count': bars.count(),
             "bar_reports_data": bar_reports_data,
+            'expired_bars': context_expired_bars,
             'recert_bars': recert_bars
         })
 
@@ -85,6 +96,13 @@ class CustomAdminSite(admin.AdminSite):
             self.admin_view,
             "Bar",
             BarForm
+        ).urls()
+        site_urls = site_urls + CustomDjangoListViews(
+            BarReport,
+            AdminBarReportSerializer,
+            "reports",
+            self.admin_view,
+            "Report",
         ).urls()
         site_urls = site_urls + super().get_urls()
         return site_urls

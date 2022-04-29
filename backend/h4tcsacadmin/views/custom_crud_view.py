@@ -50,7 +50,9 @@ class CustomDjangoViews():
             "headers": self.serializer.Meta.fields,
             'name': self.title,
             'create_url': 'myadmin:%s-create' % self.base_path,
-            "header_text": "All %ss" % self.title
+            "header_text": "All %ss" % self.title,
+            "links": True
+
         })
 
     def update(self, request, uuid):
@@ -97,4 +99,35 @@ class CustomDjangoViews():
             'name': self.title,
             "update_url": "myadmin:%s-create" % self.base_path,
             "header_text": "Creating %s" % self.title
+        })
+
+
+class CustomDjangoListViews():
+
+    def __init__(self, model, serializer, base_path, admin_view, title):
+        self.base_path = base_path
+        self.admin_view = admin_view
+        self.model = model
+        self.serializer = serializer
+        self.title = title
+
+    def urls(self):
+        urls = [
+            path(
+                r'%s/' % self.base_path,
+                self.admin_view(self.list),
+                name="%s-list" % self.base_path
+            )
+        ]
+        return urls
+
+    def list(self, request):
+        query_set = self.model.objects.all()
+        data = self.serializer(query_set, many=True).data
+        return render(request, "admin/list.html", {
+            'data': data,
+            "headers": self.serializer.Meta.fields,
+            'name': self.title,
+            "header_text": "All %ss" % self.title,
+            "links": False
         })
