@@ -16,5 +16,5 @@ const getAllFAQs = () => fetch(`${urlBase}faqs/`).then((res) => res.json());
 const getLanding = () => fetch(`${urlBase}landing/`).then((res) => res.json());
 
 export {
-  getResources, getContacts, getAllFAQs, getLanding,
+  getResources, getContacts, getAllFAQs, getLanding
 };
