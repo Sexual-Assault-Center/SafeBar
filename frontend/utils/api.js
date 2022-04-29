@@ -17,6 +17,8 @@ const getLanding = () => fetch(`${urlBase}landing/`).then((res) => res.json());
 
 const getBarsByUid = () => fetch(`${urlBase}bars/`).then((res) => res.json());
 
+const addFav = (favObj) => fetch(`${urlBase}bars/`, {body: JSON.stringify(favObj)}).then((res) => res.json());
+
 export {
-  getResources, getContacts, getAllFAQs, getLanding, getBarsByUid
+  getResources, getContacts, getAllFAQs, getLanding, getBarsByUid, addFav
 };
