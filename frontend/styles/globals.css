@@ -13,7 +13,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     /* background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(56,40,93,1) 35%, rgba(0,0,0,1) 100%); */
-    background-image: linear-gradient(#011123, #2B1F47);
+    background-image: linear-gradient(#001022, #2B1F47);
 }
 
 a {
@@ -32,10 +32,21 @@ h1, h2, h2 {
   color: #D899DD;
   font-family: 'Oswald', sans-serif;
   text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
+/* h4 {
+  color: #D899DD;
+  font-family: 'Oswald', sans-serif;
+  text-align: center; */
+  /* padding-top: 2%;
+  padding-bottom: 2%; */
+/* } */
 .shieldHeader{
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap;
+  justify-items: center;
 }
 
 .shieldIcon{
@@ -54,6 +65,7 @@ h1, h2, h2 {
 .card-title{
   font-family: 'Oswald', sans-serif;
   font: bold;
+  color: #F1EDF1 !important;
 }
 
 .card-border-radius {
@@ -62,9 +74,12 @@ h1, h2, h2 {
 }
 
 .card {
-  background-color: #231A42 !important;
-  color: white;
+  background-image: radial-gradient(#2B1F47, #001022);
+  /* background-color: #2B1F47 !important; */
+  color: #F1EDF1 !important;
   margin: 5px;
+  padding-left: 5%;
+  padding-right: 0 !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -84,16 +99,16 @@ h1, h2, h2 {
 }
 
 .outline-button {
-  border: 2px solid F1EDF1;
+  border: 2px solid #F1EDF1;
   border-radius: 8px;
-  color: F1EDF1;
+  color: #F1EDF1;
   background: none;
   font-family: 'Oswald', sans-serif;
 }
 
 .outline-button:hover {
-  background: #3F285F;
-  border: 2px solid F1EDF1;
+  background: #38285D;
+  border: 2px solid #F1EDF1;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -107,19 +122,21 @@ h1, h2, h2 {
 
 .button-style:hover {
   background: #C1A6FF;
-  color: #3F285F;
+  color: #2B1F47;
   font-family: 'Oswald', sans-serif;
   border: none;
   border-radius: 8px;
+  opacity: 80%;
 }
 
 .social-banner {
   background-color: #3F285F;
   border-radius: 25px;
   border: none;
-  width: 70%;
+  width: 67%;
   height: 5rem;
   margin: auto;
+  opacity: 80%;
 }
 
 /* OFF CANVAS NAV  */
@@ -185,7 +202,8 @@ p.footerIcon {
 }
 
 .activeFooter > .footerBarOption > .optionTitle,
-.activeFooter > .footerBarOption > .help-title
+.activeFooter > .footerBarOption > .help-title,
+.activeFooter > .footerBarOption > .optionIcon
  {
   color: #D899DD;
   font-weight: bold;
