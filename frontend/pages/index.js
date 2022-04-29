@@ -54,16 +54,16 @@ export default function Home() {
         ))}
       </div>
       <div className="social-banner d-flex flex-row flex-wrap align-items-center justify-content-evenly space-between">
-        <a href="https://twitter.com/NashvilleSAC">
+        <a href="https://twitter.com/NashvilleSAC" target="_blank" rel="noreferrer">
           <BsTwitter className="footerIcon text-white m-2" size={30} />
         </a>
-        <a href="https://www.facebook.com/nashvilleSAC">
+        <a href="https://www.facebook.com/nashvilleSAC" target="_blank" rel="noreferrer">
           <BsFacebook className="footerIcon text-white m-2" size={30} />
         </a>
-        <a href="https://www.youtube.com/channel/UCOBCjNfljUuBR8h1I7f531A">
+        <a href="https://www.youtube.com/channel/UCOBCjNfljUuBR8h1I7f531A" target="_blank" rel="noreferrer">
           <BsYoutube className="footerIcon text-white m-2" size={30} />
         </a>
-        <a href="https://www.instagram.com/nashvillesac/">
+        <a href="https://www.instagram.com/nashvillesac/" target="_blank" rel="noreferrer">
           <BsInstagram className="footerIcon text-white m-2" size={30} />
         </a>
       </div>
