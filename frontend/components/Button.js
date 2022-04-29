@@ -6,7 +6,12 @@ const ButtonComp = ({
 }) => {
   const isOutline = Boolean(outline);
   return (
-    <Button href={href} onClick={onClick} type={type} className={`${isOutline ? 'outline-button' : 'button-style'}`}>
+    <Button
+      href={href}
+      onClick={onClick}
+      type={type}
+      className={`${isOutline ? 'outline-button' : 'button-style'}`}
+    >
       {buttonText.toUpperCase()}{' '}
     </Button>
   );
