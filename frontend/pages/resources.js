@@ -15,7 +15,7 @@ export default function Resources() {
   return (
     <>
       <HeadDetails title="Resources" description="Making Nightlife Safer for Everyone" />
-      <h1>Resources</h1>
+      <h1>RESOURCES</h1>
       <div>
         {
           resources.map((resource) => <ResourcesCard key={resource.uuid} {...resource} />)
