@@ -6,6 +6,7 @@ import { BsShieldFillCheck } from 'react-icons/bs';
 
 const BarCard = ({
   // img,
+  uuid,
   is_safebar,
   name,
   street_address,
@@ -31,7 +32,7 @@ const BarCard = ({
       <ButtonGroup aria-label="Basic example">
         {/* <Button variant="secondary" onClick={func}>LIKE</Button>
         <Button variant="secondary" onClick={func}>DISLIKE</Button> */}
-        <Button variant="secondary">REPORT</Button>
+        <Button variant="secondary" href={`/report/${uuid}`}>REPORT</Button>
         <Button variant="secondary" onClick={func}>FAVORITE</Button>
       </ButtonGroup>
     </Card.Body>
@@ -42,6 +43,7 @@ export default BarCard;
 
 BarCard.propTypes = {
   // img: PropTypes.string,
+  uuid: PropTypes.string.isRequired,
   is_safebar: PropTypes.bool,
   name: PropTypes.string.isRequired,
   street_address: PropTypes.string,
