@@ -1,10 +1,18 @@
-import { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
 import * as ga from '../utils/ga';
+import barsData from '../barsData.json';
+import Searchbar from '../components/Searchbar';
+import BarCard from '../components/BarCard';
 import HeadDetails from '../components/HeadDetails';
+import { getSearch } from '../utils/api';
 
 export default function Bars() {
   const [query, setQuery] = useState('');
+  const [bars, setBars] = useState([]);
+
+  useEffect(() => {
+    setBars(barsData);
+  }, [bars]);
 
   const search = () => {
     ga.event({
@@ -13,18 +21,19 @@ export default function Bars() {
         search_term: query,
       },
     });
+    getSearch(query).then((res) => res);
   };
 
   return (
-    <div>
+    <>
       <HeadDetails title="Bars" description="Making Nightlife Safer for Everyone" />
       <h1>Bars Page</h1>
-      <div>
-        <input type="text" onChange={(event) => setQuery(event.target.value)} />
+      <Searchbar onClick={() => search()} onChange={(event) => setQuery(event.target.value)}>Search</Searchbar>
+      <div className="card-cont">
+        {
+          bars.map((bar) => <BarCard key={bar.id} {...bar} />)
+        }
       </div>
-      <div>
-        <Button onClick={() => search()}>Search</Button>
-      </div>
-    </div>
+    </>
   );
 }
