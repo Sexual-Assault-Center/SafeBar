@@ -10,6 +10,7 @@ from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.rating import Rating
 from h4tcsacapp.models.bar_report import BarReport
+from h4tcsacapp.models.favorite import Favorite
 
 
 class ReportTypeSerializer(serializers.ModelSerializer):
@@ -46,7 +47,7 @@ class BarSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Bar
-        fields = ['is_safebar', 'name', 'street_address', "city", "zip_code", "image", "website"]
+        fields = ['uuid', 'is_safebar', 'name', 'street_address', "city", "zip_code", "image", "website"]
 
 
 class ListSerializer(serializers.ModelSerializer):
@@ -76,4 +77,9 @@ class ListSerializer(serializers.ModelSerializer):
 class BarReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = BarReport
+        fields = '__all__'
+
+class FavoriteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Favorite
         fields = '__all__'

@@ -13,7 +13,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     /* background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(56,40,93,1) 35%, rgba(0,0,0,1) 100%); */
-    background-image: linear-gradient(#011123, #35275A);
+    background-image: linear-gradient(#001022, #2B1F47);
 }
 
 a {
@@ -29,10 +29,30 @@ p {
   font-family: 'Ubuntu', sans-serif;
 }
 h1, h2, h2 {
-  color: white;
+  color: #D899DD;
   font-family: 'Oswald', sans-serif;
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+/* h4 {
+  color: #D899DD;
+  font-family: 'Oswald', sans-serif;
+  text-align: center; */
+  /* padding-top: 2%;
+  padding-bottom: 2%; */
+/* } */
+.shieldHeader{
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  justify-items: center;
 }
 
+.shieldIcon{
+  color: #FFE367;
+  size: 25px;
+}
 .layout-cont {
   margin-bottom: 6rem;
 }
@@ -45,6 +65,7 @@ h1, h2, h2 {
 .card-title{
   font-family: 'Oswald', sans-serif;
   font: bold;
+  color: #F1EDF1 !important;
 }
 
 .card-border-radius {
@@ -53,9 +74,12 @@ h1, h2, h2 {
 }
 
 .card {
-  background-color: #231A42 !important;
-  color: white;
+  background-image: radial-gradient(#2B1F47, #001022);
+  /* background-color: #2B1F47 !important; */
+  color: #F1EDF1 !important;
   margin: 5px;
+  padding-left: 5%;
+  padding-right: 0 !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -75,16 +99,16 @@ h1, h2, h2 {
 }
 
 .outline-button {
-  border: 2px solid white;
+  border: 2px solid #F1EDF1;
   border-radius: 8px;
-  color: white;
+  color: #F1EDF1;
   background: none;
   font-family: 'Oswald', sans-serif;
 }
 
 .outline-button:hover {
-  background: #3F285F;
-  border: 2px solid white;
+  background: #38285D;
+  border: 2px solid #F1EDF1;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -98,19 +122,21 @@ h1, h2, h2 {
 
 .button-style:hover {
   background: #C1A6FF;
-  color: #3F285F;
+  color: #2B1F47;
   font-family: 'Oswald', sans-serif;
   border: none;
   border-radius: 8px;
+  opacity: 80%;
 }
 
 .social-banner {
   background-color: #3F285F;
   border-radius: 25px;
   border: none;
-  width: 70%;
+  width: 67%;
   height: 5rem;
   margin: auto;
+  opacity: 80%;
 }
 
 /* OFF CANVAS NAV  */
@@ -119,9 +145,18 @@ h1, h2, h2 {
   text-align: left !important;
   padding: 0 !important;
   margin: 0 !important;
-  color: black !important;
+  color: white !important;
 }
 
+.offcanvas-body, .offcanvas-header {
+  background-color: #2B1F47;
+  color: white;
+}
+
+.navbar-toggler {  
+  margin-left: auto !important;
+  border: none !important;
+}
 
 .icon-circle-style {
   width: 60px;
@@ -138,7 +173,7 @@ footer {
   width: 100%;
   text-align: center;
   background-color: #231A42;
-  color: white;
+  color: #8570B5;
 }
 
 .allFooterButtons {
@@ -151,27 +186,35 @@ footer {
   cursor: pointer;
   padding: 0 5px;
 }
-
+.helpIcon {
+  color: #D899DD;
+}
 p.footerIcon {
   display: flex;
   justify-content: center;
   margin: 0;
+  /* opacity: 80%; */
 }
 
 .footerBarOption {
   width: 100%
 }
 
+.activeIcon{
+    color: #D899DD;
+}
 .activeFooter > .footerBarOption > .footerIcon > .footerSvg {
   filter: invert(30%) sepia(83%) saturate(4273%) hue-rotate(333deg)
     brightness(99%) contrast(87%);
   font-weight: bold;
+  color: #D899DD;
 }
 
 .activeFooter > .footerBarOption > .optionTitle,
-.activeFooter > .footerBarOption > .help-title
+.activeFooter > .footerBarOption > .help-title,
+.activeFooter > .footerBarOption > .optionIcon
  {
-  color: #FFE367;
+  color: #D899DD;
   font-weight: bold;
 }
 
@@ -179,6 +222,7 @@ p.footerIcon {
   margin: 0;
   padding-bottom: 10px;
   font-size: 12px;
+  color: #8570B5;
 }
 
 .auth-btn {
@@ -213,9 +257,11 @@ p.footerIcon {
 }
 .help-icon {
   margin-top: 10px;
+  color: #D899DD
 }
 .help-icon, .optionIcon {
   padding: 10px;
+  color: #8570B5
 }
 .list-nav {
   margin-left: 35px;

@@ -1,55 +1,73 @@
+/* eslint-disable camelcase */
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { BsShieldFillCheck } from 'react-icons/bs';
+import { useRouter } from 'next/router';
 
 const BarCard = ({
   // img,
-  safebar,
+  uuid,
+  is_safebar,
   name,
-  street,
+  street_address,
   city,
   zip,
   phone,
   func,
-}) => (
-  <Card style={{ width: '18rem' }}>
-    {/* <Card.Img variant="top" src={img} /> */}
-    <Card.Body>
-      <Card.Title>
-        {safebar ? <BsShieldFillCheck color="yellow" size={25} /> : ''}{' '}
-        {name}
-      </Card.Title>
-      <Card.Text>
-        {street}, {city} {zip}
-        <br />
-        <a href={`tel:${phone}`}>{phone}</a>
-      </Card.Text>
-      <div># of Reports</div>
-      <ButtonGroup aria-label="Basic example">
-        {/* <Button variant="secondary" onClick={func}>LIKE</Button>
+  bar_report_count,
+}) => {
+  const router = useRouter();
+
+  const handleClick = (id) => {
+    router.push(`/report/${id}`);
+  };
+
+  return (
+    <Card style={{ width: '18rem' }}>
+      {/* <Card.Img variant="top" src={img} /> */}
+      <Card.Body>
+        <Card.Title>
+          {is_safebar ? <BsShieldFillCheck className="shieldIcon" size={25} /> : ''}{' '}
+          {name}
+        </Card.Title>
+        <Card.Text>
+          {street_address}, {city} {zip}
+          <br />
+          <a href={`tel:${phone}`}>{phone}</a>
+        </Card.Text>
+        <div>{bar_report_count} Reports</div>
+        <ButtonGroup aria-label="Basic example">
+          {/* <Button variant="secondary" onClick={func}>LIKE</Button>
         <Button variant="secondary" onClick={func}>DISLIKE</Button> */}
-        <Button variant="secondary">REPORT</Button>
-        <Button variant="secondary" onClick={func}>FAVORITE</Button>
-      </ButtonGroup>
-    </Card.Body>
-  </Card>
-);
+          <Button variant="secondary" onClick={() => handleClick(uuid)}>REPORT</Button>
+          <Button variant="secondary" onClick={func}>FAVORITE</Button>
+        </ButtonGroup>
+      </Card.Body>
+    </Card>
+  );
+};
 
 export default BarCard;
 
 BarCard.propTypes = {
   // img: PropTypes.string,
-  safebar: PropTypes.bool,
+  uuid: PropTypes.string.isRequired,
+  is_safebar: PropTypes.bool,
   name: PropTypes.string.isRequired,
-  street: PropTypes.string.isRequired,
+  street_address: PropTypes.string,
   city: PropTypes.string.isRequired,
-  zip: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
+  zip: PropTypes.string,
+  phone: PropTypes.string,
   func: PropTypes.func.isRequired,
+  bar_report_count: PropTypes.number,
 };
 
 BarCard.defaultProps = {
   // img: '/sac-logo.png',
-  safebar: false,
+  is_safebar: false,
+  street_address: '',
+  zip: '',
+  phone: '',
+  bar_report_count: 0,
 };

@@ -8,6 +8,18 @@ const getContacts = () => fetch(`${urlBase}contacts/`).then((res) => res.json())
 
 const getAllFAQs = () => fetch(`${urlBase}faqs/`).then((res) => res.json());
 
+const getAllBars = () => fetch(`${urlBase}bars/`).then((res) => res.json());
+
+const getAllReportTypes = () => fetch(`${urlBase}reporttypes/`).then((res) => res.json());
+
+const postReport = (reportObj) => fetch(`${urlBase}bar-report/`, {
+  body: JSON.stringify(reportObj),
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json"
+  }
+});
+
 // const getSearch = (query) => {
 //   // return fetch(`${urlBase}search?query=${query}/`) Placeholder until endpoint exists
 //   return null;
@@ -16,5 +28,5 @@ const getAllFAQs = () => fetch(`${urlBase}faqs/`).then((res) => res.json());
 const getLanding = () => fetch(`${urlBase}landing/`).then((res) => res.json());
 
 export {
-  getResources, getContacts, getAllFAQs, getLanding,
+  getResources, getContacts, getAllFAQs, getLanding, getAllBars, getAllReportTypes, postReport
 };
