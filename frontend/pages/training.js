@@ -10,7 +10,7 @@ export default function Training() {
         title="Training"
         description="Making Nightlife Safer for Everyone"
       />
-      <Card className="px-5 py-5">
+      <Card className="m-auto training-style">
         <Card.Title className="text-center">Safebar Training.<br />What is it?</Card.Title>
         <Card.Header className="text-center">
           Safe Bar TN is a network of bars, restaurants, and community
@@ -49,8 +49,10 @@ export default function Training() {
               website and social media.{' '}
             </li>
           </ul>
+          <div className="d-flex justify-content-center">
+            <ButtonComp buttonText="SIGN UP FOR TRAINING" href={NAVIGATION.TRAINING_LINK} />
+          </div>
         </Card.Body>
-        <ButtonComp buttonText="SIGN UP FOR TRAINING" href={NAVIGATION.TRAINING_LINK} />
       </Card>
     </>
   );
