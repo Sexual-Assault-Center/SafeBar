@@ -31,7 +31,6 @@ export default function Home() {
         title="Welcome"
         description="Making Nightlife Safer for Everyone"
       />
-      <h1>Home Page</h1>
       {/* <div mediaUrl={landing.mediaUrl} isVideo={landing.isVideo} clickUrl="foobar">
         {landing.isVideo
           ? <ReactPlayer url={landing.mediaUrl} />
