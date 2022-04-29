@@ -1,0 +1,5 @@
+<form action="/submit-bar/" method="patch">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>

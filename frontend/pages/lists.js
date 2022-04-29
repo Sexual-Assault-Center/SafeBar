@@ -1,11 +1,23 @@
 import HeadDetails from '../components/HeadDetails';
+import Signin from '../components/SignIn';
+import { useAuth } from '../utils/context/authContext';
 
 export default function Lists() {
+  const { user } = useAuth();
+
   return (
     <>
-      <HeadDetails title="Your Lists" description="Making Nightlife Safer for Everyone" />
-      <h1>Lists Page</h1>
-      <p>The user will need to be authenticated to view this page</p>
+      <HeadDetails
+        title="Your Lists"
+        description="Making Nightlife Safer for Everyone"
+      />
+      {Object.keys(user).length ? (
+        <h1 className="text-center">Favorites</h1>
+      ) : (
+        <>
+          <Signin title="TO SEE YOUR FAVORITES" />
+        </>
+      )}
     </>
   );
 }
