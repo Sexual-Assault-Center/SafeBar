@@ -21,5 +21,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin_site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('submitBar/', include('h4tcsacrecertify.urls'))
+    path('submit-bar/', include('h4tcsacrecertify.urls'))
 ]
