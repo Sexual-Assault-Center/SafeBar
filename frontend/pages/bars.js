@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 // import * as ga from '../utils/ga';
 // import Searchbar from '../components/Searchbar';
+import { BsShieldFillCheck } from 'react-icons/bs';
 import BarCard from '../components/BarCard';
 import HeadDetails from '../components/HeadDetails';
 import { useAuth } from '../utils/context/authContext';
@@ -51,6 +52,10 @@ export default function Bars() {
     <>
       <HeadDetails title="Bars" description="Making Nightlife Safer for Everyone" />
       {/* <Searchbar onClick={() => search()} onChange={(e) => handleChange(e)} value={value}>Search</Searchbar> */}
+      <div className="shieldHeader">
+        <BsShieldFillCheck className="shieldIcon" size={25} />
+        <h2>SAFEBAR CERTIFIED BARS</h2>
+      </div>
       <div className="card-cont d-flex flex-wrap">
         {
           safebars.map((bar) => <BarCard key={bar.uuid} {...bar} user={user} func={checkUserStatus} />)

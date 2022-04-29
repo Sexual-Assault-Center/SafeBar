@@ -20,19 +20,19 @@ export default function FooterNav() {
   const renderIcon = (name) => {
     let icon;
     switch (name) {
-      case 'Home':
+      case 'home':
         icon = <FaHome className="footerIcon" size={25} />;
         break;
-      case 'Explore':
-        icon = <FaSearch className="footerIcon" size={25} />;
+      case 'explore':
+        icon = <FaSearch className="footerIcon" size={20} />;
         break;
       case 'HELP':
-        icon = <BsExclamationCircle className="m-0 footerIcon" size={40} />;
+        icon = <BsExclamationCircle className="m-0 footerIcon helpIcon" size={40} />;
         break;
-      case 'Favorites':
-        icon = <BiDrink className="footerIcon" size={25} />;
+      case 'saved':
+        icon = <BiDrink className="footerIcon" size={27} />;
         break;
-      case 'Login':
+      case 'login':
         icon = <BsPersonCircle className="footerIcon" size={25} />;
         break;
       default:
@@ -47,12 +47,12 @@ export default function FooterNav() {
           <li
             key={i}
             className={classNames(
-              router.pathname === `/${el.text === 'Home' ? '' : el.path}`
+              router.pathname === `/${el.text === 'home' ? '' : el.path}`
                 ? 'activeFooter'
                 : '',
             )}
           >
-            <Link href={`/${el.text === 'Home' ? '' : el.path}`} passHref>
+            <Link href={`/${el.text === 'home' ? '' : el.path}`} passHref>
               <div
                 className={classNames(
                   `footerBarOption ${
@@ -86,8 +86,8 @@ export default function FooterNav() {
             className="auth-btn"
           >
             <div className="footerBarOption position-relative">
-              <div className="optionIcon">{renderIcon('Login')}</div>
-              <p className="optionTitle">{!user ? 'Login' : 'Logout'}</p>
+              <div className="optionIcon">{renderIcon('login')}</div>
+              <p className="optionTitle">{!user ? 'login' : 'logout'}</p>
             </div>
           </Button>
         </li>
