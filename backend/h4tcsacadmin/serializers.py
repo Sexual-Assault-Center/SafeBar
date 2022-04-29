@@ -45,4 +45,8 @@ class AdminBarSerializer(serializers.ModelSerializer):
 class AdminFAQSerializer(serializers.ModelSerializer):
     class Meta:
         model = FAQ
-        fields = "__all__"
+        fields = [
+            "uuid",
+            "question",
+            "answer"
+        ]
