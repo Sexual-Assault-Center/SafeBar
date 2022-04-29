@@ -29,7 +29,7 @@ export default function Home() {
           ? <ReactPlayer url={landing.mediaUrl} />
           : (
             <Link to="clickUrl">
-              <Image src={landing.mediaUrl} alt={landing.mediaUrl} />
+              <Image src={landing.mediaUrl} alt={landing.title} />
             </Link>
           )}
       </div>
