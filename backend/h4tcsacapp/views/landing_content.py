@@ -10,10 +10,10 @@ class LandingContentViewSet(ViewSet):
     """
 
     def list(self, request):
+        queryset = LandingContent.objects.all()
+        serializer = LandingContentSerializer(queryset, many=True)
         try:
-            queryset = LandingContent.objects.all()[0]
-            serializer = LandingContentSerializer(queryset)
-            response = Response(serializer.data)
+            response = Response(serializer.data[0])
         except IndexError:
             response = Response({})
         return response
