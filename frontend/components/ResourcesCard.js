@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Card } from 'react-bootstrap';
+import ButtonComp from './Button';
 
 function ResourcesCard({ title, description, url }) {
   return (
@@ -10,7 +11,7 @@ function ResourcesCard({ title, description, url }) {
         <Card.Text>
           {description}
         </Card.Text>
-        <Button variant="primary" href={url}>Learn More</Button>
+        <ButtonComp variant="primary" href={url} buttonText="Learn More" />
       </Card.Body>
     </Card>
   );
