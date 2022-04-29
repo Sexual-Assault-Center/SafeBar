@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Accordion } from 'react-bootstrap';
 import HeadDetails from '../components/HeadDetails';
 import { getAllFAQs } from '../utils/api';
 
@@ -19,15 +20,20 @@ export default function Faqs() {
 
   return (
     <>
-      <HeadDetails title="FAQs" description="Making Nightlife Safer for Everyone" />
+      <HeadDetails
+        title="FAQs"
+        description="Making Nightlife Safer for Everyone"
+      />
       <h1>FAQs</h1>
       <div id="faqDiv">
-        {faqs.map((item) => (
-          <div className="faq-item">
-            <p className="faq-question">{item.question}</p>
-            <p className="faq-answer">{item.answer}</p>
-          </div>
-        ))}
+        <Accordion>
+          {faqs.map((item) => (
+            <Accordion.Item eventKey={item.uuid} key={item.uuid}>
+              <Accordion.Header>{item.question}</Accordion.Header>
+              <Accordion.Body>{item.answer}</Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
       </div>
     </>
   );

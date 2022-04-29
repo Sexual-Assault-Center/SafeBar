@@ -29,7 +29,7 @@ export default function FooterNav() {
       case 'HELP':
         icon = <BsExclamationCircle className="m-0 footerIcon" size={40} />;
         break;
-      case 'Lists':
+      case 'Favorites':
         icon = <BiDrink className="footerIcon" size={25} />;
         break;
       case 'Login':

@@ -1,17 +1,36 @@
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
+import { Button, ButtonGroup } from 'react-bootstrap';
+import { BsShieldFillCheck } from 'react-icons/bs';
 
 const BarCard = ({
-  img, name, street, city, zip, phone,
+  // img,
+  safebar,
+  name,
+  street,
+  city,
+  zip,
+  phone,
+  func,
 }) => (
   <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src={img} />
+    {/* <Card.Img variant="top" src={img} /> */}
     <Card.Body>
-      <Card.Title>{name}</Card.Title>
+      <Card.Title>
+        {safebar ? <BsShieldFillCheck color="yellow" size={25} /> : ''}{' '}
+        {name}
+      </Card.Title>
       <Card.Text>
-        <p>{street}, {city} {zip}</p>
-        <p><a href={`tel:${phone}`}>{phone}</a></p>
+        {street}, {city} {zip}
+        <br />
+        <a href={`tel:${phone}`}>{phone}</a>
       </Card.Text>
+      <ButtonGroup aria-label="Basic example">
+        <Button variant="secondary" onClick={func}>LIKE</Button>
+        <Button variant="secondary" onClick={func}>DISLIKE</Button>
+        <Button variant="secondary" onClick={func}>REPORT</Button>
+        <Button variant="secondary" onClick={func}>FAVORITE</Button>
+      </ButtonGroup>
     </Card.Body>
   </Card>
 );
@@ -19,14 +38,17 @@ const BarCard = ({
 export default BarCard;
 
 BarCard.propTypes = {
-  img: PropTypes.string,
+  // img: PropTypes.string,
+  safebar: PropTypes.bool,
   name: PropTypes.string.isRequired,
   street: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   zip: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
+  func: PropTypes.func.isRequired,
 };
 
 BarCard.defaultProps = {
-  img: '/sac-logo.png',
+  // img: '/sac-logo.png',
+  safebar: false,
 };

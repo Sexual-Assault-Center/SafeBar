@@ -15,7 +15,7 @@ export default function Contacts() {
       <h1>Contacts Page</h1>
       {contacts.map((contact) => (
         <Contact
-          key={contact.id}
+          key={contact.uuid}
           contact={contact}
         />
       ))}

@@ -8,13 +8,9 @@ function Contact({ contact }) {
       <Card.Body>
         <Card.Title>{contact.name}</Card.Title>
         <Card.Text>
-          Email: {contact.email}
-        </Card.Text>
-        <Card.Text>
-          Phone: {contact.phone}
-        </Card.Text>
-        <Card.Text>
-          Contact Name: {contact.contact_name}
+          Contact Name: {contact.contact_name}<br />
+          Email: <a href={`mailto:${contact.email}`}>{contact.email}</a><br />
+          Phone: <a href={`tel:${contact.phone_number}`}>{contact.phone_number}</a>
         </Card.Text>
       </Card.Body>
     </Card>
@@ -28,7 +24,7 @@ Contact.propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
     email: PropTypes.string,
-    phone: PropTypes.number,
+    phone_number: PropTypes.number,
     contact_name: PropTypes.string,
   }),
 };
