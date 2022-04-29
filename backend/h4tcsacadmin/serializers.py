@@ -19,7 +19,13 @@ class AdminResourceSerializer(serializers.ModelSerializer):
 class AdminContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
-        fields = "__all__"
+        fields = [
+            "uuid",
+            "name",
+            "contact_name",
+            "email",
+            "phone_number",
+        ]
 
 
 class AdminBarSerializer(serializers.ModelSerializer):
