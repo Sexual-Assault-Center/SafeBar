@@ -5,7 +5,7 @@ import ButtonComp from './Button';
 
 function ResourcesCard({ title, description, url }) {
   return (
-    <Card className="my-2">
+    <Card className="my-2 card-style">
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>

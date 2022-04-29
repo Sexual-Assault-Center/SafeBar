@@ -78,13 +78,18 @@ h1, h2, h2 {
 }
 
 .cardBodyText {
-  padding: 0 !important;
+  padding: 0 0 10px 0 !important;
+  font-family: 'Ubuntu', sans-serif !important;
 }
 
 
 .training-style {
   background-image: radial-gradient(#2B1F47, #001022);
   color: #F1EDF1 !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 8px !important;
+  min-height: 70% !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -106,8 +111,8 @@ h1, h2, h2 {
   -webkit-mask-image: linear-gradient(to right, transparent 10%, black 75%);
   mask-image: linear-gradient(to right, transparent 25%, black 75%);
 }
-
-.outline-button {
+/* BUTTON STYLES */
+.outline-style {
   border: 2px solid #F1EDF1 !important;
   border-radius: 8px !important;
   color: #F1EDF1 !important;
@@ -115,13 +120,13 @@ h1, h2, h2 {
   font-family: 'Oswald', sans-serif;
 }
 
-.outline-button:hover {
+.outline-style:hover {
   background: #38285D !important;
   border: 2px solid #F1EDF1 !important;
   font-family: 'Oswald', sans-serif;
 }
 
-.button-style {
+.reg-button-style {
   background: #38285D !important;
   color: #C1A6FF !important;
   font-family: 'Oswald', sans-serif;
@@ -129,7 +134,7 @@ h1, h2, h2 {
   border-radius: 8px !important;
 }
 
-.button-style:hover {
+.reg-button-style:hover {
   background: #C1A6FF !important;
   color: #2B1F47 !important;
   font-family: 'Oswald', sans-serif;
@@ -137,7 +142,18 @@ h1, h2, h2 {
   border-radius: 8px !important;
   opacity: 80% !important;
 }
+/* END BUTTON STYLES */
 
+.formContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  min-width: 80%;
+}
+
+/* .formCard {
+
+} */
 .social-banner {
   background-image: radial-gradient(#8570B5, #2B1F47) !important;
   border-radius: 25px;
@@ -147,11 +163,19 @@ h1, h2, h2 {
   margin: auto;
   opacity: 80%;
 }
-
+/* ACCORDION DESIGN */
 .helpAccord {
-  padding-top: 60%;
-  padding-bottom: 10vh;
+  /* padding-top: 60%;
+  padding-bottom: 10vh; */
+  margin-top: 30vh;
 }
+.accord {
+  margin-top: 50px;
+}
+.accord-text {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+/* ACCORDION DES END */
 
 /* OFF CANVAS NAV  */
 .btn-link {
@@ -180,10 +204,10 @@ h1, h2, h2 {
   background-color: #2B1F47;
 }
 
-/* label.textName {
+label.textName {
   font-family: 'Ubuntu', sans-serif !important;
   color: #F1EDF1 !important;
-} */
+}
 
 /******  FOOTER NAVIGATION  *******/
 
@@ -207,7 +231,7 @@ footer {
   cursor: pointer;
   padding: 0 5px;
 }
-.helpIcon {
+.helpIcon, .help-title {
   color: #D899DD;
 }
 p.footerIcon {
