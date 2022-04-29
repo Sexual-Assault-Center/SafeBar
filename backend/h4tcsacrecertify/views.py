@@ -40,14 +40,19 @@ def check_bars_for_recert_status(request):
         bar.save()
 
         # Prevent resending emails
-        if(not BarToken.objects.filter(bar_id=bar.uuid).exists()):
+        if(not BarToken.objects.filter(bar_id=bar.uuid).filter(notification_sent=True).exists()):
             # Create a unique token for the bar
             barToken = BarToken.objects.create_bartoken(bar.uuid)
 
             # Send recertification email
             exp_date = bar.certification_date + relativedelta(months=+6)
-            send_recert_email(bar.name, bar.contact_name, barToken.token, exp_date, bar.email)
-
+            try:
+                send_recert_email(bar.name, bar.contact_name, barToken.token, exp_date, bar.email)
+                barToken.notification_sent = True
+                barToken.save()
+            except:
+                print('ERROR: An error occurred while sending a recertification email to: ' + bar.name)
+            
             # Wait 100ms
             # In the future, this section would be better as a queued async task
             time.sleep(0.1)

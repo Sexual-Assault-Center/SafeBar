@@ -4,7 +4,6 @@ from h4tcsacapp.models.contact import Contact
 from h4tcsacapp.models.faq import FAQ
 from h4tcsacapp.models.resource import Resource
 
-
 class ResourceForm(ModelForm):
     class Meta:
         model = Resource
@@ -20,7 +19,22 @@ class ContactForm(ModelForm):
 class BarForm(ModelForm):
     class Meta:
         model = Bar
-        fields = "__all__"
+        fields = (
+            'is_safebar',
+            'is_approved',
+            'name',
+            'email',
+            'contact_name',
+            'street_address',
+            'city',
+            'zip_code',
+            'phone_number',
+            'website',
+            'image',
+            'description',
+            'certification_date'
+            
+        )
 
 
 class FAQForm(ModelForm):
