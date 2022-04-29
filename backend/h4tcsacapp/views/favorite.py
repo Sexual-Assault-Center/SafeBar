@@ -14,8 +14,4 @@ class FavoriteViewSet(ModelViewSet):
 
     def retrieve(self, request, pk=None):
         favorites = Favorite.objects.filter(uid=pk)
-        output = []
-        for favorite in favorites:
-            serialized = FavoriteSerializer(favorite).data
-            output.append(serialized)
-        return Response(output)
+        return Response(FavoriteSerializer(favorites, many=True).data)
