@@ -16,7 +16,6 @@ export default function Bars() {
   const [safebars, setSafebars] = useState([]);
   const [bars, setBars] = useState([]);
   // const [value, setValue] = useState('');
-
   const { user } = useAuth();
 
   useEffect(() => {
@@ -57,7 +56,7 @@ export default function Bars() {
         <BsShieldFillCheck className="shieldIcon me-2 mb-2" size={25} />
         <h2>SAFEBAR CERTIFIED BARS</h2>
       </div>
-      <div className="card-cont d-flex flex-wrap">
+      <div className="card-cont d-flex flex-wrap justify-content-center">
         {
           safebars.map((bar) => <BarCard key={bar.uuid} {...bar} user={user} func={checkUserStatus} />)
         }

@@ -5,6 +5,7 @@ import { BsShieldFillCheck } from 'react-icons/bs';
 import ButtonComp from './Button';
 
 const BarCard = ({
+  uuid,
   is_safebar,
   name,
   street_address,
@@ -36,10 +37,9 @@ const BarCard = ({
           buttonText="report"
           type="button"
           outline
+          href={`/report/${uuid}`}
         />
-        <ButtonComp buttonText="favorite" type="button" outline onClick={func}>
-          FAVORITE
-        </ButtonComp>
+        <ButtonComp buttonText="favorite" type="button" outline onClick={func} />
       </div>
     </Card.Body>
   </Card>
@@ -48,6 +48,7 @@ const BarCard = ({
 export default BarCard;
 
 BarCard.propTypes = {
+  uuid: PropTypes.string.isRequired,
   is_safebar: PropTypes.bool,
   name: PropTypes.string.isRequired,
   street_address: PropTypes.string,
