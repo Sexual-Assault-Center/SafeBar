@@ -12,7 +12,7 @@ export default function Help() {
         description="Making Nightlife Safer for Everyone"
       />
       <div id="helpDiv">
-        <Accordion>
+        <Accordion className="helpAccord">
           <Accordion.Item eventKey="0">
             <Accordion.Header>{userHelp.title}</Accordion.Header>
             <Accordion.Body>
