@@ -10,7 +10,18 @@ export default function Faqs() {
     let isMounted = true;
     getAllFAQs().then((faqsArray) => {
       if (isMounted) {
-        setFaqs(faqsArray);
+        const sortedArray = faqsArray.sort((a, b) => {
+          const aItem = a.question;
+          const bItem = b.question;
+          if (aItem < bItem) {
+            return -1;
+          }
+          if (aItem > bItem) {
+            return 1;
+          }
+          return 0;
+        });
+        setFaqs(sortedArray);
       }
     });
     return () => {
