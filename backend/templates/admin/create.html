@@ -1,6 +1,6 @@
 {% extends "admin/base_site.html" %}
 
-{% block bodyheader %} {{ header_text }}{% endblock %}
+{% block bodyheader %} {% include "admin/admin_navigation.html" %}{% endblock %}
 
 {% block pagecss %}
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
@@ -13,6 +13,8 @@
     {{ name }} Updated!
 </div>
 {% endif %}
+<h1>{{ header_text }}</h1>
+
 <form action="{% url update_url %}" method="post">
     {% csrf_token %}
     {{ form }}

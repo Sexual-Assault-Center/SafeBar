@@ -1,18 +1,30 @@
 {% extends "admin/base_site.html" %}
 
-{% block bodyheader %} {{ header_text }}{% endblock %}
+{% block bodyheader %} {% include "admin/admin_navigation.html" %}{% endblock %}
 
 {% block pagecss %}
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<style>
+    .alert-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+</style>
 {% endblock %}
 
 
 {% block content %}
-{% if success %}
-<div class="alert alert-success" role="alert">
-    {{ name }} Updated!
+<div class="alert-container">
+    {% if success %}
+    <div class="alert alert-success" role="alert">
+        {{ name }} Updated!
+    </div>
+    {% endif %}
 </div>
-{% endif %}
+<h1>{{ header_text }}</h1>
+
 <form action="{% url update_url uuid %}" method="post">
     {% csrf_token %}
     {{ form }}
