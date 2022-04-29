@@ -36,7 +36,7 @@ EMAIL_HOST_USER = env_map["EMAIL_HOST_USER"]
 EMAIL_HOST_PASSWORD = env_map["EMAIL_HOST_PASSWORD"]
 EMAIL_HOST = env_map["EMAIL_HOST"]
 EMAIL_PORT = env_map["EMAIL_PORT"]
-EMAIL_USE_TLS=env_map["EMAIL_USE_TLS"]
+EMAIL_USE_TLS = env_map["EMAIL_USE_TLS"]
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -55,9 +55,8 @@ ALLOWED_HOSTS = [
     env_map["API_HOST"],
     "localhost"
 ]
-CORS_ORIGIN_WHITELIST = [
-    env_map["FRONTEND_ORIGIN"],
-]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
@@ -70,9 +69,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'h4tcsacapp',
+    'h4tcsacadmin',
     'corsheaders',
+    'django_extensions',
     'h4tcsacrecertify',
-    'h4tcsacadmin'
 ]
 
 REST_FRAMEWORK = {

@@ -1,0 +1,88 @@
+{% extends "admin/base_site.html" %}
+
+{% block bodyheader %} {{ header_text }}{% endblock %}
+
+{% block pagecss %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
+{% block content %}
+{% if success_create %}
+<div class="alert alert-success" role="alert">
+    {{ name }} Created!
+</div>
+{% endif %}
+{% if success_delete %}
+<div class="alert alert-danger" role="alert">
+    {{ name }} Deleted!
+</div>
+{% endif %}
+<a class="btn btn-success btn-lg active" href="{% url create_url %}">Create</a>
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            {% for header in headers %}
+            <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in data %}
+        <tr>
+            {% for value in item.values %}
+            <td>
+                {{ value }}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            {% for header in headers %}
+            <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </tfoot>
+</table>
+{% endblock %}
+
+{% block customjs %}
+<!-- DataTable -->
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js">
+</script>
+
+{{ headers|json_script:"headers" }}
+{{ data|json_script:"data" }}
+{{ success|json_script:"success" }}
+
+<script>
+    const headers = JSON.parse(document.getElementById('headers').textContent);
+    const data_list = JSON.parse(document.getElementById('data').textContent);
+    const success = JSON.parse(document.getElementById('success').textContent);
+
+    $(document).ready(function () {
+        if (success) {
+            setTimeout(() => $(".alert").alert('close'), 3000)
+        }
+        $('#example').DataTable({
+            "columns": headers.map((header, i) =>
+                ({
+                    render: (data, type, full, meta) => {
+                        if(type === 'display'){
+                            return i === 1 ?
+                                `<a href="update/${data_list[meta.row].uuid}">${data}</a>` : data
+                        }
+
+                        return data
+                    },
+                    visible: i !== 0
+                })
+            ),
+
+        });
+    });
+</script>
+{% endblock customjs %}

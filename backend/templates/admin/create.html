@@ -1,0 +1,38 @@
+{% extends "admin/base_site.html" %}
+
+{% block bodyheader %} {{ header_text }}{% endblock %}
+
+{% block pagecss %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
+{% block content %}
+{% if success %}
+<div class="alert alert-success" role="alert">
+    {{ name }} Updated!
+</div>
+{% endif %}
+<form action="{% url update_url %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Create">
+</form>
+{% endblock %}
+
+{% block customjs %}
+{{ success|json_script:"success" }}
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
+<script>
+    const success = JSON.parse(document.getElementById('success').textContent);
+
+    $(document).ready(function () {
+        if (success) {
+
+            setTimeout(() => $(".alert").alert('close'), 3000)
+        }
+    });
+</script>
+{% endblock customjs %}
