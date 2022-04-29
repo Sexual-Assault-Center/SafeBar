@@ -4,7 +4,7 @@ import barsData from '../barsData.json';
 import Searchbar from '../components/Searchbar';
 import BarCard from '../components/BarCard';
 import HeadDetails from '../components/HeadDetails';
-import { getSearch } from '../utils/api';
+// import { getSearch } from '../utils/api';
 
 export default function Bars() {
   const [query, setQuery] = useState('');
@@ -22,7 +22,7 @@ export default function Bars() {
         search_term: query,
       },
     });
-    getSearch(query).then((res) => res);
+    // getSearch(query).then((res) => res);
   };
 
   const handleChange = (e) => {
