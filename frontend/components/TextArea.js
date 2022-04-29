@@ -5,7 +5,7 @@ const TextArea = ({
   label, placeholder, value, onChange,
 }) => (
   <>
-    <FloatingLabel controlId="floatingTextarea" label={label} className="mb-3">
+    <FloatingLabel controlId="floatingTextarea" label={label} className="checkText mb-3">
       <Form.Control
         as="textarea"
         placeholder={placeholder}

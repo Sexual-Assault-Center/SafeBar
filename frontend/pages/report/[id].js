@@ -72,11 +72,16 @@ export default function Report() {
                 type="radio"
                 label={reportObject.name}
                 id={reportObject.uuid}
+                className="textName"
               />
             ))
           )
         }
-        <TextArea onChange={(e) => handleChange(e)} value={value} />
+        <TextArea
+          onChange={(e) => handleChange(e)}
+          value={value}
+        />
+
         <Button type="submit" buttonText="report" />
       </Form>
     </>
