@@ -9,6 +9,7 @@ from h4tcsacapp.models.list_bar import ListBar
 from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.rating import Rating
+from h4tcsacapp.models.bar_report import BarReport
 
 
 class ReportTypeSerializer(serializers.ModelSerializer):
@@ -72,7 +73,7 @@ class ListSerializer(serializers.ModelSerializer):
             bars.append(data)
         return bars
 
-class RatingSerializer(serializers.ModelSerializer):
+class BarReportSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Rating
+        model = BarReport
         fields = '__all__'
