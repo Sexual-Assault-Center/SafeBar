@@ -30,7 +30,7 @@ const BarCard = ({
     };
     addFav(favObj).then(() => setFavClick((prevState) => !prevState));
   };
-  
+
   const handleClick = (id) => {
     router.push(`/report/${id}`);
   };
@@ -79,7 +79,6 @@ BarCard.propTypes = {
   city: PropTypes.string.isRequired,
   zip: PropTypes.string,
   phone: PropTypes.string,
-  func: PropTypes.func.isRequired,
   bar_report_count: PropTypes.number,
 };
 
