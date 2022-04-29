@@ -70,8 +70,14 @@
         $('#example').DataTable({
             "columns": headers.map((header, i) =>
                 ({
-                    render: (data) => i === 1 ?
-                        `<a href="update/${data_list[i].uuid}">${data}</a>` : data,
+                    render: (data, type, full, meta) => {
+                        if(type === 'display'){
+                            return i === 1 ?
+                                `<a href="update/${data_list[meta.row].uuid}">${data}</a>` : data
+                        }
+
+                        return data
+                    },
                     visible: i !== 0
                 })
             ),
