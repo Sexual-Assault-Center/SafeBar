@@ -21,7 +21,7 @@ Servicio en Español`,
   },
   {
     image: 'images/donate.jpeg',
-    text: `Help bring hope and healing to survivors of sexual abuse and assault.`,
+    text: 'Help bring hope and healing to survivors of sexual abuse and assault.',
     href: 'https://sacenter.org/support/give-a-gift.aspx',
     buttonText: 'donate',
     id: 3,
