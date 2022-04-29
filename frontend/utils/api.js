@@ -12,6 +12,7 @@ const getAllFAQs = () => fetch(`${urlBase}faqs/`).then((res) => res.json());
 //   // return fetch(`${urlBase}search?query=${query}/`) Placeholder until endpoint exists
 //   return null;
 // }
+const getAllBars = () => fetch(`${urlBase}bars/`).then((res) => res.json());
 
 const getAllReportTypes = () => fetch(`${urlBase}reporttypes/`).then((res) => res.json());
 
@@ -30,11 +31,11 @@ const addFav = (favObj) => fetch(`${urlBase}bars/`, { body: JSON.stringify(favOb
 export {
   getResources,
   getContacts,
-  getAllFAQs,
   getLanding,
   postReport,
   getAllReportTypes,
   getAllFAQs,
   getBarsByUid,
-  addFav
+  addFav,
+  getAllBars,
 };
