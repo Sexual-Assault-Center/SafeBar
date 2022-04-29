@@ -1,6 +1,24 @@
 const NAVIGATION = {
-  FOOTER: ['Home', 'Explore', 'HELP', 'Lists', 'Login'],
-  TRAINING_LINK: 'https://sacenter.org/resources/safe-bar-training-program.aspx',
+  FOOTER: [
+    {
+      path: '/',
+      text: 'Home',
+    },
+    {
+      path: 'bars',
+      text: 'Explore',
+    },
+    {
+      path: 'help',
+      text: 'HELP',
+    },
+    {
+      path: 'lists',
+      text: 'Lists',
+    },
+  ],
+  TRAINING_LINK:
+    'https://sacenter.org/resources/safe-bar-training-program.aspx',
 };
 
 export default NAVIGATION;
