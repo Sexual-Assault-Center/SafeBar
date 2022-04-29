@@ -9,6 +9,7 @@ from h4tcsacapp.models.rating import Rating
 from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.sponser import Sponser
+from h4tcsacapp.models.list import List
 
 
 class CustomAdminSite(admin.AdminSite):
@@ -34,3 +35,4 @@ admin_site.register(Rating)
 admin_site.register(ReportType)
 admin_site.register(Resource)
 admin_site.register(Sponser)
+admin_site.register(List)
