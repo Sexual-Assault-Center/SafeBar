@@ -55,20 +55,22 @@
       </div>
       <div class="container-primary">
         <h4>Recertifications Due within 30 days</h4>
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <div>
-                <div>Ole Red</div>
-                <small class="small-header">Contact: Bryan Harris</small>
-              </div>
-              <div>
-                <small class="small-header">due on</small>
-                <div>5/1/22</div>
+        {% for bar in recert_bars %}
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <div>{{ bar.name }}</div>
+                  <small class="small-header">Contact: {{ bar.contact_name }}</small>
+                </div>
+                <div>
+                  <small class="small-header">due on</small>
+                  <div>{{ bar.expiration }}</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
     <div class="right">

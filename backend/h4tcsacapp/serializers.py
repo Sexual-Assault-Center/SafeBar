@@ -48,6 +48,13 @@ class BarSerializer(serializers.ModelSerializer):
         fields = ['uuid', 'is_safebar', 'name', 'street_address', "city", "zip_code", "image", "website"]
 
 
+class BarContactSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Bar
+        fields = ['uuid', 'is_safebar', 'name', 'street_address', "city", "zip_code", "image", "website", "contact_name"]
+
+
 class ListSerializer(serializers.ModelSerializer):
     list_name = serializers.SerializerMethodField()
     list_id = serializers.SerializerMethodField()

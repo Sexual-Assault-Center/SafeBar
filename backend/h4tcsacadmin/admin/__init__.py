@@ -20,7 +20,7 @@ from h4tcsacapp.models.rating import Rating
 from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.sponser import Sponser
-from h4tcsacapp.serializers import BarReportExpandedSerializer
+from h4tcsacapp.serializers import BarContactSerializer, BarReportExpandedSerializer
 
 
 class CustomAdminSite(admin.AdminSite):
@@ -34,11 +34,24 @@ class CustomAdminSite(admin.AdminSite):
             y, m, d = report['date_submitted'].split("T")[0].split("-")
             bar_reports_data[index]['date_submitted'] = "%s/%s/%s" % (m, d, y)
 
-        needs_certif = bars.filter(certification_date__lte=date.today() - relativedelta(months=5))
+        recert_bars = []
 
-        print([bar.certification_date for bar in needs_certif])
+        for bar in bars:
+            if(bar.certification_date):
+                expiration = bar.certification_date + relativedelta(months=6)
+                expiration_start = bar.certification_date + relativedelta(months=5)
+                if (date.today() < expiration) and (date.today() > expiration_start):
+                    bar_data = BarContactSerializer(bar).data
+                    (y, m, d) = str(expiration).split("-")
+                    bar_data["expiration"] = "%s/%s/%s" % (m, d, y)
+                    recert_bars.append(bar_data)
 
-        return TemplateResponse(request, self.index_template or 'dashboard/index.html', {"report_count": bar_reports.count(), 'safebar_count': bars.count(), "bar_reports_data": bar_reports_data})
+        return TemplateResponse(request, self.index_template or 'dashboard/index.html', {
+            "report_count": bar_reports.count(),
+            'safebar_count': bars.count(),
+            "bar_reports_data": bar_reports_data,
+            'recert_bars': recert_bars
+        })
 
     def get_urls(self):
         site_urls = []
