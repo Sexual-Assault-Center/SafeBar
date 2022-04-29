@@ -1,10 +1,8 @@
 from h4tcsacapp.models.bar import Bar
-from h4tcsacapp.models.rating import Rating
-from h4tcsacapp.serializers import BarSerializer, RatingSerializer
+from h4tcsacapp.serializers import BarSerializer
+from h4tcsacapp.models.bar_report import BarReport
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework.renderers import JSONRenderer
 
 
 class BarViewSet(ModelViewSet):
@@ -15,13 +13,12 @@ class BarViewSet(ModelViewSet):
     serializer_class = BarSerializer
     http_method_names = ['get']
 
-    @action(methods=['get'], detail=False, url_path='highlight/(?P<uid>[^/.]+)')
-    def highlight(self, request, uid):
-        print(uid)
-        ratings = Rating.objects.all()
-        return JSONRenderer.render(RatingSerializer(ratings).data)
+    def list(self, request):
+        bars = Bar.objects.filter(is_approved=True)
+        barOutput = []
+        for bar in bars:
+            serializedBar = BarSerializer(bar).data
+            serializedBar["bar_report_count"] = BarReport.objects.filter(bar_id=bar.uuid).count()
+            barOutput.append(serializedBar)
 
-# Grab all bars
-# Grab ratings by user
-# Structure response by safe or other
-# Join user ratings 
+        return Response(barOutput)

@@ -10,8 +10,8 @@ const BarCard = ({
   // img,
   id,
   safebar,
-  name,
   street,
+  name,
   city,
   zip,
   phone,
@@ -63,8 +63,8 @@ BarCard.propTypes = {
   // img: PropTypes.string,
   id: PropTypes.string.isRequired,
   safebar: PropTypes.bool,
+  street: PropTypes.string,
   name: PropTypes.string.isRequired,
-  street: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   zip: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
@@ -72,7 +72,6 @@ BarCard.propTypes = {
 
 BarCard.defaultProps = {
   // img: '/sac-logo.png',
-
   safebar: false,
 };
 

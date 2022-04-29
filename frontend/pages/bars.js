@@ -6,7 +6,6 @@ import BarCard from '../components/BarCard';
 import HeadDetails from '../components/HeadDetails';
 import { useAuth } from '../utils/context/authContext';
 import { signInUser } from '../utils/auth';
-
 import { getAllBars } from '../utils/api';
 
 export default function Bars() {
@@ -19,10 +18,12 @@ export default function Bars() {
   const { user } = useAuth();
 
   useEffect(() => {
-    getAllBars().then(setBarsData);
-    setSafebars(barsData.filter((bar) => bar.safebar));
-    setBars(barsData.filter((bar) => !bar.safebar));
-  }, [barsData]);
+    getAllBars().then((barData) => {
+      setSafebars(barData.filter((bar) => bar.safebar));
+      setBars(barData.filter((bar) => !bar.safebar));
+      setBarsData(bars.concat(safebars));
+    });
+  }, []);
 
   const search = () => {
     ga.event({
@@ -31,7 +32,10 @@ export default function Bars() {
         search_term: query,
       },
     });
-    barsData.filter((bar) => bar.city.includes(query.toLowerCase()) || bar.name.includes(query.toLowerCase()));
+    setBarsData(() => {
+      barsData.filter((bar) => bar.city.includes(query.toLowerCase()) || bar.name.includes(query.toLowerCase()));
+    })
+    
   };
 
   const handleChange = (e) => {
@@ -53,10 +57,10 @@ export default function Bars() {
       <Searchbar onClick={() => search()} onChange={(e) => handleChange(e)} value={value}>Search</Searchbar>
       <div className="card-cont d-flex flex-wrap">
         {
-          safebars.map((bar) => <BarCard key={bar.id} {...bar} user={user} func={checkUserStatus} />)
+          safebars.map((bar) => <BarCard key={bar.uuid} {...bar} user={user} func={checkUserStatus} />)
         }
         {
-          bars.map((bar) => <BarCard key={bar.id} {...bar} user={user} func={checkUserStatus} />)
+          bars.map((bar) => <BarCard key={bar.uuid} {...bar} user={user} func={checkUserStatus} />)
         }
       </div>
     </>

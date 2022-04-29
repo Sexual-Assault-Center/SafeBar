@@ -8,11 +8,12 @@ const getContacts = () => fetch(`${urlBase}contacts/`).then((res) => res.json())
 
 const getAllFAQs = () => fetch(`${urlBase}faqs/`).then((res) => res.json());
 
+const getAllBars = () => fetch(`${urlBase}bars/`).then((res) => res.json());
+
 // const getSearch = (query) => {
 //   // return fetch(`${urlBase}search?query=${query}/`) Placeholder until endpoint exists
 //   return null;
 // }
-const getAllBars = () => fetch(`${urlBase}bars/`).then((res) => res.json());
 
 const getAllReportTypes = () => fetch(`${urlBase}reporttypes/`).then((res) => res.json());
 
