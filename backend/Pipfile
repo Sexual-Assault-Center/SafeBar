@@ -9,6 +9,8 @@ pycodestyle = "*"
 autopep8 = "*"
 gitpython = "*"
 django-environ = "*"
+django-extensions = "*"
+ipdb = "*"
 
 [packages]
 django = "*"

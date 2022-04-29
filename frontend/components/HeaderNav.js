@@ -11,11 +11,8 @@ export default function HeaderNav() {
   const handleShow = () => setShow(true);
 
   return (
-    <Navbar as="nav" className="nb-fixed" expand={show}>
+    <Navbar as="nav" variant="dark" className="nb-fixed" expand={show}>
       <Container fluid>
-        <Navbar.Brand as={Link} href="/">
-          <h1 className="safespace" style={{ cursor: 'pointer' }}>SafeBar</h1>
-        </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShow} />
         <Navbar.Offcanvas
           id="offcanvasNavbar"
