@@ -20,7 +20,6 @@ export default function Bars() {
 
   useEffect(() => {
     getAllBars().then((barData) => {
-      console.log(barData);
       setSafebars(barData.filter((bar) => bar.safebar));
       setBars(barData.filter((bar) => !bar.safebar));
     });
