@@ -28,10 +28,10 @@ export default function Home() {
   return (
     <div>
       <HeadDetails
-        title="Welcome"
+        title="SAFEBAR"
         description="Making Nightlife Safer for Everyone"
       />
-      <h2>SPOTLIGHT ON:</h2>
+      <h2>GET INVOLVED</h2>
       {/* <div mediaUrl={landing.mediaUrl} isVideo={landing.isVideo} clickUrl="foobar">
         {landing.isVideo
           ? <ReactPlayer url={landing.mediaUrl} />

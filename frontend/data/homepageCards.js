@@ -12,7 +12,7 @@ Be the Change.`,
   },
   {
     image: 'images/crisisline.jpeg',
-    title: 'Need help now?',
+    title: 'NEED HELP NOW?',
     text: `Statewide 24-Hour Crisis & Support Line
 Servicio en Español`,
     href: 'https://sacenter.org/heal/crisis-support.aspx',
@@ -21,6 +21,7 @@ Servicio en Español`,
   },
   {
     image: 'images/donate.jpeg',
+    title: 'A GIFT OF HOPE',
     text: 'Help bring hope and healing to survivors of sexual abuse and assault.',
     href: 'https://sacenter.org/support/give-a-gift.aspx',
     buttonText: 'donate',
@@ -28,7 +29,7 @@ Servicio en Español`,
   },
   {
     image: 'images/SAC.png',
-    title: 'Sexual Assault Center',
+    title: 'SEXUAL ASSAULT CENTER',
     text: `Bringing an end to sexual 
 violence through counseling, education, and advocacy`,
     href: 'https://sacenter.org/',

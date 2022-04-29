@@ -7,7 +7,7 @@ const FeatureCard = ({
 }) => (
   <>
     <Card className="d-flex flex-row card-width card-border-radius text-white m-3 card-background">
-      <Card.Body className="align-self-center ms-2">
+      <Card.Body className="align-self-center ms-2 cardBodyText">
         <Card.Title className="card-title">{title}</Card.Title>
         <Card.Text>{text}</Card.Text>
         <ButtonComp buttonText={buttonText} href={href} outline />
