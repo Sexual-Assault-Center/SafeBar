@@ -2,7 +2,6 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { AuthConsumer, AuthProvider } from '../utils/context/authContext';
-
 import * as ga from '../utils/ga';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
