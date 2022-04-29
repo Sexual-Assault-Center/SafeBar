@@ -73,7 +73,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_extensions',
     'h4tcsacrecertify',
-    'h4tcsacadmin'
 ]
 
 REST_FRAMEWORK = {

@@ -1,24 +1,17 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import path, reverse
-from h4tcsacapp.models.resource import Resource
-from django.forms import ModelForm
-
-
-class AuthorForm(ModelForm):
-    class Meta:
-        model = Resource
-        fields = "__all__"
 
 
 class CustomDjangoViews():
 
-    def __init__(self, model, serializer, base_path, admin_view, title):
+    def __init__(self, model, serializer, base_path, admin_view, title, form):
         self.base_path = base_path
         self.admin_view = admin_view
         self.model = model
         self.serializer = serializer
         self.title = title
+        self.form = form
 
     def urls(self):
         urls = [
@@ -45,7 +38,7 @@ class CustomDjangoViews():
         ]
         return urls
 
-    def list(self, request, success=False):
+    def list(self, request):
         query_set = self.model.objects.all()
         success_delete = request.GET.get('success_delete', '')
         success_create = request.GET.get('success_create', '')
@@ -57,105 +50,51 @@ class CustomDjangoViews():
             "headers": list(data[0].keys()),
             'name': self.title,
             'create_url': 'myadmin:%s-create' % self.base_path,
-            "header_text": "All %s" % self.title
+            "header_text": "All %ss" % self.title
         })
 
     def update(self, request, uuid):
-        resource = Resource.objects.get(pk=uuid)
+        model_instance = self.model.objects.get(pk=uuid)
         success = False
         if request.method == 'POST':
-            form = AuthorForm(request.POST, instance=resource)
+            form = self.form(request.POST, instance=model_instance)
             if form.is_valid():
                 form.save()
             success = True
         else:
-            form = AuthorForm(instance=resource)
+            form = self.form(instance=model_instance)
 
         return render(request, 'admin/update.html', {
             'form': form,
             'success': success,
-            'name': "Resource",
-            "update_url": "myadmin:resources-update",
+            'name': self.title,
+            "update_url": "myadmin:%s-update" % self.base_path,
             'uuid': uuid,
-            "delete_url": "myadmin:resources-delete",
-            "header_text": "Updating Resource"
+            "delete_url": "myadmin:%s-delete" % self.base_path,
+            "header_text": "Updating %s" % self.title
         })
 
     def delete(self, request, uuid):
-        resource = get_object_or_404(Resource, pk=uuid)
+        resource = get_object_or_404(self.model, pk=uuid)
         resource.delete()
-        return HttpResponseRedirect("%s?%s" % (reverse('myadmin:resources-list'), "success_delete=True"))
+        return HttpResponseRedirect("%s?%s" % (reverse('myadmin:%s-list' % self.base_path), "success_delete=True"))
 
     def create(self, request):
         success = False
         if request.method == 'POST':
-            form = AuthorForm(request.POST)
+            form = self.form(request.POST)
             if form.is_valid():
                 form.save()
             success = True
-            return HttpResponseRedirect("%s?%s" % (reverse('myadmin:resources-list'), "success_create=True"))
+            return HttpResponseRedirect("%s?%s" % (reverse('myadmin:%s-list' % self.base_path), "success_create=True"))
 
         else:
-            form = AuthorForm()
+            form = self.form()
 
         return render(request, 'admin/create.html', {
             'form': form,
             'success': success,
-            'name': "Resource",
-            "update_url": "myadmin:resources-create",
-            "header_text": "Creating Resource"
-
-        })
-
-
-class ResourceViews(CustomDjangoViews):
-    def run(self, request, action="list", uuid=None):
-        action_func = getattr(self, action)
-        return action_func(request, uuid)
-
-    def update(self, request, uuid):
-        resource = Resource.objects.get(pk=uuid)
-        success = False
-        if request.method == 'POST':
-            form = AuthorForm(request.POST, instance=resource)
-            if form.is_valid():
-                form.save()
-            success = True
-        else:
-            form = AuthorForm(instance=resource)
-
-        return render(request, 'admin/update.html', {
-            'form': form,
-            'success': success,
-            'name': "Resource",
-            "update_url": "myadmin:resources-update",
-            'uuid': uuid,
-            "delete_url": "myadmin:resources-delete",
-            "header_text": "Updating Resource"
-        })
-
-    def delete(self, request, uuid):
-        resource = get_object_or_404(Resource, pk=uuid)
-        resource.delete()
-        return HttpResponseRedirect("%s?%s" % (reverse('myadmin:resources-list'), "success_delete=True"))
-
-    def create(self, request):
-        success = False
-        if request.method == 'POST':
-            form = AuthorForm(request.POST)
-            if form.is_valid():
-                form.save()
-            success = True
-            return HttpResponseRedirect("%s?%s" % (reverse('myadmin:resources-list'), "success_create=True"))
-
-        else:
-            form = AuthorForm()
-
-        return render(request, 'admin/create.html', {
-            'form': form,
-            'success': success,
-            'name': "Resource",
-            "update_url": "myadmin:resources-create",
-            "header_text": "Creating Resource"
-
+            'name': self.title,
+            "update_url": "myadmin:%s-create" % self.base_path,
+            "header_text": "Creating %s" % self.title
         })
