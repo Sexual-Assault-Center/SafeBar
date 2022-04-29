@@ -2,11 +2,11 @@ const NAVIGATION = {
   FOOTER: [
     {
       path: '/',
-      text: 'Home',
+      text: 'home',
     },
     {
       path: 'bars',
-      text: 'Explore',
+      text: 'explore',
     },
     {
       path: 'help',
@@ -14,7 +14,7 @@ const NAVIGATION = {
     },
     {
       path: 'lists',
-      text: 'Favorites',
+      text: 'saved',
     },
   ],
   TRAINING_LINK:

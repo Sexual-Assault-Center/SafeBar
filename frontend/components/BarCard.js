@@ -17,7 +17,7 @@ const BarCard = ({
     {/* <Card.Img variant="top" src={img} /> */}
     <Card.Body>
       <Card.Title>
-        {safebar ? <BsShieldFillCheck color="yellow" size={25} /> : ''}{' '}
+        {safebar ? <BsShieldFillCheck className="shieldIcon" size={25} /> : ''}{' '}
         {name}
       </Card.Title>
       <Card.Text>

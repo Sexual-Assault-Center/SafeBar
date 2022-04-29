@@ -1,6 +1,7 @@
 /* eslint-disable consistent-return */
 import { useState, useEffect } from 'react';
 // import * as ga from '../utils/ga';
+import { BsShieldFillCheck } from 'react-icons/bs';
 import barsData from '../barsData.json';
 // import Searchbar from '../components/Searchbar';
 import BarCard from '../components/BarCard';
@@ -48,8 +49,12 @@ export default function Bars() {
 
   return (
     <>
-      <HeadDetails title="Bars" description="Making Nightlife Safer for Everyone" />
+      <HeadDetails title="" description="" />
       {/* <Searchbar onClick={() => search()} onChange={(e) => handleChange(e)} value={value}>Search</Searchbar> */}
+      <div className="shieldHeader">
+        <BsShieldFillCheck className="shieldIcon" size={25} />
+        <h2>SAFEBAR CERTIFIED BARS</h2>
+      </div>
       <div className="card-cont d-flex flex-wrap">
         {
           safebars.map((bar) => <BarCard key={bar.id} {...bar} user={user} func={checkUserStatus} />)
