@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Ubuntu:wght@300&display=swap');
+
 html,
 body {
   padding: 0;
@@ -13,6 +15,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+p {
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .layout-cont {
@@ -66,6 +72,58 @@ p.footerIcon {
   margin: 0;
   padding-bottom: 10px;
   font-size: 12px;
+}
+
+.card-width {
+  width: 24rem;
+  height: auto;
+}
+.card-border-radius {
+  border-radius: 25px;
+  border: none;
+}
+
+.card-background {
+  background: #231A42;
+}
+
+.img-fit {
+  object-fit: cover;
+}
+
+.gradient-bg {
+  -webkit-mask-image: linear-gradient(to right, transparent 10%, black 75%);
+  mask-image: linear-gradient(to right, transparent 25%, black 75%);
+}
+
+.outline-button {
+  border: 2px solid white;
+  border-radius: 8px;
+  color: white;
+  background: none;
+  font-family: 'Oswald', sans-serif;
+}
+
+.outline-button:hover {
+  background: #3F285F;
+  border: 2px solid white;
+  font-family: 'Oswald', sans-serif;
+}
+
+.button-style {
+  background: #38285D;
+  color: #C1A6FF;
+  font-family: 'Oswald', sans-serif;
+  border: none;
+  border-radius: 8px;
+}
+
+.button-style:hover {
+  background: #C1A6FF;
+  color: #3F285F;
+  font-family: 'Oswald', sans-serif;
+  border: none;
+  border-radius: 8px;
 }
 
 /* OFF CANVAS NAV  */

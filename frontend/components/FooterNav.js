@@ -48,7 +48,7 @@ export default function FooterNav() {
               key={i}
               className={router.pathname.includes(lc) ? 'activeFooter' : ''}
             >
-              <Link href={`/${lc}`} passHref>
+              <Link href={lc === 'training' ? NAVIGATION.TRAINING_LINK : `/${lc}`} passHref>
                 <div className="footerBarOption">
                   {renderIcon(name)}
                   <p className="optionTitle">{name}</p>
