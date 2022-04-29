@@ -18,4 +18,9 @@ const getSearch = (query) => {
   // return fetch(`${urlBase}search?query=${query}/`) Placeholder until endpoint exists
   return null;
 }
-export { getResources, getContacts, getSearch, getAllFAQs }
+
+const getLanding = () => {
+  return fetch(`${urlBase}landing/`).then((res) => res.json());
+}
+
+export { getResources, getContacts, getSearch, getAllFAQs, getLanding }
