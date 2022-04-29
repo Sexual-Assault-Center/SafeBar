@@ -6,31 +6,29 @@ import { FaHome, FaSearch, FaExclamation } from 'react-icons/fa';
 import { BiDrink } from 'react-icons/bi';
 import { BsPersonCircle } from 'react-icons/bs';
 import NAVIGATION from '../constants/navigation';
+import { useAuth } from '../utils/context/authContext';
 
 export default function FooterNav() {
   const router = useRouter();
+  const { user } = useAuth();
 
   const renderIcon = (name) => {
     let icon;
     switch (name) {
       case 'Home':
-        icon = <FaHome />;
+        icon = <FaHome className="footerIcon" />;
         break;
       case 'Explore':
-        icon = <FaSearch />;
+        icon = <FaSearch className="footerIcon" />;
         break;
       case 'HELP':
-        icon = (
-          <div className="rounded-circle bg-primary icon-circle-style">
-            <FaExclamation className="" />
-          </div>
-        );
+        icon = <FaExclamation className="m-0 footerIcon" />;
         break;
       case 'Lists':
-        icon = <BiDrink />;
+        icon = <BiDrink className="footerIcon" />;
         break;
       case 'Login':
-        icon = <BsPersonCircle />;
+        icon = <BsPersonCircle className="footerIcon" />;
         break;
       default:
         break;
@@ -48,10 +46,15 @@ export default function FooterNav() {
               key={i}
               className={router.pathname.includes(lc) ? 'activeFooter' : ''}
             >
-              <Link href={lc === 'training' ? NAVIGATION.TRAINING_LINK : `/${lc}`} passHref>
-                <div className="footerBarOption">
-                  {renderIcon(name)}
-                  <p className="optionTitle">{name}</p>
+              <Link
+                href={lc === 'training' ? NAVIGATION.TRAINING_LINK : `/${lc}`}
+                passHref
+              >
+                <div className="footerBarOption position-relative">
+                  <p>{renderIcon(name)}</p>
+                  <p className="optionTitle">
+                    {!!user && name === 'Login' ? 'Logout' : name}
+                  </p>
                 </div>
               </Link>
             </li>
