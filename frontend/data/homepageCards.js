@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 export const cardData = [
   {
     image: 'images/bar.jpeg',
@@ -32,6 +33,6 @@ Servicio en Español`,
 violence through counseling, education, and advocacy`,
     href: 'https://sacenter.org/',
     buttonText: 'learn more',
-    id: 3,
+    id: 4,
   },
 ];
