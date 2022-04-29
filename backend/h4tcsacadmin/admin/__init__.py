@@ -8,6 +8,7 @@ from h4tcsacapp.models.bar import Bar
 from h4tcsacapp.models.bar_report import BarReport
 from h4tcsacapp.models.contact import Contact
 from h4tcsacapp.models.faq import FAQ
+from h4tcsacapp.models.landing_content import LandingContent
 from h4tcsacapp.models.list import List
 from h4tcsacapp.models.list_bar import ListBar
 from h4tcsacapp.models.rating import Rating
@@ -77,3 +78,4 @@ admin_site.register(Resource)
 admin_site.register(Sponser)
 admin_site.register(ListBar)
 admin_site.register(List)
+admin_site.register(LandingContent)

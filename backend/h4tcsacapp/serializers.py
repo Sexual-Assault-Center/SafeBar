@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from h4tcsacapp.models.bar import Bar
 from h4tcsacapp.models.contact import Contact
+from h4tcsacapp.models.landing_content import LandingContent
 from h4tcsacapp.models.list import List
 
 from h4tcsacapp.models.faq import FAQ
@@ -18,6 +19,12 @@ class ReportTypeSerializer(serializers.ModelSerializer):
 class FAQSerializer(serializers.ModelSerializer):
     class Meta:
         model = FAQ
+        fields = '__all__'
+
+
+class LandingContentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LandingContent
         fields = '__all__'
 
 
