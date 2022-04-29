@@ -193,4 +193,7 @@ p.footerIcon {
 .help-icon, .optionIcon {
   padding: 10px;
 }
+.list-nav {
+  margin-left: 30px;
+}
 /******  END FOOTER NAVIGATION  *******/

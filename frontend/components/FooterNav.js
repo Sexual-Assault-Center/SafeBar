@@ -54,9 +54,12 @@ export default function FooterNav() {
           >
             <Link href={`/${el.text === 'Home' ? '' : el.path}`} passHref>
               <div
-                className={`footerBarOption ${
-                  el.path === 'help' ? 'help-nav' : 'position-relative'
-                }`}
+                className={classNames(
+                  `footerBarOption ${
+                    el.path === 'help' ? 'help-nav' : ''
+                  }`,
+                  el.path === 'lists' ? 'list-nav' : '',
+                )}
               >
                 <div
                   className={`${
