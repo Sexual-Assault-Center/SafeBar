@@ -13,7 +13,7 @@ const getContacts = () => {
 const getAllFAQs = () => {
   return fetch(`${urlBase}faqs/`).then((res) => res.json());
 }
-export { getResources, getContacts }
+
 const getSearch = (query) => {
   // return fetch(`${urlBase}search?query=${query}/`) Placeholder until endpoint exists
   return null;
