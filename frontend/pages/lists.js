@@ -34,7 +34,7 @@ export default function Lists() {
             {favs.map((favObj) => (
               <BarCard
                 key={favObj.id}
-                fav={favObj}
+                {...favObj}
               />
             ))}
           </div>

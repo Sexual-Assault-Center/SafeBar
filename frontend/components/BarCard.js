@@ -1,11 +1,11 @@
 /* eslint-disable camelcase */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 import { BsShieldFillCheck } from 'react-icons/bs';
 import { useRouter } from 'next/router';
 import { useAuth } from '../utils/context/authContext';
-import { addFav } from '../utils/api';
+import { addFav, getFavsByUid } from '../utils/api';
 import ButtonComp from './Button';
 
 const BarCard = ({
@@ -18,16 +18,25 @@ const BarCard = ({
   phone,
   bar_report_count,
 }) => {
+  const [favs, setFavs] = useState([]);
   const [favClick, setFavClick] = useState(false);
   const router = useRouter();
   const { user } = useAuth();
+
+  useEffect(() => {
+    getFavsByUid(user.id).then(setFavs);
+  }, [user.id]);
 
   const handleFav = () => {
     const favObj = {
       uid: user.uid,
       bar: uuid,
     };
-    addFav(favObj).then(() => setFavClick((prevState) => !prevState));
+
+    const barMatch = favs.filter((bar) => bar.uuid === uuid);
+    if (!(barMatch.length > 0)) {
+      addFav(favObj).then(() => setFavClick((prevState) => !prevState));
+    }
   };
 
   const handleClick = (id) => {
