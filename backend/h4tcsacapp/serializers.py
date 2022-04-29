@@ -5,7 +5,14 @@ from h4tcsacapp.models.list import List
 
 from h4tcsacapp.models.faq import FAQ
 from h4tcsacapp.models.list_bar import ListBar
+from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
+
+
+class ReportTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ReportType
+        fields = '__all__'
 
 
 class FAQSerializer(serializers.ModelSerializer):
