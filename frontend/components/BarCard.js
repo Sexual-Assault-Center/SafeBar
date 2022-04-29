@@ -2,6 +2,7 @@
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 import { BsShieldFillCheck } from 'react-icons/bs';
+import { useRouter } from 'next/router';
 import ButtonComp from './Button';
 
 const BarCard = ({
@@ -14,36 +15,49 @@ const BarCard = ({
   phone,
   func,
   bar_report_count,
-}) => (
-  <Card className="card-style" style={{ width: '18rem' }}>
-    <Card.Body>
-      <Card.Title className="d-flex flex-row no-wrap align-items-center">
-        {is_safebar ? (
-          <BsShieldFillCheck className="shieldIcon me-2" size={25} />
-        ) : (
-          ''
-        )}{' '}
-        {name}
-      </Card.Title>
-      <Card.Text>
-        {street_address}, {city} {zip}
-        <br />
-        <a href={`tel:${phone}`}>{phone}</a>
-      </Card.Text>
-      <div>{bar_report_count} Reports</div>
-      <div className="d-flex flex-row no-wrap align-items-center mt-2">
-        <ButtonComp
-          className="me-2"
-          buttonText="report"
-          type="button"
-          outline
-          href={`/report/${uuid}`}
-        />
-        <ButtonComp buttonText="favorite" type="button" outline onClick={func} />
-      </div>
-    </Card.Body>
-  </Card>
-);
+}) => {
+  const router = useRouter();
+
+  const handleClick = (id) => {
+    router.push(`/report/${id}`);
+  };
+
+  return (
+    <Card className="card-style" style={{ width: '18rem' }}>
+      <Card.Body>
+        <Card.Title className="d-flex flex-row no-wrap align-items-center">
+          {is_safebar ? (
+            <BsShieldFillCheck className="shieldIcon me-2" size={25} />
+          ) : (
+            ''
+          )}{' '}
+          {name}
+        </Card.Title>
+        <Card.Text>
+          {street_address}, {city} {zip}
+          <br />
+          <a href={`tel:${phone}`}>{phone}</a>
+        </Card.Text>
+        <div>{bar_report_count} Reports</div>
+        <div className="d-flex flex-row no-wrap align-items-center mt-2">
+          <ButtonComp
+            className="me-2"
+            buttonText="report"
+            type="button"
+            outline
+            onClick={() => handleClick(uuid)}
+          />
+          <ButtonComp
+            buttonText="favorite"
+            type="button"
+            outline
+            onClick={func}
+          />
+        </div>
+      </Card.Body>
+    </Card>
+  );
+};
 
 export default BarCard;
 
