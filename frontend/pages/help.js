@@ -1,29 +1,38 @@
+/* eslint-disable react/no-danger */
+import Accordion from 'react-bootstrap/Accordion';
 import HeadDetails from '../components/HeadDetails';
-import { userHelp, barHelp } from '../help.json';
-import AccordionComp from '../components/Accordion';
+import { userHelp, barHelp } from '../data/help.json';
 
 export default function Help() {
   return (
     <>
-      <HeadDetails title="Get Help" description="Making Nightlife Safer for Everyone" />
-      <h1>Help</h1>
+      <HeadDetails
+        title="Get Help"
+        description="Making Nightlife Safer for Everyone"
+      />
       <div id="helpDiv">
-        <AccordionComp title={userHelp.title}>
-          <div id="userDiv">
-            <p>{userHelp.emergency}</p>
-            <p>{userHelp.hotline}</p>
-            <a href={userHelp.chatUrl}>{userHelp.chat}</a>
-          </div>
-        </AccordionComp>
-        <AccordionComp title={barHelp.title}>
-          <div id="barDiv">
-            <p>{barHelp.direct}</p>
-            <p>{barHelp.distract}</p>
-            <p>{barHelp.delegate}</p>
-            <p>{barHelp.delay}</p>
-            <p>{barHelp.document}</p>
-          </div>
-        </AccordionComp>
+        <Accordion>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>{userHelp.title}</Accordion.Header>
+            <Accordion.Body>
+              <p>{userHelp.emergency}</p>
+              <p dangerouslySetInnerHTML={{ __html: userHelp.hotline }} />
+              <a className="btn btn-primary" href={userHelp.chatUrl} target="_blank" rel="noreferrer">{userHelp.chat}</a>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>{barHelp.title}</Accordion.Header>
+            <Accordion.Body>
+              <div id="barDiv">
+                <p dangerouslySetInnerHTML={{ __html: barHelp.direct }} />
+                <p dangerouslySetInnerHTML={{ __html: barHelp.distract }} />
+                <p dangerouslySetInnerHTML={{ __html: barHelp.delegate }} />
+                <p dangerouslySetInnerHTML={{ __html: barHelp.delay }} />
+                <p dangerouslySetInnerHTML={{ __html: barHelp.document }} />
+              </div>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
       </div>
     </>
   );
