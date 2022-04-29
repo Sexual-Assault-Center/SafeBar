@@ -216,8 +216,8 @@ p.footerIcon {
   color: black !important;
 }
 .login-btn {
-  background-color: #38285D;
-  border: none;
+  background-color: #38285D !important;
+  border: none !important;
 }
 .sign-in {
   position: absolute;
