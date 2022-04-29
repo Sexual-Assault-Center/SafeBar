@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from h4tcsacadmin.forms import ContactForm, ResourceForm
+from h4tcsacadmin.forms import ContactForm, FAQForm, ResourceForm
 from h4tcsacadmin.views.dashboard import dashboard
 from h4tcsacadmin.views.custom_crud_view import CustomDjangoViews
 from h4tcsacapp.models.bar import Bar
@@ -13,7 +13,7 @@ from h4tcsacapp.models.rating import Rating
 from h4tcsacapp.models.report_type import ReportType
 from h4tcsacapp.models.resource import Resource
 from h4tcsacapp.models.sponser import Sponser
-from h4tcsacapp.serializers import ContactSerializer, ResourceSerializer
+from h4tcsacapp.serializers import ContactSerializer, FAQSerializer, ResourceSerializer
 
 
 class CustomAdminSite(admin.AdminSite):
@@ -27,7 +27,6 @@ class CustomAdminSite(admin.AdminSite):
             "Resource",
             ResourceForm
         ).urls()
-        # Contacts
         site_urls = site_urls + CustomDjangoViews(
             Contact,
             ContactSerializer,
@@ -36,15 +35,14 @@ class CustomAdminSite(admin.AdminSite):
             "Contact",
             ContactForm
         ).urls()
-        # FAQ
-        # site_urls = site_urls + CustomDjangoViews(
-        #     Resource,
-        #     ResourceSerializer,
-        #     "resources",
-        #     self.admin_view,
-        #     "Resource",
-        #     ResourceForm
-        # ).urls()
+        site_urls = site_urls + CustomDjangoViews(
+            FAQ,
+            FAQSerializer,
+            "faqs",
+            self.admin_view,
+            "FAQ",
+            FAQForm
+        ).urls()
         # Resources
         # site_urls = site_urls + CustomDjangoViews(
         #     Resource,
