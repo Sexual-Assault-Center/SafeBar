@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Card } from 'react-bootstrap';
 import ButtonComp from './Button';
 
-
 function ResourcesCard({ title, description, url }) {
   return (
     <Card className="my-2">
