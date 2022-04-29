@@ -1,4 +1,5 @@
-[{
+[
+  {
     "model": "admin.logentry",
     "pk": 1,
     "fields": {
@@ -10,7 +11,8 @@
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 2,
     "fields": {
@@ -22,7 +24,8 @@
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 3,
     "fields": {
@@ -34,7 +37,8 @@
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 4,
     "fields": {
@@ -46,7 +50,8 @@
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 5,
     "fields": {
@@ -58,7 +63,8 @@
       "action_flag": 3,
       "change_message": ""
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 6,
     "fields": {
@@ -70,7 +76,8 @@
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 7,
     "fields": {
@@ -82,7 +89,8 @@
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 8,
     "fields": {
@@ -94,7 +102,8 @@
       "action_flag": 2,
       "change_message": "[{\"changed\": {\"fields\": [\"Email\"]}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 9,
     "fields": {
@@ -106,7 +115,8 @@
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 10,
     "fields": {
@@ -118,7 +128,8 @@
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 11,
     "fields": {
@@ -130,7 +141,8 @@
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 12,
     "fields": {
@@ -142,7 +154,8 @@
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 13,
     "fields": {
@@ -154,7 +167,8 @@
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 14,
     "fields": {
@@ -166,7 +180,8 @@
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 15,
     "fields": {
@@ -178,7 +193,8 @@
       "action_flag": 2,
       "change_message": "[]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 16,
     "fields": {
@@ -190,7 +206,8 @@
       "action_flag": 2,
       "change_message": "[]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 17,
     "fields": {
@@ -202,7 +219,8 @@
       "action_flag": 2,
       "change_message": "[]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 18,
     "fields": {
@@ -214,7 +232,8 @@
       "action_flag": 2,
       "change_message": "[]"
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 19,
     "fields": {
@@ -226,7 +245,8 @@
       "action_flag": 3,
       "change_message": ""
     }
-  }, {
+  },
+  {
     "model": "admin.logentry",
     "pk": 20,
     "fields": {
@@ -238,7 +258,8 @@
       "action_flag": 2,
       "change_message": "[]"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -246,7 +267,8 @@
       "content_type": 1,
       "codename": "add_logentry"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 2,
     "fields": {
@@ -254,7 +276,8 @@
       "content_type": 1,
       "codename": "change_logentry"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 3,
     "fields": {
@@ -262,7 +285,8 @@
       "content_type": 1,
       "codename": "delete_logentry"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 4,
     "fields": {
@@ -270,7 +294,8 @@
       "content_type": 1,
       "codename": "view_logentry"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 5,
     "fields": {
@@ -278,7 +303,8 @@
       "content_type": 2,
       "codename": "add_permission"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 6,
     "fields": {
@@ -286,7 +312,8 @@
       "content_type": 2,
       "codename": "change_permission"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 7,
     "fields": {
@@ -294,7 +321,8 @@
       "content_type": 2,
       "codename": "delete_permission"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 8,
     "fields": {
@@ -302,7 +330,8 @@
       "content_type": 2,
       "codename": "view_permission"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 9,
     "fields": {
@@ -310,7 +339,8 @@
       "content_type": 3,
       "codename": "add_group"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 10,
     "fields": {
@@ -318,7 +348,8 @@
       "content_type": 3,
       "codename": "change_group"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 11,
     "fields": {
@@ -326,7 +357,8 @@
       "content_type": 3,
       "codename": "delete_group"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 12,
     "fields": {
@@ -334,7 +366,8 @@
       "content_type": 3,
       "codename": "view_group"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 13,
     "fields": {
@@ -342,7 +375,8 @@
       "content_type": 4,
       "codename": "add_user"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 14,
     "fields": {
@@ -350,7 +384,8 @@
       "content_type": 4,
       "codename": "change_user"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 15,
     "fields": {
@@ -358,7 +393,8 @@
       "content_type": 4,
       "codename": "delete_user"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 16,
     "fields": {
@@ -366,7 +402,8 @@
       "content_type": 4,
       "codename": "view_user"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 17,
     "fields": {
@@ -374,7 +411,8 @@
       "content_type": 5,
       "codename": "add_contenttype"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 18,
     "fields": {
@@ -382,7 +420,8 @@
       "content_type": 5,
       "codename": "change_contenttype"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 19,
     "fields": {
@@ -390,7 +429,8 @@
       "content_type": 5,
       "codename": "delete_contenttype"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 20,
     "fields": {
@@ -398,7 +438,8 @@
       "content_type": 5,
       "codename": "view_contenttype"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 21,
     "fields": {
@@ -406,7 +447,8 @@
       "content_type": 6,
       "codename": "add_session"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 22,
     "fields": {
@@ -414,7 +456,8 @@
       "content_type": 6,
       "codename": "change_session"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 23,
     "fields": {
@@ -422,7 +465,8 @@
       "content_type": 6,
       "codename": "delete_session"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 24,
     "fields": {
@@ -430,7 +474,8 @@
       "content_type": 6,
       "codename": "view_session"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 25,
     "fields": {
@@ -438,7 +483,8 @@
       "content_type": 7,
       "codename": "add_bar"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 26,
     "fields": {
@@ -446,7 +492,8 @@
       "content_type": 7,
       "codename": "change_bar"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 27,
     "fields": {
@@ -454,7 +501,8 @@
       "content_type": 7,
       "codename": "delete_bar"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 28,
     "fields": {
@@ -462,7 +510,8 @@
       "content_type": 7,
       "codename": "view_bar"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 29,
     "fields": {
@@ -470,7 +519,8 @@
       "content_type": 8,
       "codename": "add_contact"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 30,
     "fields": {
@@ -478,7 +528,8 @@
       "content_type": 8,
       "codename": "change_contact"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 31,
     "fields": {
@@ -486,7 +537,8 @@
       "content_type": 8,
       "codename": "delete_contact"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 32,
     "fields": {
@@ -494,7 +546,8 @@
       "content_type": 8,
       "codename": "view_contact"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 33,
     "fields": {
@@ -502,7 +555,8 @@
       "content_type": 9,
       "codename": "add_faq"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 34,
     "fields": {
@@ -510,7 +564,8 @@
       "content_type": 9,
       "codename": "change_faq"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 35,
     "fields": {
@@ -518,7 +573,8 @@
       "content_type": 9,
       "codename": "delete_faq"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 36,
     "fields": {
@@ -526,7 +582,8 @@
       "content_type": 9,
       "codename": "view_faq"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 37,
     "fields": {
@@ -534,7 +591,8 @@
       "content_type": 10,
       "codename": "add_list"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 38,
     "fields": {
@@ -542,7 +600,8 @@
       "content_type": 10,
       "codename": "change_list"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 39,
     "fields": {
@@ -550,7 +609,8 @@
       "content_type": 10,
       "codename": "delete_list"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 40,
     "fields": {
@@ -558,7 +618,8 @@
       "content_type": 10,
       "codename": "view_list"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 41,
     "fields": {
@@ -566,7 +627,8 @@
       "content_type": 11,
       "codename": "add_reporttype"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 42,
     "fields": {
@@ -574,7 +636,8 @@
       "content_type": 11,
       "codename": "change_reporttype"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 43,
     "fields": {
@@ -582,7 +645,8 @@
       "content_type": 11,
       "codename": "delete_reporttype"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 44,
     "fields": {
@@ -590,7 +654,8 @@
       "content_type": 11,
       "codename": "view_reporttype"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 45,
     "fields": {
@@ -598,7 +663,8 @@
       "content_type": 12,
       "codename": "add_resource"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 46,
     "fields": {
@@ -606,7 +672,8 @@
       "content_type": 12,
       "codename": "change_resource"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 47,
     "fields": {
@@ -614,7 +681,8 @@
       "content_type": 12,
       "codename": "delete_resource"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 48,
     "fields": {
@@ -622,7 +690,8 @@
       "content_type": 12,
       "codename": "view_resource"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 49,
     "fields": {
@@ -630,7 +699,8 @@
       "content_type": 13,
       "codename": "add_sponser"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 50,
     "fields": {
@@ -638,7 +708,8 @@
       "content_type": 13,
       "codename": "change_sponser"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 51,
     "fields": {
@@ -646,7 +717,8 @@
       "content_type": 13,
       "codename": "delete_sponser"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 52,
     "fields": {
@@ -654,7 +726,8 @@
       "content_type": 13,
       "codename": "view_sponser"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 53,
     "fields": {
@@ -662,7 +735,8 @@
       "content_type": 14,
       "codename": "add_rating"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 54,
     "fields": {
@@ -670,7 +744,8 @@
       "content_type": 14,
       "codename": "change_rating"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 55,
     "fields": {
@@ -678,7 +753,8 @@
       "content_type": 14,
       "codename": "delete_rating"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 56,
     "fields": {
@@ -686,7 +762,8 @@
       "content_type": 14,
       "codename": "view_rating"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 57,
     "fields": {
@@ -694,7 +771,8 @@
       "content_type": 15,
       "codename": "add_listbar"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 58,
     "fields": {
@@ -702,7 +780,8 @@
       "content_type": 15,
       "codename": "change_listbar"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 59,
     "fields": {
@@ -710,7 +789,8 @@
       "content_type": 15,
       "codename": "delete_listbar"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 60,
     "fields": {
@@ -718,7 +798,8 @@
       "content_type": 15,
       "codename": "view_listbar"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 61,
     "fields": {
@@ -726,7 +807,8 @@
       "content_type": 16,
       "codename": "add_barreport"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 62,
     "fields": {
@@ -734,7 +816,8 @@
       "content_type": 16,
       "codename": "change_barreport"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 63,
     "fields": {
@@ -742,7 +825,8 @@
       "content_type": 16,
       "codename": "delete_barreport"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 64,
     "fields": {
@@ -750,7 +834,8 @@
       "content_type": 16,
       "codename": "view_barreport"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 65,
     "fields": {
@@ -758,7 +843,8 @@
       "content_type": 17,
       "codename": "add_bartoken"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 66,
     "fields": {
@@ -766,7 +852,8 @@
       "content_type": 17,
       "codename": "change_bartoken"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 67,
     "fields": {
@@ -774,7 +861,8 @@
       "content_type": 17,
       "codename": "delete_bartoken"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 68,
     "fields": {
@@ -782,7 +870,8 @@
       "content_type": 17,
       "codename": "view_bartoken"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 69,
     "fields": {
@@ -790,7 +879,8 @@
       "content_type": 18,
       "codename": "add_landingcontent"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 70,
     "fields": {
@@ -798,7 +888,8 @@
       "content_type": 18,
       "codename": "change_landingcontent"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 71,
     "fields": {
@@ -806,7 +897,8 @@
       "content_type": 18,
       "codename": "delete_landingcontent"
     }
-  }, {
+  },
+  {
     "model": "auth.permission",
     "pk": 72,
     "fields": {
@@ -814,7 +906,8 @@
       "content_type": 18,
       "codename": "view_landingcontent"
     }
-  }, {
+  },
+  {
     "model": "auth.user",
     "pk": 1,
     "fields": {
@@ -831,7 +924,8 @@
       "groups": [],
       "user_permissions": []
     }
-  }, {
+  },
+  {
     "model": "auth.user",
     "pk": 2,
     "fields": {
@@ -848,189 +942,72 @@
       "groups": [],
       "user_permissions": []
     }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 1,
-    "fields": {
-      "app_label": "admin",
-      "model": "logentry"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 2,
-    "fields": {
-      "app_label": "auth",
-      "model": "permission"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 3,
-    "fields": {
-      "app_label": "auth",
-      "model": "group"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 4,
-    "fields": {
-      "app_label": "auth",
-      "model": "user"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 5,
-    "fields": {
-      "app_label": "contenttypes",
-      "model": "contenttype"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 6,
-    "fields": {
-      "app_label": "sessions",
-      "model": "session"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 7,
-    "fields": {
-      "app_label": "h4tcsacapp",
-      "model": "bar"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 8,
-    "fields": {
-      "app_label": "h4tcsacapp",
-      "model": "contact"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 9,
-    "fields": {
-      "app_label": "h4tcsacapp",
-      "model": "faq"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 10,
-    "fields": {
-      "app_label": "h4tcsacapp",
-      "model": "list"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 11,
-    "fields": {
-      "app_label": "h4tcsacapp",
-      "model": "reporttype"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 12,
-    "fields": {
-      "app_label": "h4tcsacapp",
-      "model": "resource"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 13,
-    "fields": {
-      "app_label": "h4tcsacapp",
-      "model": "sponser"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 14,
-    "fields": {
-      "app_label": "h4tcsacapp",
-      "model": "rating"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 15,
-    "fields": {
-      "app_label": "h4tcsacapp",
-      "model": "listbar"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 16,
-    "fields": {
-      "app_label": "h4tcsacapp",
-      "model": "barreport"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 17,
-    "fields": {
-      "app_label": "h4tcsacrecertify",
-      "model": "bartoken"
-    }
-  }, {
-    "model": "contenttypes.contenttype",
-    "pk": 18,
-    "fields": {
-      "app_label": "h4tcsacapp",
-      "model": "landingcontent"
-    }
-  }, {
+  },
+  {
     "model": "sessions.session",
     "pk": "6kbql0s4sr4ntojnc2vmybyrpgtamzj5",
     "fields": {
       "session_data": ".eJxVjMEOwiAQRP-FsyFQt1Q8eu83kF12K1UDSWlPxn-3JD3oaSbzZuatAm5rCluVJcysrsqq029GGJ-SG-AH5nvRseR1mUm3ij5o1WNhed2O7t9Bwpra2nCMFpDFD0CDRDZOvIHOotmFBaUjZ9hb58CSnfDSg-xWmPoJzurzBf8NOEw:1nkFN6:fr9fbE-Y9fYhbQMZJxahuaDLWxepUyzBOCu8GW6Uoyo",
       "expire_date": "2022-05-13T01:24:36.508Z"
     }
-  }, {
+  },
+  {
     "model": "sessions.session",
     "pk": "82ehfym4kyvrcamjwt3d2gj45207q0q9",
     "fields": {
       "session_data": ".eJxVjMEOwiAQRP-FsyFQt1Q8eu83kF12K1UDSWlPxn-3JD3oaSbzZuatAm5rCluVJcysrsqq029GGJ-SG-AH5nvRseR1mUm3ij5o1WNhed2O7t9Bwpra2nCMFpDFD0CDRDZOvIHOotmFBaUjZ9hb58CSnfDSg-xWmPoJzurzBf8NOEw:1nkQTk:7462UKmWLuhksTNVP3zM111XNfrMbLDZixVSVIoCTJg",
       "expire_date": "2022-05-13T13:16:12.708Z"
     }
-  }, {
+  },
+  {
     "model": "sessions.session",
     "pk": "8r8qaydk51zvdccqkr79yos4tl09chj9",
     "fields": {
       "session_data": ".eJxVjMEOwiAQRP-FsyFQt1Q8eu83kF12K1UDSWlPxn-3JD3oaSbzZuatAm5rCluVJcysrsqq029GGJ-SG-AH5nvRseR1mUm3ij5o1WNhed2O7t9Bwpra2nCMFpDFD0CDRDZOvIHOotmFBaUjZ9hb58CSnfDSg-xWmPoJzurzBf8NOEw:1nkEIw:QMDAZkuVP9XEYHIgx8yjZqrmKNBGyD1CCg2vfcjklUw",
       "expire_date": "2022-05-13T00:16:14.145Z"
     }
-  }, {
+  },
+  {
     "model": "sessions.session",
     "pk": "ezajglna82sbmact5xfzr3r81dy2gc02",
     "fields": {
       "session_data": ".eJxVjMEOwiAQRP-FsyFQt1Q8eu83kF12K1UDSWlPxn-3JD3oaSbzZuatAm5rCluVJcysrsqq029GGJ-SG-AH5nvRseR1mUm3ij5o1WNhed2O7t9Bwpra2nCMFpDFD0CDRDZOvIHOotmFBaUjZ9hb58CSnfDSg-xWmPoJzurzBf8NOEw:1nk91O:D039KYH0W293HVwYa7B6wWNDAW396bFfD15bCEXCTCw",
       "expire_date": "2022-05-12T18:37:46.067Z"
     }
-  }, {
+  },
+  {
     "model": "sessions.session",
     "pk": "ikbls1n17y9cwye2jqx1kzqb2gvunsz8",
     "fields": {
       "session_data": ".eJxVjMEOwiAQRP-FsyFQt1Q8eu83kF12K1UDSWlPxn-3JD3oaSbzZuatAm5rCluVJcysrsqq029GGJ-SG-AH5nvRseR1mUm3ij5o1WNhed2O7t9Bwpra2nCMFpDFD0CDRDZOvIHOotmFBaUjZ9hb58CSnfDSg-xWmPoJzurzBf8NOEw:1nkQVK:CJonx4R2LHQfTvv-T8dy_4x-2Z6W_smG3EIv5DLXroo",
       "expire_date": "2022-05-13T13:17:50.177Z"
     }
-  }, {
+  },
+  {
     "model": "sessions.session",
     "pk": "qkfncscqyq75oaz6eerzqzjdsktpk0ed",
     "fields": {
       "session_data": ".eJxVjMEOwiAQRP-FsyFQt1Q8eu83kF12K1UDSWlPxn-3JD3oaSbzZuatAm5rCluVJcysrsqq029GGJ-SG-AH5nvRseR1mUm3ij5o1WNhed2O7t9Bwpra2nCMFpDFD0CDRDZOvIHOotmFBaUjZ9hb58CSnfDSg-xWmPoJzurzBf8NOEw:1nk902:3fFs1iBIznNNen1o_GniCkeydzDWFUL74z_apJUtIJo",
       "expire_date": "2022-05-12T18:36:22.017Z"
     }
-  }, {
+  },
+  {
     "model": "sessions.session",
     "pk": "ur0qihi9szysiy47xsz4worrnmsxn9fp",
     "fields": {
       "session_data": ".eJxVjMEOwiAQRP-FsyFQt1Q8eu83kF12K1UDSWlPxn-3JD3oaSbzZuatAm5rCluVJcysrsqq029GGJ-SG-AH5nvRseR1mUm3ij5o1WNhed2O7t9Bwpra2nCMFpDFD0CDRDZOvIHOotmFBaUjZ9hb58CSnfDSg-xWmPoJzurzBf8NOEw:1nkAMz:G4uAEmHb07TlHrfQiiMaL5ts9MxoAQXLV6y9bsh9xQo",
       "expire_date": "2022-05-12T20:04:09.397Z"
     }
-  }, {
+  },
+  {
     "model": "sessions.session",
     "pk": "zrz4u8qg3tc3k5hbxsx8cskcude4smqj",
     "fields": {
       "session_data": ".eJxVjMEOwiAQRP-FsyFQt1Q8eu83kF12K1UDSWlPxn-3JD3oaSbzZuatAm5rCluVJcysrsqq029GGJ-SG-AH5nvRseR1mUm3ij5o1WNhed2O7t9Bwpra2nCMFpDFD0CDRDZOvIHOotmFBaUjZ9hb58CSnfDSg-xWmPoJzurzBf8NOEw:1nkDoo:XIcG6GC33JLRUMHTcATOHrS92e4qGY7TMUXUXSEFGxw",
       "expire_date": "2022-05-12T23:45:06.970Z"
     }
-  }, {
+  },
+  {
     "model": "h4tcsacapp.contact",
     "pk": "068a522f-6aa6-422b-a684-fb2c0b574146",
     "fields": {
@@ -1039,7 +1016,8 @@
       "phone_number": 1231231234,
       "contact_name": "Mario Luigi"
     }
-  }, {
+  },
+  {
     "model": "h4tcsacapp.contact",
     "pk": "0eec0d3d-76a1-47bd-a0a6-2c9c7e58dc94",
     "fields": {
@@ -1048,7 +1026,8 @@
       "phone_number": 1231231234,
       "contact_name": "Waldo"
     }
-  }, {
+  },
+  {
     "model": "h4tcsacapp.contact",
     "pk": "a2bba079-249d-44e1-a957-50f80cca84f9",
     "fields": {
@@ -1057,35 +1036,40 @@
       "phone_number": 1234567890,
       "contact_name": "Austin Parker"
     }
-  }, {
+  },
+  {
     "model": "h4tcsacapp.faq",
     "pk": "06a8b25b-c81d-4440-9bfc-e3e717f108e9",
     "fields": {
       "question": "Can safe bar status be removed? If so, how?",
       "answer": "There are some requirements to being certified as a Safe Bar and if they do not meet the standards, we will not be able to consider them a Safe Bar. 1) 50% of bar staff and one owner/manager must be trained.  2) They must display the Angel Shot poster (A"
     }
-  }, {
+  },
+  {
     "model": "h4tcsacapp.faq",
     "pk": "135d3fe8-bccd-41b6-8951-1a350eb1be8f",
     "fields": {
       "question": "Is training the only way for a bar to become safe?",
       "answer": "Safe Bar isn’t the only way that a bar can become safer - I’ve heard of individual bars creating their own protocols or forms of employee onboarding training. Becoming a safer establishment can take many different forms with varying levels of involvement"
     }
-  }, {
+  },
+  {
     "model": "h4tcsacapp.faq",
     "pk": "689de923-4547-4aa3-9b70-c9dc477ed0b6",
     "fields": {
       "question": "How does a bar recertify?",
       "answer": "A bar is certified as a Safe Bar after at least 50% of the bar staff and one manager/owner go through the 1.5-hour training. We provide them with resources and check-in with them every 6 months to recertify if they have new employees or less than 50% of"
     }
-  }, {
+  },
+  {
     "model": "h4tcsacapp.faq",
     "pk": "f268c3fa-79b6-4b09-b49a-ad8cfdcc572f",
     "fields": {
       "question": "What makes a bar a safe bar?",
       "answer": "We give bar staff the tools needed to recognize and respond to sexual harassment and assault. Safe Bar is a primary prevention program, so we empower training attendees to be a part of the solution to prevent sexual violence from happening in the first p"
     }
-  }, {
+  },
+  {
     "model": "h4tcsacapp.resource",
     "pk": "1552d16c-54ce-4bb9-824b-4b3eb22caafa",
     "fields": {
@@ -1093,7 +1077,8 @@
       "description": "Sexual Assault center raising awareness",
       "url": "https://sacenter.org/"
     }
-  }, {
+  },
+  {
     "model": "h4tcsacapp.resource",
     "pk": "8cc28d88-2696-4826-900f-26670c6c905d",
     "fields": {
@@ -1101,7 +1086,8 @@
       "description": "Sexual Assault center raising awareness",
       "url": "https://sacenter.org/"
     }
-  }, {
+  },
+  {
     "model": "h4tcsacapp.resource",
     "pk": "ad279a7c-c372-48fe-a8ec-497d2b8b5fc6",
     "fields": {
@@ -1109,7 +1095,8 @@
       "description": "Parking",
       "url": "https://www.premierparking.com"
     }
-  }, {
+  },
+  {
     "model": "h4tcsacapp.resource",
     "pk": "dabb84f3-1337-4a4e-af0d-eea0bcf6078b",
     "fields": {
