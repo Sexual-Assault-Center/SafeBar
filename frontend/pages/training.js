@@ -1,6 +1,7 @@
 import { Card } from 'react-bootstrap';
 import ButtonComp from '../components/Button';
 import HeadDetails from '../components/HeadDetails';
+import NAVIGATION from '../constants/navigation';
 
 export default function Training() {
   return (
@@ -35,7 +36,7 @@ export default function Training() {
             </ul>
           </Card.Text>
         </Card.Body>
-        <ButtonComp buttonText="train now!" />
+        <ButtonComp buttonText="train now!" href={NAVIGATION.TRAINING_LINK} />
       </Card>
     </>
   );
