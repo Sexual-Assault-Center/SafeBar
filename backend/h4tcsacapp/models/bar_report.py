@@ -10,3 +10,7 @@ class BarReport(models.Model):
     report_type = models.ForeignKey(ReportType, on_delete=models.PROTECT)
     comment = models.CharField(("Comment"), max_length=254)
     uid = models.CharField(("User ID"), max_length=100)
+    date_submitted = models.DateTimeField(("Date Submitted"), auto_now_add=True)
+
+    class Meta:
+        ordering = ['-date_submitted']
