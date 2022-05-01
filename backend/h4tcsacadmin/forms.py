@@ -1,6 +1,7 @@
 from django.forms import CheckboxInput, DateInput, EmailInput, ModelForm, TextInput, Textarea, URLInput, NumberInput
 from h4tcsacapi import checkbox_attributes, form_attributes, date_attributes
 from h4tcsacapp.models.bar import Bar
+from h4tcsacapp.models.bar_report import BarReport
 from h4tcsacapp.models.contact import Contact
 from h4tcsacapp.models.faq import FAQ
 from h4tcsacapp.models.resource import Resource
@@ -75,4 +76,18 @@ class FAQForm(ModelForm):
         widgets = {
             'question': TextInput(attrs=form_attributes()),
             'answer': TextInput(attrs=form_attributes()),
+        }
+
+
+class BarReportForm(ModelForm):
+    class Meta:
+        model = BarReport
+        fields = "__all__"
+
+        widgets = {
+            'bar': TextInput(attrs=form_attributes()),
+            'report_type': TextInput(attrs=form_attributes()),
+            'comment': TextInput(attrs=form_attributes()),
+            'uid': TextInput(attrs=form_attributes()),
+            'date_submitted': TextInput(attrs=form_attributes()),
         }
