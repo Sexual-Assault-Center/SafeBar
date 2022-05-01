@@ -62,28 +62,34 @@ export default function Report() {
   return (
     <>
       <HeadDetails title="Resources" description="Making Nightlife Safer for Everyone" />
-      <Form onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
-        {
-          (
-            reportTypes.map((reportObject) => (
-              <Form.Check
-                name="report-check"
-                onClick={(e) => handleClick(e)}
-                type="radio"
-                label={reportObject.name}
-                id={reportObject.uuid}
-                // className="textName"
-              />
-            ))
-          )
-        }
-        <TextArea
-          onChange={(e) => handleChange(e)}
-          value={value}
-        />
+      <div className="m-auto training-style">
+        <h2>SUBMIT A REPORT</h2>
+        <div className="formContainer">
+          <Form onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
+            {
+              (
+                reportTypes.map((reportObject) => (
+                  <Form.Check
+                    variant="light"
+                    name="report-check"
+                    onClick={(e) => handleClick(e)}
+                    type="radio"
+                    label={reportObject.name}
+                    id={reportObject.uuid}
+                    className="text-light"
+                  />
+                ))
+              )
+            }
+            <TextArea
+              onChange={(e) => handleChange(e)}
+              value={value}
+            />
 
-        <Button type="submit" buttonText="report" />
-      </Form>
+            <Button type="submit" buttonText="report" />
+          </Form>
+        </div>
+      </div>
     </>
   );
 }
