@@ -1,9 +1,12 @@
 /* eslint-disable camelcase */
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
 import { BsShieldFillCheck } from 'react-icons/bs';
+import { FaThumbsDown, FaThumbsUp } from 'react-icons/fa';
+import { AiOutlineWarning, AiOutlineCheckCircle } from 'react-icons/ai';
+import { BiDrink } from 'react-icons/bi';
 import { useRouter } from 'next/router';
-import ButtonComp from './Button';
 
 const BarCard = ({
   uuid,
@@ -22,38 +25,61 @@ const BarCard = ({
     router.push(`/report/${id}`);
   };
 
+  const imageUrl = 'https://assets3.thrillist.com/v1/image/3059875/1584x1056/flatten;crop;webp=auto;jpeg_quality=50.jpg';
+
   return (
-    <Card className="card-style" style={{ width: '18rem' }}>
+    <Card
+      className="card-style"
+      style={{
+        width: '18rem',
+        backgroundImage: `url(${imageUrl})`,
+      }}
+    >
       <Card.Body>
-        <Card.Title className="d-flex flex-row no-wrap align-items-center">
-          {is_safebar ? (
-            <BsShieldFillCheck className="shieldIcon me-2" size={25} />
-          ) : (
-            ''
-          )}{' '}
-          {name}
-        </Card.Title>
+        <div>
+          <Card.Title className="d-flex flex-row no-wrap align-items-center justify-content-between">
+            <div>{name}</div>
+            <div>
+              {is_safebar ? (
+                <BsShieldFillCheck className="shieldIcon me-2" size={25} />
+              ) : (
+                ''
+              )}
+            </div>
+          </Card.Title>
+          <div className="d-flex">
+            <div className="pos-report">
+              <AiOutlineCheckCircle size={16} /> {bar_report_count}
+            </div>
+            <div className="neg-report">
+              <AiOutlineWarning size={16} /> {bar_report_count}
+            </div>
+          </div>
+        </div>
         <Card.Text>
           {street_address}, {city} {zip}
           <br />
           <a href={`tel:${phone}`}>{phone}</a>
+          <div className="d-flex flex-row no-wrap align-items-center mt-2 justify-content-between">
+            <div>
+              <Button
+                className="me-2 outline-style"
+                onClick={() => handleClick(uuid)}
+              >
+                <FaThumbsUp className="mx-1" />
+              </Button>
+              <Button
+                className="me-2 outline-style"
+                onClick={() => handleClick(uuid)}
+              >
+                <FaThumbsDown className="mx-1" />
+              </Button>
+            </div>
+            <Button className="me-2 outline-style" onClick={func}>
+              <BiDrink className="me-2" /> SAVE
+            </Button>
+          </div>
         </Card.Text>
-        <div>{bar_report_count} Reports</div>
-        <div className="d-flex flex-row no-wrap align-items-center mt-2">
-          <ButtonComp
-            className="me-2"
-            buttonText="report"
-            type="button"
-            outline
-            onClick={() => handleClick(uuid)}
-          />
-          <ButtonComp
-            buttonText="favorite"
-            type="button"
-            outline
-            onClick={func}
-          />
-        </div>
       </Card.Body>
     </Card>
   );

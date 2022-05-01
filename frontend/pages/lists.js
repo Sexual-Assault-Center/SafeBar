@@ -12,7 +12,7 @@ export default function Lists() {
         description="Making Nightlife Safer for Everyone"
       />
       {Object.keys(user).length ? (
-        <h1 className="text-center">SAVED</h1>
+        <h1 className="text-center">SAVED BARS</h1>
       ) : (
         <>
           <Signin title="TO SEE YOUR SAVED BARS" />

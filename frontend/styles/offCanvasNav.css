@@ -32,16 +32,6 @@ label.textName {
   font-family: 'Ubuntu', sans-serif !important;
   color: #F1EDF1 !important;
 }
-
-
-.accordion-button,
-.accordion-header {
-  background-color: #38285D !important;
-  color: #C1A6FF !important;
-}
-.accordion-body {
-  color: black !important;
-}
 .login-btn {
   background-color: #38285D !important;
   border: none !important;
