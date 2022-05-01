@@ -59,10 +59,11 @@ class CustomDjangoViews():
         model_instance = self.model.objects.get(pk=uuid)
         success = False
         if request.method == 'POST':
-            form = self.form(request.POST, instance=model_instance)
-            if form.is_valid():
-                form.save()
-            success = True
+            serializer = self.serializer(model_instance, data=request.POST)
+            if serializer.is_valid():
+                serializer.save()
+                success = True
+                return HttpResponseRedirect("%s?%s" % (reverse('myadmin:%s-list' % self.base_path), "success_create=True"))
         else:
             form = self.form(instance=model_instance)
 
@@ -84,11 +85,11 @@ class CustomDjangoViews():
     def create(self, request):
         success = False
         if request.method == 'POST':
-            form = self.form(request.POST)
-            if form.is_valid():
-                form.save()
-            success = True
-            return HttpResponseRedirect("%s?%s" % (reverse('myadmin:%s-list' % self.base_path), "success_create=True"))
+            serializer = self.serializer(data=request.POST)
+            if serializer.is_valid():
+                serializer.save()
+                success = True
+                return HttpResponseRedirect("%s?%s" % (reverse('myadmin:%s-list' % self.base_path), "success_create=True"))
 
         else:
             form = self.form()
