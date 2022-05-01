@@ -28,3 +28,9 @@ class FavoriteViewSet(ModelViewSet):
         elif(request.method == "DELETE"):
             Favorite.objects.get(uuid=uuid).delete()
             return Response(True)
+    
+    @action(detail=False, methods=['post'], url_path='new-favorite/(?P<uid>[^/.]+)/(?P<bar_id>[^/.]+)')
+    def new_favorite(self, request, uid, bar_id):
+        favorite = Favorite(uid=uid, bar_id=bar_id)
+        favorite.save()
+        return Response(FavoriteSerializer(favorite).data)
