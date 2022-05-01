@@ -1,0 +1,30 @@
+
+.card-width {
+  width: 26rem;
+  height: 18rem;
+}
+
+.card-title{
+  font-family: 'Oswald', sans-serif;
+  font: bold;
+  color: #F1EDF1 !important;
+}
+
+.card-border-radius {
+  border-radius: 25px;
+  border: none;
+}
+
+.card-style {
+  background-image: radial-gradient(#2B1F47, #001022);
+  /* background-color: #2B1F47 !important; */
+  color: #F1EDF1 !important;
+  margin: 5px;
+  padding-left: 5%;
+  padding-right: 0 !important;
+}
+
+.cardBodyText {
+  padding: 15px !important;
+  font-family: 'Ubuntu', sans-serif !important;
+}

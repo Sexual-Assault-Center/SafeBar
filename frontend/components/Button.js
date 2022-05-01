@@ -10,11 +10,11 @@ const ButtonComp = ({
     <>
       {hasHref
         ? (
-          <Button href={href} onClick={onClick} type={type} className={`${isOutline ? 'outline-button' : 'button-style'} ${className || null}`}>
+          <Button href={href} onClick={onClick} type={type} className={`${isOutline ? 'outline-style' : 'reg-button-style'} ${className || null}`}>
             {buttonText.toUpperCase()}{' '}
           </Button>
         ) : (
-          <Button onClick={onClick} type={type} className={`${isOutline ? 'outline-button' : 'button-style'} ${className || null}`}>
+          <Button onClick={onClick} type={type} className={`${isOutline ? 'outline-style' : 'reg-button-style'} ${className || null}`}>
             {buttonText.toUpperCase()}{' '}
           </Button>
         )}

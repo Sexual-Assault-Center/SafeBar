@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import HeadDetails from '../components/HeadDetails';
 import Contact from '../components/Contact';
-import { getContacts } from '../utils/api';
+import { getRequest } from '../utils/api';
 
 export default function Contacts() {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    getContacts().then(setContacts);
+    getRequest('contacts').then(setContacts);
   }, []);
   return (
     <>

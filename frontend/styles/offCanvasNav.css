@@ -1,0 +1,54 @@
+
+/* OFF CANVAS NAV  */
+.btn-link {
+  text-decoration: none !important;
+  text-align: left !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #F1EDF1 !important;
+}
+.btn-close {
+  color: #C1A6FF !important;
+}
+
+.offcanvas-body, .offcanvas-header {
+  color: #F1EDF1;
+  background-image: linear-gradient(#001022, #2B1F47) !important;
+}
+
+.navbar-toggler {  
+  margin-left: auto !important;
+  border: none !important;
+  padding-top: 10px;
+}
+
+.icon-circle-style {
+  width: 60px;
+  height: 60px;
+  background-color: #2B1F47;
+}
+
+label.textName {
+  font-family: 'Ubuntu', sans-serif !important;
+  color: #F1EDF1 !important;
+}
+
+
+.accordion-button,
+.accordion-header {
+  background-color: #38285D !important;
+  color: #C1A6FF !important;
+}
+.accordion-body {
+  color: black !important;
+}
+.login-btn {
+  background-color: #38285D !important;
+  border: none !important;
+}
+.sign-in {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -58px 0 0 -116px;
+}
