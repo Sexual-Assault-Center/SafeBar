@@ -17,18 +17,6 @@
 
 
 {% block content %}
-<div class="alert-container">
-    {% if success_create %}
-    <div class="alert alert-success" role="alert">
-        {{ name }} Created!
-    </div>
-    {% endif %}
-    {% if success_delete %}
-    <div class="alert alert-danger" role="alert">
-        {{ name }} Deleted!
-    </div>
-    {% endif %}
-</div>
 <h1>{{ header_text }}</h1>
 {% if create_url %}
 <a class="btn btn-success btn-lg active" href="{% url create_url %}">Create</a>
@@ -70,21 +58,14 @@
 
 {{ headers|json_script:"headers" }}
 {{ data|json_script:"data" }}
-{{ success_create|json_script:"success_create" }}
-{{ success_delete|json_script:"success_delete" }}
 {{ links|json_script:"links" }}
 
 <script>
     const headers = JSON.parse(document.getElementById('headers').textContent);
     const data_list = JSON.parse(document.getElementById('data').textContent);
-    const success_create = JSON.parse(document.getElementById('success_create').textContent);
     const links = JSON.parse(document.getElementById('links').textContent);
-    const success_delete = JSON.parse(document.getElementById('success_delete').textContent);
 
     $(document).ready(function () {
-        if (success_create || success_delete) {
-            setTimeout(() => $(".alert").alert('close'), 3000)
-        }
         $('#example').DataTable({
             "columns": headers.map((header, i) =>
                 ({

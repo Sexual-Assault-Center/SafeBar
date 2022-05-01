@@ -16,13 +16,6 @@
 
 
 {% block content %}
-<div class="alert-container">
-    {% if success %}
-    <div class="alert alert-success" role="alert">
-        {{ name }} Updated!
-    </div>
-    {% endif %}
-</div>
 <h1>{{ header_text }}</h1>
 <div class="d-flex p-2 bd-highlight">
     <form action="{% url update_url uuid %}" method="post">
@@ -40,20 +33,3 @@
     </form>
 </div>
 {% endblock %}
-
-{% block customjs %}
-{{ success|json_script:"success" }}
-<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-
-<script>
-    const success = JSON.parse(document.getElementById('success').textContent);
-
-    $(document).ready(function () {
-        if (success) {
-
-            setTimeout(() => $(".alert").alert('close'), 3000)
-        }
-    });
-</script>
-{% endblock customjs %}
