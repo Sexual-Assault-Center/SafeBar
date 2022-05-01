@@ -3,12 +3,12 @@ from datetime import date
 from dateutil.relativedelta import *
 from django.contrib import admin
 from django.template.response import TemplateResponse
-from h4tcsacadmin.forms import BarForm, ContactForm, FAQForm, ResourceForm
+from h4tcsacadmin.forms import BarForm, BarReportForm, ContactForm, FAQForm, ResourceForm
 from h4tcsacadmin.serializers import (AdminBarReportSerializer, AdminBarSerializer,
                                       AdminContactSerializer,
                                       AdminFAQSerializer,
                                       AdminResourceSerializer)
-from h4tcsacadmin.views.custom_crud_view import CustomDjangoListViews, CustomDjangoViews
+from h4tcsacadmin.views.custom_crud_view import CustomDjangoViews
 from h4tcsacapp.models.bar import Bar
 from h4tcsacapp.models.bar_report import BarReport
 from h4tcsacapp.models.contact import Contact
@@ -97,12 +97,14 @@ class CustomAdminSite(admin.AdminSite):
             "Bar",
             BarForm
         ).urls()
-        site_urls = site_urls + CustomDjangoListViews(
+        site_urls = site_urls + CustomDjangoViews(
             BarReport,
             AdminBarReportSerializer,
             "reports",
             self.admin_view,
             "Report",
+            BarReportForm,
+            create=False
         ).urls()
         site_urls = site_urls + super().get_urls()
         return site_urls
