@@ -6,9 +6,9 @@ class Bar(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     is_safebar = models.BooleanField("Is Safe Bar", default=False, blank=True)
     is_approved = models.BooleanField("Is Approved", default=False, blank=True)
-    name = models.CharField("Name", max_length=254, blank=True, default="")
+    name = models.CharField("Name", max_length=254)
     contact_name = models.CharField("Contact Name", max_length=255, blank=True, default="")
-    phone_number = models.IntegerField("Phone Number", blank=True, null=True, default=None)
+    phone_number = models.BigIntegerField("Phone Number", blank=True, null=True, default=None)
     street_address = models.CharField("Street Address", max_length=254, blank=True, default="")
     city = models.CharField(
         "City",

@@ -1,4 +1,5 @@
 /* eslint-disable react/no-danger */
+import { Button } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 import HeadDetails from '../components/HeadDetails';
 import { userHelp, barHelp } from '../data/help';
@@ -11,13 +12,13 @@ export default function Help() {
         description="Making Nightlife Safer for Everyone"
       />
       <div id="helpDiv">
-        <Accordion>
+        <Accordion className="helpAccord">
           <Accordion.Item eventKey="0">
             <Accordion.Header>{userHelp.title}</Accordion.Header>
             <Accordion.Body>
               <p>{userHelp.emergency}</p>
               <p dangerouslySetInnerHTML={{ __html: userHelp.hotline }} />
-              <a className="btn btn-primary" href={userHelp.chatUrl} target="_blank" rel="noreferrer">{userHelp.chat}</a>
+              <Button className="btn btn-primary" onClick={() => { window.open(userHelp.chatUrl, '_blank'); }} rel="noreferrer">{userHelp.chat}</Button>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
