@@ -17,19 +17,31 @@
 
 {% block content %}
 <h1>{{ header_text }}</h1>
-<div class="d-flex p-2 bd-highlight">
-    <form action="{% url update_url uuid %}" method="post">
+<div class="d-flex p-2 flex-column align-items-center">
+    <form class="w-75 m-2" action="{% url update_url uuid %}" method="post">
         {% csrf_token %}
-        <div class="d-flex flex-column bd-highlight mb-3">
-            {{ form }}
+        <div class="d-flex flex-column mb-3 align-content-center">
+            {% for field in form %}
+            <div class="form-group w-auto  p-2">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                <div class="invalid-feedback">
+                    {{ field.errors }}
+                </div>
+            </div>
+            {% endfor %}
+
         </div>
-        <input type="submit" value="Update">
+        <button class="btn btn-primary btn-lg btn-block w-100" type="submit">Update</button>
+
+
     </form>
-    <form action="{% url delete_url uuid %}" method="post">
+    <form class="w-75 m-2" action="{% url delete_url uuid %}" method="post">
         {% csrf_token %}
-        <div class="form-group">
-            <input type="submit" value="Delete">
-        </div>
+            <button class="btn btn-danger btn-lg btn-block w-100" type="submit">Delete</button>
     </form>
 </div>
 {% endblock %}
