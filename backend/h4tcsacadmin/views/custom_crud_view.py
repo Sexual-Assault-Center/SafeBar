@@ -78,7 +78,7 @@ class CustomDjangoViews():
     def delete(self, request, uuid):
         resource = get_object_or_404(self.model, pk=uuid)
         resource.delete()
-        messages.error(request, '%s failed to be deleted! Try deleting it again!' % self.title)
+        messages.error(request, '%s was deleted!' % self.title)
 
         return HttpResponseRedirect(reverse('myadmin:%s-list' % self.base_path))
 
