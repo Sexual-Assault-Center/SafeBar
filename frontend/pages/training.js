@@ -50,9 +50,6 @@ export default function Training() {
               website and social media.{' '}
             </li>
           </ul>
-          <div className="d-flex justify-content-center">
-            <ButtonComp buttonText="SIGN UP FOR TRAINING" href={NAVIGATION.TRAINING_LINK} />
-          </div>
         </Card.Body>
         <ButtonComp
           buttonText="SIGN UP FOR TRAINING"

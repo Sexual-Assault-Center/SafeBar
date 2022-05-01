@@ -8,14 +8,14 @@ import {
 import HeadDetails from '../components/HeadDetails';
 import { cardData } from '../data/homepageCards';
 import FeatureCard from '../components/FeatureCard';
-// import { getLanding } from '../utils/api';
+// import { getRequest } from '../utils/api';
 
 export default function Home() {
   // const [landing, setLanding] = useState({});
 
   // useEffect(() => {
   //   let isMounted = true;
-  //   getLanding().then((landingObj) => {
+  //   getRequest('landing).then((landingObj) => {
   //     if (isMounted) {
   //       setLanding(landingObj);
   //     }

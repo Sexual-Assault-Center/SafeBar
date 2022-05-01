@@ -1,0 +1,27 @@
+.checkText label {
+  color: black;
+}
+
+.report-sub {
+  padding: 20px 20px 0 20px;
+}
+
+.report-sub p b {
+  font-weight: bolder;
+}
+
+.report-radios {
+  margin-bottom: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.charCounter {
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom:20px;
+  margin-top: -10px;
+}
+
+.bar-name {
+  color: #D899DD;
+  font-weight: bolder;
+}
