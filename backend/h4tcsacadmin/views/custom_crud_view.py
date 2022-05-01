@@ -6,13 +6,14 @@ from django.contrib import messages
 
 class CustomDjangoViews():
 
-    def __init__(self, model, serializer, base_path, admin_view, title, form):
+    def __init__(self, model, serializer, base_path, admin_view, title, form, create=True):
         self.base_path = base_path
         self.admin_view = admin_view
         self.model = model
         self.serializer = serializer
         self.title = title
         self.form = form
+        self.show_create = create
 
     def urls(self):
         urls = [
@@ -20,11 +21,6 @@ class CustomDjangoViews():
                 '%s/' % self.base_path,
                 self.admin_view(self.list),
                 name="%s-list" % self.base_path
-            ),
-            path(
-                '%s/create/' % self.base_path,
-                self.admin_view(self.create),
-                name="%s-create" % self.base_path
             ),
             path(
                 '%s/delete/<slug:uuid>' % self.base_path,
@@ -37,6 +33,12 @@ class CustomDjangoViews():
                 name="%s-update" % self.base_path
             )
         ]
+        if self.show_create:
+            urls = urls + [path(
+                '%s/create/' % self.base_path,
+                self.admin_view(self.create),
+                name="%s-create" % self.base_path
+            ), ]
         return urls
 
     def list(self, request):
@@ -46,7 +48,7 @@ class CustomDjangoViews():
             'data': data,
             "headers": self.serializer.Meta.fields,
             'name': self.title,
-            'create_url': 'myadmin:%s-create' % self.base_path,
+            'create_url': 'myadmin:%s-create' % self.base_path if self.show_create else None,
             "header_text": "All %ss" % self.title,
             "links": True
         })
@@ -61,7 +63,7 @@ class CustomDjangoViews():
             else:
                 messages.error(request, '%s failed to update. Try again!' % self.title)
                 form = self.form(request.POST, instance=model_instance)
-
+        print(request.POST)
         form = self.form(instance=model_instance)
 
         return render(request, 'admin/update.html', {

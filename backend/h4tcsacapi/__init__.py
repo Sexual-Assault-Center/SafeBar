@@ -1,7 +1,15 @@
-def form_attributes(placeholder=""):
+def input_attributes(placeholder=""):
     return {
         'class': "form-control form-control-md",
         'placeholder': placeholder
+    }
+
+
+def disabled_input_attributes(placeholder=""):
+    return {
+        'class': "form-control form-control-md form-control-plaintext",
+        'placeholder': placeholder,
+        "disabled": "disabled"
     }
 
 

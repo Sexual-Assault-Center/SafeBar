@@ -103,7 +103,8 @@ class CustomAdminSite(admin.AdminSite):
             "reports",
             self.admin_view,
             "Report",
-            BarReportForm
+            BarReportForm,
+            create=False
         ).urls()
         site_urls = site_urls + super().get_urls()
         return site_urls
