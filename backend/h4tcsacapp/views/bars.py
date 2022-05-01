@@ -18,7 +18,8 @@ class BarViewSet(ModelViewSet):
         barOutput = []
         for bar in bars:
             serializedBar = BarSerializer(bar).data
-            serializedBar["bar_report_count"] = BarReport.objects.filter(bar_id=bar.uuid).count()
+            visible_bar_reports = BarReport.objects.filter(is_visible=True)
+            serializedBar["bar_report_count"] = visible_bar_reports.filter(bar_id=bar.uuid).count()
             barOutput.append(serializedBar)
 
         return Response(barOutput)

@@ -7,6 +7,6 @@ class BarReportViewSet(ModelViewSet):
     """
     A simple ViewSet for viewing and creating Bar Reports
     """
-    queryset = BarReport.objects.all()
+    queryset = BarReport.objects.filter(is_visible=True)
     serializer_class = BarReportSerializer
     http_method_names = ['get', 'post']
