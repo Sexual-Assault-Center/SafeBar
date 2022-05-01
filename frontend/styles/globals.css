@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Ubuntu:wght@300&display=swap');
 
+@import 'search.css';
+
 body {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -35,15 +37,6 @@ h1, h2, h2 {
   padding-top: 2%;
   padding-bottom: 2%;
 }
-/* h4 {
-  color: #D899DD;
-  font-family: 'Oswald', sans-serif;
-  text-align: center; */
-  /* padding-top: 2%;
-  padding-bottom: 2%; */
-/* } */
-
-
 .shieldIcon{
   color: #FFE367;
   size: 25px;
@@ -151,9 +144,6 @@ h1, h2, h2 {
   min-width: 80%;
 }
 
-/* .formCard {
-
-} */
 .social-banner {
   background-image: radial-gradient(#8570B5, #2B1F47) !important;
   border-radius: 25px;
@@ -219,6 +209,7 @@ footer {
   text-align: center;
   background-color: #231A42;
   color: #8570B5;
+  filter: drop-shadow(0 -1mm 5mm #001022);
 }
 
 .allFooterButtons {

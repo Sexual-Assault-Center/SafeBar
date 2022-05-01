@@ -16,8 +16,8 @@ const postReport = (reportObj) => fetch(`${urlBase}bar-report/`, {
   body: JSON.stringify(reportObj),
   method: 'POST',
   headers: {
-    "Content-Type": "application/json"
-  }
+    'Content-Type': 'application/json',
+  },
 });
 
 // const getSearch = (query) => {
@@ -28,5 +28,5 @@ const postReport = (reportObj) => fetch(`${urlBase}bar-report/`, {
 const getLanding = () => fetch(`${urlBase}landing/`).then((res) => res.json());
 
 export {
-  getResources, getContacts, getAllFAQs, getLanding, getAllBars, getAllReportTypes, postReport
+  getResources, getContacts, getAllFAQs, getLanding, getAllBars, getAllReportTypes, postReport,
 };
