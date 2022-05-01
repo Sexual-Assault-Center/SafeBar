@@ -73,6 +73,10 @@ export default function Bars() {
         title="Bars"
         description="Making Nightlife Safer for Everyone"
       />
+      <div className="d-flex flex-row no-wrap align-items-center justify-content-center">
+        <BsShieldFillCheck className="shieldIcon me-2 mb-2" size={25} />
+        <h2>SAFEBAR CERTIFIED BARS</h2>
+      </div>
       <div className="searchContainer">
         <Searchbar
           onChange={handleChange}
@@ -82,10 +86,6 @@ export default function Bars() {
         >
           Search
         </Searchbar>
-      </div>
-      <div className="d-flex flex-row no-wrap align-items-center justify-content-center">
-        <BsShieldFillCheck className="shieldIcon me-2 mb-2" size={25} />
-        <h2>SAFEBAR CERTIFIED BARS</h2>
       </div>
       <div className="card-cont d-flex flex-wrap justify-content-center">
         {loading ? (
