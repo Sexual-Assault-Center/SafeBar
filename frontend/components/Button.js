@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 
 const ButtonComp = ({
-  buttonText, outline, type, onClick, href,
+  buttonText, outline, type, onClick, href, className,
 }) => {
   const hasHref = Boolean(href);
   const isOutline = Boolean(outline);
@@ -10,11 +10,11 @@ const ButtonComp = ({
     <>
       {hasHref
         ? (
-          <Button href={href} onClick={onClick} type={type} className={`${isOutline ? 'outline-button' : 'button-style'}`}>
+          <Button href={href} onClick={onClick} type={type} className={`${isOutline ? 'outline-style' : 'reg-button-style'} ${className || null}`}>
             {buttonText.toUpperCase()}{' '}
           </Button>
         ) : (
-          <Button onClick={onClick} type={type} className={`${isOutline ? 'outline-button' : 'button-style'}`}>
+          <Button onClick={onClick} type={type} className={`${isOutline ? 'outline-style' : 'reg-button-style'} ${className || null}`}>
             {buttonText.toUpperCase()}{' '}
           </Button>
         )}
@@ -30,6 +30,7 @@ ButtonComp.propTypes = {
   type: PropTypes.oneOf(['button', 'submit']),
   onClick: PropTypes.func,
   href: PropTypes.string,
+  className: PropTypes.string,
 };
 
 ButtonComp.defaultProps = {
@@ -38,4 +39,5 @@ ButtonComp.defaultProps = {
   type: 'button',
   href: '',
   onClick: () => { },
+  className: null,
 };

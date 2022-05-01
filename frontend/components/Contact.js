@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function Contact({ contact }) {
   return (
-    <Card className="my-2">
+    <Card className="my-2 card-style">
       <Card.Body>
         <Card.Title>{contact.name}</Card.Title>
         <Card.Text>

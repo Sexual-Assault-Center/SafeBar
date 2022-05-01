@@ -8,14 +8,14 @@ export default function Lists() {
   return (
     <>
       <HeadDetails
-        title="Your Lists"
+        title="Your Saved Bars"
         description="Making Nightlife Safer for Everyone"
       />
       {Object.keys(user).length ? (
-        <h1 className="text-center">Favorites</h1>
+        <h1 className="text-center">SAVED</h1>
       ) : (
         <>
-          <Signin title="TO SEE YOUR FAVORITES" />
+          <Signin title="TO SEE YOUR SAVED BARS" />
         </>
       )}
     </>
