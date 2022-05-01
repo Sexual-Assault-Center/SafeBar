@@ -13,7 +13,6 @@ export default function Report() {
   const { user } = useAuth();
 
   const [reportTypes, setReportTypes] = useState([]);
-  const [value, setValue] = useState('');
   const [report, setReport] = useState({
     uid: 'anonymous',
     bar: id,
@@ -29,28 +28,13 @@ export default function Report() {
   }, [report, user]);
 
   const handleChange = (e) => {
-    setValue(e.target.value);
+    const { name, value } = e.target;
     setReport((prevState) => (
       {
         ...prevState,
-        comment: value,
+        [name]: value,
       }
     ));
-  };
-
-  const handleClick = (e) => {
-    setReport((prevState) => (
-      {
-        ...prevState,
-        report_type: e.target.id,
-      }
-    ));
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.keyCode === 13) {
-      e.preventDefault();
-    }
   };
 
   const handleSubmit = (e) => {
@@ -65,28 +49,32 @@ export default function Report() {
       <div className="m-auto training-style">
         <h2>SUBMIT A REPORT</h2>
         <div className="formContainer">
-          <Form onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
+          <Form onSubmit={handleSubmit}>
             {
               (
                 reportTypes.map((reportObject) => (
                   <Form.Check
                     variant="light"
-                    name="report-check"
-                    onClick={(e) => handleClick(e)}
+                    name="report_type"
+                    id="report_type"
+                    onClick={handleChange}
                     type="radio"
                     label={reportObject.name}
-                    id={reportObject.uuid}
+                    value={reportObject.uuid}
                     className="text-light"
+                    required
                   />
                 ))
               )
             }
             <TextArea
               onChange={(e) => handleChange(e)}
-              value={value}
+              name="comment"
+              label="Leave Comment"
+              value={report.comment}
+              required
             />
-
-            <Button type="submit" buttonText="report" />
+            <Button type="submit" buttonText="submit report" />
           </Form>
         </div>
       </div>

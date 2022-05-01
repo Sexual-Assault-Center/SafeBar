@@ -2,12 +2,13 @@ import { FloatingLabel, Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 const TextArea = ({
-  label, placeholder, value, onChange,
+  label, placeholder, value, onChange, name,
 }) => (
   <>
-    <FloatingLabel controlId="floatingTextarea" label={label} className="checkText mb-3">
+    <FloatingLabel controlId="floatingTextarea" label={label} className="checkText comment mb-3">
       <Form.Control
         as="textarea"
+        name={name}
         placeholder={placeholder}
         style={{ height: '100px' }}
         value={value}
@@ -23,6 +24,7 @@ TextArea.propTypes = {
   label: PropTypes.string,
   placeholder: PropTypes.string,
   value: PropTypes.string,
+  name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
 };
 

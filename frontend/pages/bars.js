@@ -1,6 +1,8 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable consistent-return */
 import { useState, useEffect } from 'react';
 import { BsShieldFillCheck } from 'react-icons/bs';
+import { Spinner } from 'react-bootstrap';
 import * as ga from '../utils/ga';
 import Searchbar from '../components/Searchbar';
 import BarCard from '../components/BarCard';
@@ -9,12 +11,11 @@ import { useAuth } from '../utils/context/authContext';
 import { signInUser } from '../utils/auth';
 import { getAllBars } from '../utils/api';
 
-// import { getSearch } from '../utils/api';
-
 export default function Bars() {
   const [allBars, setAllBars] = useState([]);
   const [query, setQuery] = useState('');
   const [barsData, setBarsData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { user } = useAuth();
 
   // TODO: needs to be refactored for pagination
@@ -23,7 +24,7 @@ export default function Bars() {
       const sorted = barData.sort((a, b) => b.is_safebar - a.is_safebar);
       setAllBars(sorted);
       setBarsData(sorted);
-    });
+    }).then(() => setLoading(false));
   };
 
   useEffect(() => {
@@ -41,8 +42,7 @@ export default function Bars() {
     // TODO: Needs to be refactored to get search results from API
     setAllBars(
       barsData.filter(
-        (bar) => bar.city.toLowerCase().includes(query.toLowerCase())
-        || bar.name.toLowerCase().includes(query.toLowerCase()),
+        (bar) => bar.city.toLowerCase().includes(query.toLowerCase()) || bar.name.toLowerCase().includes(query.toLowerCase()),
       ),
     );
   };
@@ -74,7 +74,12 @@ export default function Bars() {
         description="Making Nightlife Safer for Everyone"
       />
       <div className="searchContainer">
-        <Searchbar onChange={handleChange} value={query} clear={clearSearch} placeholder="explore bars by name or city">
+        <Searchbar
+          onChange={handleChange}
+          value={query}
+          clear={clearSearch}
+          placeholder="explore bars by name or city"
+        >
           Search
         </Searchbar>
       </div>
@@ -83,16 +88,20 @@ export default function Bars() {
         <h2>SAFEBAR CERTIFIED BARS</h2>
       </div>
       <div className="card-cont d-flex flex-wrap justify-content-center">
-        {
-          allBars.length ? (
-            allBars.map((bar) => (
-              <BarCard key={bar.uuid} {...bar} user={user} func={checkUserStatus} />
-            ))
-          )
-            : (
-              <h2>No Bars</h2>
-            )
-        }
+        {loading ? (
+          <Spinner animation="border" variant="secondary" />
+        ) : allBars.length ? (
+          allBars.map((bar) => (
+            <BarCard
+              key={bar.uuid}
+              {...bar}
+              user={user}
+              func={checkUserStatus}
+            />
+          ))
+        ) : (
+          <h2>No Bars</h2>
+        )}
       </div>
     </>
   );
