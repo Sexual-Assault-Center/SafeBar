@@ -15,11 +15,7 @@ class FavoriteViewSet(ModelViewSet):
 
     def retrieve(self, request, pk=None):
         favorites = Favorite.objects.filter(uid=pk)
-        output = []
-        for favorite in favorites:
-            serialized = FavoriteSerializer(favorite).data
-            output.append(serialized)
-        return Response(output)
+        return Response(FavoriteSerializer(favorites, many=True).data)
     
     @action(detail=False, methods=['get','delete'], url_path='by-uuid/(?P<uuid>[^/.]+)')
     def by_uuid(self, request, uuid):
@@ -28,3 +24,9 @@ class FavoriteViewSet(ModelViewSet):
         elif(request.method == "DELETE"):
             Favorite.objects.get(uuid=uuid).delete()
             return Response(True)
+    
+    @action(detail=False, methods=['post'], url_path='new-favorite/(?P<uid>[^/.]+)/(?P<bar_id>[^/.]+)')
+    def new_favorite(self, request, uid, bar_id):
+        favorite = Favorite(uid=uid, bar_id=bar_id)
+        favorite.save()
+        return Response(FavoriteSerializer(favorite).data)
