@@ -5,7 +5,7 @@ const TextArea = ({
   label, placeholder, value, onChange, name,
 }) => (
   <>
-    <FloatingLabel controlId="floatingTextarea" label={label} className="checkText comment mb-3">
+    <FloatingLabel controlId="floatingTextarea" label={label} className="checkText mb-3">
       <Form.Control
         as="textarea"
         name={name}
@@ -13,6 +13,7 @@ const TextArea = ({
         style={{ height: '100px' }}
         value={value}
         onChange={onChange}
+        maxLength="500"
       />
     </FloatingLabel>
   </>

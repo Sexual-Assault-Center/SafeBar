@@ -9,7 +9,7 @@ import BarCard from '../components/BarCard';
 import HeadDetails from '../components/HeadDetails';
 import { useAuth } from '../utils/context/authContext';
 import { signInUser } from '../utils/auth';
-import { getAllBars } from '../utils/api';
+import { getRequest } from '../utils/api';
 
 export default function Bars() {
   const [allBars, setAllBars] = useState([]);
@@ -20,7 +20,7 @@ export default function Bars() {
 
   // TODO: needs to be refactored for pagination
   const getBars = () => {
-    getAllBars().then((barData) => {
+    getRequest('bars').then((barData) => {
       const sorted = barData.sort((a, b) => b.is_safebar - a.is_safebar);
       setAllBars(sorted);
       setBarsData(sorted);

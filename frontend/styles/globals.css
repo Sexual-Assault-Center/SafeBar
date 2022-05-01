@@ -80,10 +80,7 @@ h1, h2, h2 {
 }
 
 .formContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  min-width: 80%;
+  padding: 20px;
 }
 
 .social-banner {
