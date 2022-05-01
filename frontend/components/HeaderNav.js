@@ -20,6 +20,7 @@ export default function HeaderNav() {
           show={show}
           onHide={handleClose}
           placement="end"
+          variant="dark"
         >
           <Offcanvas.Header className="offcanvas-header" closeButton>
             <Offcanvas.Title id="offcanvasNavbarLabel">

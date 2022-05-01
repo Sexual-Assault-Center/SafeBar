@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import HeadDetails from '../components/HeadDetails';
 import ResourcesCard from '../components/ResourcesCard';
-import { getResources } from '../utils/api';
+import { getRequest } from '../utils/api';
 
 export default function Resources() {
   const [resources, setResources] = useState([]);
 
   useEffect(() => {
-    getResources().then((res) => {
+    getRequest('resources').then((res) => {
       setResources(res);
     });
   }, []);

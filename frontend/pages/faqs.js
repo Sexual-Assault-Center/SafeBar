@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Accordion } from 'react-bootstrap';
 import HeadDetails from '../components/HeadDetails';
-import { getAllFAQs } from '../utils/api';
+import { getRequest } from '../utils/api';
 
 export default function Faqs() {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
     let isMounted = true;
-    getAllFAQs().then((faqsArray) => {
+    getRequest('faqs').then((faqsArray) => {
       if (isMounted) {
         const sortedArray = faqsArray.sort((a, b) => {
           const aItem = a.question;

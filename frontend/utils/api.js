@@ -2,22 +2,14 @@ import URLS from '../constants/urls';
 
 const urlBase = URLS.API_URL;
 
-const getResources = () => fetch(`${urlBase}resources/`).then((res) => res.json());
+const getRequest = (path) => fetch(`${urlBase}${path}/`).then((res) => res.json());
 
-const getContacts = () => fetch(`${urlBase}contacts/`).then((res) => res.json());
-
-const getAllFAQs = () => fetch(`${urlBase}faqs/`).then((res) => res.json());
-
-const getAllBars = () => fetch(`${urlBase}bars/`).then((res) => res.json());
-
-const getAllReportTypes = () => fetch(`${urlBase}reporttypes/`).then((res) => res.json());
-
-const postReport = (reportObj) => fetch(`${urlBase}bar-report/`, {
-  body: JSON.stringify(reportObj),
+const postRequest = (path, obj) => fetch(`${urlBase}${path}/`, {
+  body: JSON.stringify(obj),
   method: 'POST',
   headers: {
-    "Content-Type": "application/json"
-  }
+    'Content-Type': 'application/json',
+  },
 });
 
 // const getSearch = (query) => {
@@ -25,8 +17,6 @@ const postReport = (reportObj) => fetch(`${urlBase}bar-report/`, {
 //   return null;
 // }
 
-const getLanding = () => fetch(`${urlBase}landing/`).then((res) => res.json());
-
 export {
-  getResources, getContacts, getAllFAQs, getLanding, getAllBars, getAllReportTypes, postReport
+  getRequest, postRequest,
 };
