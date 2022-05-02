@@ -12,11 +12,16 @@ const postRequest = (path, obj) => fetch(`${urlBase}${path}/`, {
   },
 });
 
-// const getSearch = (query) => {
-//   // return fetch(`${urlBase}search?query=${query}/`) Placeholder until endpoint exists
-//   return null;
-// }
+const addFav = (uid, barId) => fetch(`${urlBase}favorite/new-favorite/${uid}/${barId}/`, {
+  body: JSON.stringify({}),
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+const getFavsByUid = (uid) => fetch(`${urlBase}favorite/${uid}/`).then((res) => res.json());
 
 export {
-  getRequest, postRequest,
+  getRequest, postRequest, addFav, getFavsByUid,
 };
