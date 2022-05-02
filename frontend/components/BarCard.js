@@ -20,6 +20,7 @@ import { signInUser } from '../utils/auth';
 
 const BarCard = ({
   uuid,
+  saved_by_user,
   is_safebar,
   name,
   street_address,
@@ -95,9 +96,13 @@ const BarCard = ({
                 <FaThumbsDown className="mx-1" />
               </Button>
             </div>
-            <Button className="me-2 outline-style" onClick={handleFav}>
-              <BiDrink className="me-2" /> SAVE
-            </Button>
+            {
+              !saved_by_user && (
+                <Button className="me-2 outline-style" onClick={handleFav}>
+                  <BiDrink className="me-2" /> SAVE
+                </Button>
+              )
+            }
           </div>
         </div>
       </Card.Body>
@@ -110,6 +115,7 @@ export default BarCard;
 BarCard.propTypes = {
   uuid: PropTypes.string.isRequired,
   is_safebar: PropTypes.bool,
+  saved_by_user: PropTypes.bool,
   name: PropTypes.string.isRequired,
   street_address: PropTypes.string,
   city: PropTypes.string.isRequired,
@@ -120,6 +126,7 @@ BarCard.propTypes = {
 
 BarCard.defaultProps = {
   is_safebar: false,
+  saved_by_user: false,
   street_address: '',
   zip: '',
   phone: '',

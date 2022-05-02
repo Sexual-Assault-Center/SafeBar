@@ -18,11 +18,19 @@ export default function Bars() {
 
   // TODO: needs to be refactored for pagination
   const getBars = () => {
-    getRequest('bars').then((barData) => {
-      const sorted = barData.sort((a, b) => b.is_safebar - a.is_safebar);
-      setAllBars(sorted);
-      setBarsData(sorted);
-    }).then(() => setLoading(false));
+    if (user) {
+      getRequest(`bars/by-uid/${user.uid}`).then((barData) => {
+        const sorted = barData.sort((a, b) => b.is_safebar - a.is_safebar);
+        setAllBars(sorted);
+        setBarsData(sorted);
+      }).then(() => setLoading(false));
+    } else {
+      getRequest('bars').then((barData) => {
+        const sorted = barData.sort((a, b) => b.is_safebar - a.is_safebar);
+        setAllBars(sorted);
+        setBarsData(sorted);
+      }).then(() => setLoading(false));
+    }
   };
 
   useEffect(() => {
@@ -87,7 +95,6 @@ export default function Bars() {
             <BarCard
               key={bar.uuid}
               {...bar}
-              user={user}
             />
           ))
         ) : (
