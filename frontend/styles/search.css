@@ -1,0 +1,50 @@
+/****** SEARCH COMPONENTS  */
+.searchForm {
+  display: flex;
+  justify-content: center;
+}
+
+#search {
+  background-color: #38285D;
+  border: none !important;
+  color: #C1A6FF !important;
+  width: 70%;
+  border-radius: 12px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-right: 10px;
+}
+
+form #search:focus {
+  border: none !important;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+#search:focus {
+  outline-offset: 0px !important;
+  outline: none !important;
+}
+
+#search::placeholder {
+  color: #C1A6FF !important;
+}
+.searchContainer i {
+  position: absolute;
+  margin-left: -285px;
+  margin-top: 0px;
+  padding-right: 20px;
+  font-size: 21px;
+  color: #C1A6FF;
+}
+
+.icon {
+  padding: 10px;
+  min-width: 40px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}

@@ -16,39 +16,32 @@
 
 
 {% block content %}
-<div class="alert-container">
-    {% if success %}
-    <div class="alert alert-success" role="alert">
-        {{ name }} Updated!
-    </div>
-    {% endif %}
-</div>
 <h1>{{ header_text }}</h1>
+<div class="d-flex p-2 flex-column align-items-center">
+    <form class="w-75 m-2" action="{% url update_url uuid %}" method="post">
+        {% csrf_token %}
+        <div class="d-flex flex-column mb-3 align-content-center">
+            {% for field in form %}
+            <div class="form-group w-auto  p-2">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                <div class="invalid-feedback">
+                    {{ field.errors }}
+                </div>
+            </div>
+            {% endfor %}
 
-<form action="{% url update_url uuid %}" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Update">
-</form>
-<form action="{% url delete_url uuid %}" method="post">
-    {% csrf_token %}
-    <input type="submit" value="Delete">
-</form>
+        </div>
+        <button class="btn btn-primary btn-lg btn-block w-100" type="submit">Update</button>
+
+
+    </form>
+    <form class="w-75 m-2" action="{% url delete_url uuid %}" method="post">
+        {% csrf_token %}
+            <button class="btn btn-danger btn-lg btn-block w-100" type="submit">Delete</button>
+    </form>
+</div>
 {% endblock %}
-
-{% block customjs %}
-{{ success|json_script:"success" }}
-<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-
-<script>
-    const success = JSON.parse(document.getElementById('success').textContent);
-
-    $(document).ready(function () {
-        if (success) {
-
-            setTimeout(() => $(".alert").alert('close'), 3000)
-        }
-    });
-</script>
-{% endblock customjs %}

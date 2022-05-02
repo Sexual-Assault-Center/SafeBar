@@ -10,14 +10,15 @@ export default function Training() {
         title="Training"
         description="Making Nightlife Safer for Everyone"
       />
-      <Card className="px-5 py-5">
-        <Card.Title className="text-center">Safebar Training.<br />What is it?</Card.Title>
-        <Card.Header className="text-center">
+      <h2>SAFEBAR TRAINING</h2>
+      <Card className="m-auto training-style">
+        <Card.Title className="text-center"><br />What is it?<br /></Card.Title>
+        <Card.Header className="text-center cardBodyText">
           Safe Bar TN is a network of bars, restaurants, and community
           organizations working together to prevent sexual violence and create
           safe nightlife spaces.
         </Card.Header>
-        <Card.Body>
+        <Card.Body className="cardBodyText">
           <ul>
             <li>Training is FREE</li>
             <li>In-person training</li>
@@ -50,7 +51,13 @@ export default function Training() {
             </li>
           </ul>
         </Card.Body>
-        <ButtonComp buttonText="SIGN UP FOR TRAINING" href={NAVIGATION.TRAINING_LINK} />
+        <ButtonComp
+          buttonText="SIGN UP FOR TRAINING"
+          onClick={(e) => {
+            e.preventDefault();
+            window.open(NAVIGATION.TRAINING_LINK, '_blank');
+          }}
+        />
       </Card>
     </>
   );

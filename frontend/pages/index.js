@@ -8,14 +8,14 @@ import {
 import HeadDetails from '../components/HeadDetails';
 import { cardData } from '../data/homepageCards';
 import FeatureCard from '../components/FeatureCard';
-// import { getLanding } from '../utils/api';
+// import { getRequest } from '../utils/api';
 
 export default function Home() {
   // const [landing, setLanding] = useState({});
 
   // useEffect(() => {
   //   let isMounted = true;
-  //   getLanding().then((landingObj) => {
+  //   getRequest('landing).then((landingObj) => {
   //     if (isMounted) {
   //       setLanding(landingObj);
   //     }
@@ -28,10 +28,10 @@ export default function Home() {
   return (
     <div>
       <HeadDetails
-        title="Welcome"
+        title="SAFEBAR"
         description="Making Nightlife Safer for Everyone"
       />
-      <h2>SPOTLIGHT ON:</h2>
+      <h2>GET INVOLVED</h2>
       {/* <div mediaUrl={landing.mediaUrl} isVideo={landing.isVideo} clickUrl="foobar">
         {landing.isVideo
           ? <ReactPlayer url={landing.mediaUrl} />
@@ -49,7 +49,7 @@ export default function Home() {
             buttonText={card.buttonText}
             img={card.image}
             text={card.text}
-            href={card.href}
+            onClick={(e) => { e.preventDefault(); window.open(card.href, 'target'); }}
             disabledButton={card.disabledButton}
           />
         ))}

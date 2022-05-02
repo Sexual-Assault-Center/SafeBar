@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Accordion } from 'react-bootstrap';
 import HeadDetails from '../components/HeadDetails';
-import { getAllFAQs } from '../utils/api';
+import { getRequest } from '../utils/api';
 
 export default function Faqs() {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
     let isMounted = true;
-    getAllFAQs().then((faqsArray) => {
+    getRequest('faqs').then((faqsArray) => {
       if (isMounted) {
         const sortedArray = faqsArray.sort((a, b) => {
           const aItem = a.question;
@@ -37,11 +37,11 @@ export default function Faqs() {
       />
       <h1>FAQs</h1>
       <div id="faqDiv">
-        <Accordion>
+        <Accordion className="accord">
           {faqs.map((item) => (
             <Accordion.Item eventKey={item.uuid} key={item.uuid}>
               <Accordion.Header>{item.question}</Accordion.Header>
-              <Accordion.Body>{item.answer}</Accordion.Body>
+              <Accordion.Body className="accord-text">{item.answer}</Accordion.Body>
             </Accordion.Item>
           ))}
         </Accordion>

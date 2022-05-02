@@ -1,0 +1,32 @@
+/* BUTTON STYLES */
+.outline-style {
+  border: 2px solid #F1EDF1 !important;
+  border-radius: 8px !important;
+  color: #F1EDF1 !important;
+  background: none;
+  font-family: 'Oswald', sans-serif;
+}
+
+.outline-style:hover {
+  background: #38285D !important;
+  border: 2px solid #F1EDF1 !important;
+  font-family: 'Oswald', sans-serif;
+}
+
+.reg-button-style {
+  background: #38285D !important;
+  color: #C1A6FF !important;
+  font-family: 'Oswald', sans-serif;
+  border: none!important;
+  border-radius: 8px !important;
+}
+
+.reg-button-style:hover {
+  background: #C1A6FF !important;
+  color: #2B1F47 !important;
+  font-family: 'Oswald', sans-serif;
+  border: none !important;
+  border-radius: 8px !important;
+  opacity: 80% !important;
+}
+/* END BUTTON STYLES */

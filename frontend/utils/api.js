@@ -2,21 +2,33 @@ import URLS from '../constants/urls';
 
 const urlBase = URLS.API_URL;
 
-const getResources = () => fetch(`${urlBase}resources/`).then((res) => res.json());
+const getRequest = (path) => fetch(`${urlBase}${path}/`).then((res) => res.json());
 
-const getContacts = () => fetch(`${urlBase}contacts/`).then((res) => res.json());
+const postRequest = (path, obj) => fetch(`${urlBase}${path}/`, {
+  body: JSON.stringify(obj),
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
-const getAllFAQs = () => fetch(`${urlBase}faqs/`).then((res) => res.json());
+const addFav = (uid, barId) => fetch(`${urlBase}favorite/new-favorite/${uid}/${barId}/`, {
+  body: JSON.stringify({}),
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+const removeFavorite = (uuid) => fetch(`${urlBase}favorite/by-uuid/${uuid}/`, {
+  body: JSON.stringify({}),
+  method: 'DELETE',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
-const getAllBars = () => fetch(`${urlBase}bars/`).then((res) => res.json());
-
-// const getSearch = (query) => {
-//   // return fetch(`${urlBase}search?query=${query}/`) Placeholder until endpoint exists
-//   return null;
-// }
-
-const getLanding = () => fetch(`${urlBase}landing/`).then((res) => res.json());
+const getFavsByUid = (uid) => fetch(`${urlBase}favorite/${uid}/`).then((res) => res.json());
 
 export {
-  getResources, getContacts, getAllFAQs, getLanding, getAllBars,
+  getRequest, postRequest, addFav, getFavsByUid, removeFavorite,
 };

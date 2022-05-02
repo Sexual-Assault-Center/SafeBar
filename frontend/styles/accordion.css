@@ -1,0 +1,36 @@
+/* ACCORDION DESIGN */
+.helpAccord {
+  margin-top: 25vh;
+}
+.accord {
+  margin-top: 50px;
+}
+.accord-text {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+.accordion-item {
+  background-color: #fff;
+  border: none !important;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+.accordion-item:first-of-type {
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0rem;
+}
+.accordion-button {
+  display:block;
+  text-align: center;
+  color: #C1A6FF  !important;
+  background-color: #38285D !important;
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+.accordion-header {
+  background-color: #38285D !important;
+  color: #C1A6FF !important;
+}
+.accordion-body {
+  color: black !important;
+}
+/* ACCORDION DES END */
