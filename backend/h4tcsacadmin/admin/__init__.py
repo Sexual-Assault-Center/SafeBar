@@ -13,6 +13,7 @@ from h4tcsacapp.models.bar import Bar
 from h4tcsacapp.models.bar_report import BarReport
 from h4tcsacapp.models.contact import Contact
 from h4tcsacapp.models.faq import FAQ
+from h4tcsacapp.models.favorite import Favorite
 from h4tcsacapp.models.landing_content import LandingContent
 from h4tcsacapp.models.rating import Rating
 from h4tcsacapp.models.report_type import ReportType
@@ -116,8 +117,9 @@ admin_site.register(Bar)
 admin_site.register(BarReport)
 admin_site.register(Contact)
 admin_site.register(FAQ)
+admin_site.register(Favorite)
+admin_site.register(LandingContent)
 admin_site.register(Rating)
 admin_site.register(ReportType)
 admin_site.register(Resource)
 admin_site.register(Sponser)
-admin_site.register(LandingContent)
