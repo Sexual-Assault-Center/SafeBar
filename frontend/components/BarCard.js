@@ -4,8 +4,14 @@ import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 import { BsShieldFillCheck } from 'react-icons/bs';
-import { FaThumbsDown, FaThumbsUp } from 'react-icons/fa';
-import { AiOutlineWarning, AiOutlineCheckCircle } from 'react-icons/ai';
+import {
+  FaThumbsDown,
+  // FaThumbsUp,
+} from 'react-icons/fa';
+import {
+  AiOutlineWarning,
+  // AiOutlineCheckCircle,
+} from 'react-icons/ai';
 import { BiDrink } from 'react-icons/bi';
 import { useRouter } from 'next/router';
 import { useAuth } from '../utils/context/authContext';
@@ -58,27 +64,27 @@ const BarCard = ({
               )}
             </div>
           </Card.Title>
+        </div>
+        <div>
+          {street_address}, {city} {zip}
           <div className="d-flex">
-            <div className="pos-report">
+            {/* <div className="pos-report">
               <AiOutlineCheckCircle size={16} /> {bar_report_count}
-            </div>
+            </div> */}
             <div className="neg-report">
               <AiOutlineWarning size={16} /> {bar_report_count}
             </div>
           </div>
-        </div>
-        <div>
-          {street_address}, {city} {zip}
           <br />
           <a href={`tel:${phone}`}>{phone}</a>
           <div className="d-flex flex-row no-wrap align-items-center mt-2 justify-content-between">
             <div>
-              <Button
+              {/* <Button
                 className="me-2 outline-style"
                 onClick={() => handleClick(uuid)}
               >
                 <FaThumbsUp className="mx-1" />
-              </Button>
+              </Button> */}
               <Button
                 className="me-2 outline-style"
                 onClick={() => handleClick(uuid)}
