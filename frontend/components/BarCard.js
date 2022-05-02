@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable camelcase */
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
@@ -7,6 +8,9 @@ import { FaThumbsDown, FaThumbsUp } from 'react-icons/fa';
 import { AiOutlineWarning, AiOutlineCheckCircle } from 'react-icons/ai';
 import { BiDrink } from 'react-icons/bi';
 import { useRouter } from 'next/router';
+import { useAuth } from '../utils/context/authContext';
+import { addFav } from '../utils/api';
+import { signInUser } from '../utils/auth';
 
 const BarCard = ({
   uuid,
@@ -16,23 +20,30 @@ const BarCard = ({
   city,
   zip,
   phone,
-  func,
   bar_report_count,
 }) => {
   const router = useRouter();
+  const { user } = useAuth();
 
   const handleClick = (id) => {
     router.push(`/report/${id}`);
   };
 
-  const imageUrl = 'https://assets3.thrillist.com/v1/image/3059875/1584x1056/flatten;crop;webp=auto;jpeg_quality=50.jpg';
+  // const imageUrl = 'https://assets3.thrillist.com/v1/image/3059875/1584x1056/flatten;crop;webp=auto;jpeg_quality=50.jpg';
+
+  const handleFav = () => {
+    if (!Object.keys(user).length) {
+      return signInUser();
+    }
+    addFav(user.uid, uuid).then(() => router.push('/lists'));
+  };
 
   return (
     <Card
       className="card-style"
       style={{
         width: '18rem',
-        backgroundImage: `url(${imageUrl})`,
+        // backgroundImage: `url(${imageUrl})`,
       }}
     >
       <Card.Body>
@@ -56,7 +67,7 @@ const BarCard = ({
             </div>
           </div>
         </div>
-        <Card.Text>
+        <div>
           {street_address}, {city} {zip}
           <br />
           <a href={`tel:${phone}`}>{phone}</a>
@@ -75,11 +86,11 @@ const BarCard = ({
                 <FaThumbsDown className="mx-1" />
               </Button>
             </div>
-            <Button className="me-2 outline-style" onClick={func}>
+            <Button className="me-2 outline-style" onClick={handleFav}>
               <BiDrink className="me-2" /> SAVE
             </Button>
           </div>
-        </Card.Text>
+        </div>
       </Card.Body>
     </Card>
   );
@@ -95,7 +106,6 @@ BarCard.propTypes = {
   city: PropTypes.string.isRequired,
   zip: PropTypes.string,
   phone: PropTypes.string,
-  func: PropTypes.func.isRequired,
   bar_report_count: PropTypes.number,
 };
 

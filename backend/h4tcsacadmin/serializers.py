@@ -56,6 +56,7 @@ class AdminBarReportSerializer(serializers.ModelSerializer):
             'report_type',
             'comment',
             'date_submitted',
+            'is_visible',
         ]
 
     def get_bar(self, obj):

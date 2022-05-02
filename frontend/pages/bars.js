@@ -1,5 +1,4 @@
 /* eslint-disable no-nested-ternary */
-/* eslint-disable consistent-return */
 import { useState, useEffect } from 'react';
 import { BsShieldFillCheck } from 'react-icons/bs';
 import { Spinner } from 'react-bootstrap';
@@ -8,7 +7,6 @@ import Searchbar from '../components/Searchbar';
 import BarCard from '../components/BarCard';
 import HeadDetails from '../components/HeadDetails';
 import { useAuth } from '../utils/context/authContext';
-import { signInUser } from '../utils/auth';
 import { getRequest } from '../utils/api';
 
 export default function Bars() {
@@ -61,12 +59,6 @@ export default function Bars() {
     }
   };
 
-  const checkUserStatus = () => {
-    if (!Object.keys(user).length) {
-      return signInUser();
-    }
-  };
-
   return (
     <>
       <HeadDetails
@@ -96,7 +88,6 @@ export default function Bars() {
               key={bar.uuid}
               {...bar}
               user={user}
-              func={checkUserStatus}
             />
           ))
         ) : (
