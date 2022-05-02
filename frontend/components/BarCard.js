@@ -35,6 +35,7 @@ const BarCard = ({
     router.push(`/report/${id}`);
   };
 
+  // TODO: This is the start for the images in the bg on stretch
   // const imageUrl = 'https://assets3.thrillist.com/v1/image/3059875/1584x1056/flatten;crop;webp=auto;jpeg_quality=50.jpg';
 
   const handleFav = () => {
@@ -68,6 +69,7 @@ const BarCard = ({
         <div>
           {street_address}, {city} {zip}
           <div className="d-flex">
+            {/* TODO: Add back once positive endpoint is set up  */}
             {/* <div className="pos-report">
               <AiOutlineCheckCircle size={16} /> {bar_report_count}
             </div> */}
@@ -79,6 +81,7 @@ const BarCard = ({
           <a href={`tel:${phone}`}>{phone}</a>
           <div className="d-flex flex-row no-wrap align-items-center mt-2 justify-content-between">
             <div>
+              {/* TODO: Add back once positive endpoint is set up  */}
               {/* <Button
                 className="me-2 outline-style"
                 onClick={() => handleClick(uuid)}
