@@ -1,9 +1,15 @@
+/* eslint-disable consistent-return */
 /* eslint-disable camelcase */
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
 import { BsShieldFillCheck } from 'react-icons/bs';
+import { BiDrink } from 'react-icons/bi';
 import { useRouter } from 'next/router';
 import ButtonComp from './Button';
+import { useAuth } from '../utils/context/authContext';
+import { addFav } from '../utils/api';
+import { signInUser } from '../utils/auth';
 
 const BarCard = ({
   uuid,
@@ -13,13 +19,20 @@ const BarCard = ({
   city,
   zip,
   phone,
-  func,
   bar_report_count,
 }) => {
   const router = useRouter();
+  const { user } = useAuth();
 
   const handleClick = (id) => {
     router.push(`/report/${id}`);
+  };
+
+  const handleFav = () => {
+    if (!Object.keys(user).length) {
+      return signInUser();
+    }
+    addFav(user.uid, uuid).then(() => router.push('/lists'));
   };
 
   return (
@@ -47,12 +60,9 @@ const BarCard = ({
             outline
             onClick={() => handleClick(uuid)}
           />
-          <ButtonComp
-            buttonText="favorite"
-            type="button"
-            outline
-            onClick={func}
-          />
+          <Button className="me-2 outline-style" onClick={handleFav}>
+            <BiDrink className="me-2" /> SAVE
+          </Button>
         </div>
       </Card.Body>
     </Card>
@@ -69,7 +79,6 @@ BarCard.propTypes = {
   city: PropTypes.string.isRequired,
   zip: PropTypes.string,
   phone: PropTypes.string,
-  func: PropTypes.func.isRequired,
   bar_report_count: PropTypes.number,
 };
 
