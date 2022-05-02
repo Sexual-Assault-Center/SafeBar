@@ -30,10 +30,10 @@ export default function Lists() {
         title="Your Saved Bars"
         description="Making Nightlife Safer for Everyone"
       />
-      <div className="card-cont d-flex flex-wrap justify-content-center">
-        {Object.keys(user).length ? (
-          <>
-            <h1 className="text-center">SAVED BARS</h1>
+      {Object.keys(user).length ? (
+        <>
+          <h1 className="text-center">SAVED BARS</h1>
+          <div className="card-cont d-flex flex-wrap justify-content-center">
             {loading ? (
               <Spinner animation="border" variant="secondary" />
             ) : favs.length ? (
@@ -48,13 +48,13 @@ export default function Lists() {
             ) : (
               <h2>No Saved Bars</h2>
             )}
-          </>
-        ) : (
-          <>
-            <Signin title="TO SEE YOUR SAVED BARS" />
-          </>
-        )}
-      </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <Signin title="TO SEE YOUR SAVED BARS" />
+        </>
+      )}
     </>
   );
 }
