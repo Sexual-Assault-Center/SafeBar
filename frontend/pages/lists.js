@@ -30,10 +30,10 @@ export default function Lists() {
         title="Your Saved Bars"
         description="Making Nightlife Safer for Everyone"
       />
-      <h1 className="text-center">SAVED BARS</h1>
       <div className="card-cont d-flex flex-wrap justify-content-center">
         {Object.keys(user).length ? (
           <>
+            <h1 className="text-center">SAVED BARS</h1>
             {loading ? (
               <Spinner animation="border" variant="secondary" />
             ) : favs.length ? (
