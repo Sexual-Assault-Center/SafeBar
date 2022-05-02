@@ -2,16 +2,24 @@
 /* eslint-disable camelcase */
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
 import { BsShieldFillCheck } from 'react-icons/bs';
+import { removeFavorite } from '../utils/api';
 
 const FavCard = ({
+  id,
   is_safebar,
   name,
   street_address,
   city,
   zip,
   phone,
+  getFavs,
 }) => {
+  const removeFav = () => {
+    removeFavorite(id).then(getFavs);
+  };
+
   return (
     <Card style={{ width: '18rem', backgroundColor: '#001022', color: 'white' }}>
       <Card.Body>
@@ -24,6 +32,7 @@ const FavCard = ({
           <br />
           <a href={`tel:${phone}`}>{phone}</a>
         </Card.Text>
+        <Button onClick={removeFav}>Remove</Button>
       </Card.Body>
     </Card>
   );
@@ -37,6 +46,8 @@ FavCard.propTypes = {
   street_address: PropTypes.string,
   city: PropTypes.string.isRequired,
   zip: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  getFavs: PropTypes.func.isRequired,
   phone: PropTypes.string,
 };
 
