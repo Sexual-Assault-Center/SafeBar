@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
-import { Button } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
+import ButtonComp from '../components/Button';
 import HeadDetails from '../components/HeadDetails';
 import { userHelp, barHelp } from '../data/help';
 
@@ -18,7 +18,12 @@ export default function Help() {
             <Accordion.Body>
               <p>{userHelp.emergency}</p>
               <p dangerouslySetInnerHTML={{ __html: userHelp.hotline }} />
-              <Button className="btn btn-primary" onClick={() => { window.open(userHelp.chatUrl, '_blank'); }} rel="noreferrer">{userHelp.chat}</Button>
+              <ButtonComp
+                onClick={() => {
+                  window.open(userHelp.chatUrl, '_blank');
+                }}
+                buttonText={userHelp.chat}
+              />
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
