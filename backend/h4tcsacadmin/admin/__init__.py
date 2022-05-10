@@ -1,4 +1,5 @@
 from datetime import date
+from django.contrib.auth.admin import UserAdmin
 
 from dateutil.relativedelta import *
 from django.contrib import admin
@@ -113,7 +114,7 @@ class CustomAdminSite(admin.AdminSite):
 
 admin_site = CustomAdminSite(name='myadmin')
 
-admin_site.register(User)
+admin_site.register(User, UserAdmin)
 admin_site.register(Bar)
 admin_site.register(BarReport)
 admin_site.register(Contact)
