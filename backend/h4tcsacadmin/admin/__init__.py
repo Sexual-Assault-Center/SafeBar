@@ -27,7 +27,7 @@ class CustomAdminSite(admin.AdminSite):
     def index(self, request, extra_context=None):
         bar_reports = BarReport.objects.all()
         bars = Bar.objects.filter(is_safebar=True)
-        bar_reports_data = BarReportExpandedSerializer(bar_reports, many=True).data[:-4]
+        bar_reports_data = BarReportExpandedSerializer(bar_reports, many=True).data[-4:]
 
         for (index, report) in enumerate(bar_reports_data):
             y, m, d = report['date_submitted'].split("T")[0].split("-")
@@ -52,7 +52,6 @@ class CustomAdminSite(admin.AdminSite):
             bar_data = BarContactSerializer(bar).data
             (y, m, d) = str(expiration).split("-")
             bar_data["expiration"] = "%s/%s/%s" % (m, d, y)
-            print(bar_data["expiration"])
             context_expired_bars.append(bar_data)
 
         return TemplateResponse(request, self.index_template or 'dashboard/index.html', {
