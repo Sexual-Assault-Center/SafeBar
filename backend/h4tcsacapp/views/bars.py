@@ -33,7 +33,6 @@ class BarViewSet(ModelViewSet):
         for bar in bars:
             serializedBar = BarSerializer(bar).data
             bar_set = Favorite.objects.filter(uid=uid).filter(bar=bar)
-            print(len(bar_set))
             visible_bar_reports = BarReport.objects.filter(is_visible=True)
             serializedBar["saved_by_user"] = True if len(bar_set) else False
             serializedBar["bar_report_count"] = visible_bar_reports.filter(bar_id=bar.uuid).count()

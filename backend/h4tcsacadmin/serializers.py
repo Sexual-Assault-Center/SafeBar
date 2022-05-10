@@ -67,7 +67,6 @@ class AdminBarReportSerializer(serializers.ModelSerializer):
 
     def get_date_submitted(self, obj):
         y, m, d = str(obj.date_submitted).split(" ")[0].split("-")
-        print(str(obj.date_submitted))
         return "%s/%s/%s" % (m, d, y)
 
 
