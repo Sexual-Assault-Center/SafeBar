@@ -2,6 +2,7 @@ from datetime import date
 
 from dateutil.relativedelta import *
 from django.contrib import admin
+from django.contrib.auth.models import User
 from django.template.response import TemplateResponse
 from h4tcsacadmin.forms import BarForm, BarReportForm, ContactForm, FAQForm, ResourceForm
 from h4tcsacadmin.serializers import (AdminBarReportSerializer, AdminBarSerializer,
@@ -112,6 +113,7 @@ class CustomAdminSite(admin.AdminSite):
 
 admin_site = CustomAdminSite(name='myadmin')
 
+admin_site.register(User)
 admin_site.register(Bar)
 admin_site.register(BarReport)
 admin_site.register(Contact)
