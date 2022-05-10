@@ -63,7 +63,6 @@ class CustomDjangoViews():
             else:
                 messages.error(request, '%s failed to update. Try again!' % self.title)
                 form = self.form(request.POST, instance=model_instance)
-        print(request.POST)
         form = self.form(instance=model_instance)
 
         return render(request, 'admin/update.html', {
