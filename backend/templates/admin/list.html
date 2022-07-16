@@ -21,7 +21,7 @@
 {% if create_url %}
 <a class="btn btn-success btn-lg active" href="{% url create_url %}">Create</a>
 {% endif %}
-<table id="example" class="display" style="width:100%">
+<table id="example" class="display compact" style="width:100%">
     <thead>
         <tr>
             {% for header in headers %}
@@ -81,7 +81,9 @@
                     visible: i !== 0
                 })
             ),
-
+            scrollY: '200px',
+            scrollCollapse: true,
+            scrollX: true,
         });
     });
 </script>
