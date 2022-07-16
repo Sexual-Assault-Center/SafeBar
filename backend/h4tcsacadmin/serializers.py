@@ -52,7 +52,6 @@ class AdminBarSerializer(serializers.ModelSerializer):
         ]
 
 
-
 class AdminBarReportSerializer(serializers.ModelSerializer):
     bar = serializers.SerializerMethodField()
     report_type = serializers.SerializerMethodField()
