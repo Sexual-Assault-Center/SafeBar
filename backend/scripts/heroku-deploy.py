@@ -3,18 +3,9 @@ import sys
 
 import environ
 from git import Repo
+from . import QA_APP_NAME, QA_ARG, PROD_APP_NAME, QA_GIT_REPO, PROD_GIT_REPO, DEPLOY_DIR, GIT_RELATIVE_PATH, HEROKU
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-DEPLOY_DIR = "backend"
-
-GIT_RELATIVE_PATH = "../"
-
-QA_APP_NAME = "safebarapi-qa"
-PROD_APP_NAME = "safebarapi"
-
-QA_GIT_REPO = "https://git.heroku.com/safebarapi-qa.git"
-PROD_GIT_REPO = "https://git.heroku.com/safebarapi.git"
 
 
 def has_tool(name):
@@ -29,8 +20,8 @@ def has_tool(name):
 if __name__ == "__main__":
     # Check to see if user has Heroku CLI installed
 
-    has_heroku = has_tool("heroku")
-    app = QA_APP_NAME if "qa" in sys.argv else PROD_APP_NAME
+    has_heroku = has_tool(HEROKU)
+    app = QA_APP_NAME if QA_ARG in sys.argv else PROD_APP_NAME
 
     if not has_heroku:
         print("You need access to the Heroku CLI to use this script")
@@ -55,11 +46,11 @@ if __name__ == "__main__":
             os.chdir(backend_path)
 
         repo = Repo(GIT_RELATIVE_PATH)
-        if "safebarapi" not in repo.remotes:
-            repo.create_remote('safebarapi', PROD_GIT_REPO)
+        if QA_APP_NAME not in repo.remotes:
+            repo.create_remote(QA_APP_NAME, QA_GIT_REPO)
 
-        if "safebarapi-qa" not in repo.remotes:
-            repo.create_remote('safebarapi-qa', QA_GIT_REPO)
+        if PROD_APP_NAME not in repo.remotes:
+            repo.create_remote(PROD_APP_NAME, PROD_GIT_REPO)
 
         dependencies_installed = [
             os.popen("pip freeze | grep whitenoise").read(),
@@ -91,7 +82,7 @@ if __name__ == "__main__":
             os.system("heroku config:set FRONTEND_ORIGIN={0} --app {1}".format(
                 env("HEROKU_FRONTEND_ORIGIN"), app))
             os.system("heroku config:set API_HOST={0} --app {1}".format(
-                env("HEROKU_API_HOST_QA" if app == "safebarapi-qa" else "HEROKU_API_HOST"), app))
+                env("HEROKU_API_HOST_QA" if app == QA_APP_NAME else "HEROKU_API_HOST"), app))
             os.system("heroku config  --app {0}".format(app))
 
         active_branch = repo.active_branch

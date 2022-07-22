@@ -3,18 +3,9 @@ import sys
 
 import environ
 from git import Repo
+from . import QA_APP_NAME, PROD_APP_NAME, PROD_GIT_REPO, DEPLOY_DIR, GIT_RELATIVE_PATH, QA_ARG, RECERT_APP, HEROKU
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-DEPLOY_DIR = "worker"
-
-GIT_RELATIVE_PATH = "../"
-
-QA_APP_NAME = ""
-PROD_APP_NAME = "safebar-recertify"
-
-QA_GIT_REPO = ""
-PROD_GIT_REPO = "https://git.heroku.com/safebar-recertify.git"
 
 
 def has_tool(name):
@@ -29,8 +20,8 @@ def has_tool(name):
 if __name__ == "__main__":
     # Check to see if user has Heroku CLI installed
 
-    has_heroku = has_tool("heroku")
-    app = QA_APP_NAME if "qa" in sys.argv else PROD_APP_NAME
+    has_heroku = has_tool(HEROKU)
+    app = QA_APP_NAME if QA_ARG in sys.argv else PROD_APP_NAME
 
     if not has_heroku:
         print("You need access to the Heroku CLI to use this script")
@@ -55,26 +46,8 @@ if __name__ == "__main__":
             os.chdir(backend_path)
 
         repo = Repo(GIT_RELATIVE_PATH)
-        if "safebar-recertify" not in repo.remotes:
-            repo.create_remote('safebar-recertify', PROD_GIT_REPO)
-
-        # if "safebarapi-qa" not in repo.remotes:
-        #     repo.create_remote('safebarapi-qa', QA_GIT_REPO)
-
-        # dependencies_installed = [
-        #     os.popen("pip freeze | grep whitenoise").read(),
-        #     os.popen("pip freeze | grep dj-database-url").read(),
-        #     os.popen("pip freeze | grep psycopg2-binary").read(),
-        #     os.popen("pip freeze | grep gunicorn").read()
-        # ]
-
-        # if "" in dependencies_installed:
-        #     os.system(
-        #         "pipenv install \
-        #             whitenoise \
-        #             dj_database_url \
-        #             psycopg2-binary \
-        #             gunicorn")
+        if RECERT_APP not in repo.remotes:
+            repo.create_remote(RECERT_APP, PROD_GIT_REPO)
 
         has_all_variables = False not in [
             os.popen("heroku config:get EMAIL_USER  --app {0}".format(app)).read() != "\n",

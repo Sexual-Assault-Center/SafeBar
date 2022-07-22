@@ -61,15 +61,17 @@ To login navigate to: <http://127.0.0.1:8000/admin/>
 
 ## Deployment
 
-- How to deploy QA
+- How to deploy this heroku site
   - Make sure you're in the backend directory
   - run this script:
 
     ```python
-    python scripts/heroku-deploy.py qa
+    python scripts/heroku-deploy.py
     ```
 
   - It may ask you to login into heroku, do so.
   - It will then update env variables if needed in heroku
   - It will ask you to make sure you want to deploy the branch you're on
     - If you're sure select "Y"
+  - It will then run everything to deploy it.
+    - If there are any errors, they will either log in the terminal or within the heroku <https://dashboard.heroku.com/apps/safebarapi-qa/activity>
