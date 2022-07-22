@@ -1,7 +1,9 @@
 from datetime import date
+from django.contrib.auth.admin import UserAdmin
 
 from dateutil.relativedelta import *
 from django.contrib import admin
+from django.contrib.auth.models import User
 from django.template.response import TemplateResponse
 from h4tcsacadmin.forms import BarForm, BarReportForm, ContactForm, FAQForm, ResourceForm
 from h4tcsacadmin.serializers import (AdminBarReportSerializer, AdminBarSerializer,
@@ -27,7 +29,7 @@ class CustomAdminSite(admin.AdminSite):
     def index(self, request, extra_context=None):
         bar_reports = BarReport.objects.all()
         bars = Bar.objects.filter(is_safebar=True)
-        bar_reports_data = BarReportExpandedSerializer(bar_reports, many=True).data[:-4]
+        bar_reports_data = BarReportExpandedSerializer(bar_reports, many=True).data[-4:]
 
         for (index, report) in enumerate(bar_reports_data):
             y, m, d = report['date_submitted'].split("T")[0].split("-")
@@ -52,7 +54,6 @@ class CustomAdminSite(admin.AdminSite):
             bar_data = BarContactSerializer(bar).data
             (y, m, d) = str(expiration).split("-")
             bar_data["expiration"] = "%s/%s/%s" % (m, d, y)
-            print(bar_data["expiration"])
             context_expired_bars.append(bar_data)
 
         return TemplateResponse(request, self.index_template or 'dashboard/index.html', {
@@ -113,6 +114,7 @@ class CustomAdminSite(admin.AdminSite):
 
 admin_site = CustomAdminSite(name='myadmin')
 
+admin_site.register(User, UserAdmin)
 admin_site.register(Bar)
 admin_site.register(BarReport)
 admin_site.register(Contact)

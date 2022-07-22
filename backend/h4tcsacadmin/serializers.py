@@ -36,10 +36,19 @@ class AdminBarSerializer(serializers.ModelSerializer):
             "uuid",
             "name",
             "description",
+            "contact_name",
+            "phone_number",
+            "zip_code",
+            "street_address",
             "city",
             "email",
             "is_safebar",
             "is_approved",
+            "latitude",
+            "longitude",
+            "certification_date",
+            "image",
+            "website",
         ]
 
 
@@ -67,7 +76,6 @@ class AdminBarReportSerializer(serializers.ModelSerializer):
 
     def get_date_submitted(self, obj):
         y, m, d = str(obj.date_submitted).split(" ")[0].split("-")
-        print(str(obj.date_submitted))
         return "%s/%s/%s" % (m, d, y)
 
 

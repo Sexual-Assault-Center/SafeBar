@@ -1,4 +1,4 @@
-# H4TC 2022 - SafeBar :beers: - The Yelp of SafeBars
+# H4TC 2022: SafeBar :beers: - The Yelp of SafeBars
 
 [Deployed FrontEnd](https://safebar.netlify.app/)
 
