@@ -3,6 +3,7 @@
 @import 'buttons.css';
 @import 'search.css';
 @import 'cards.css';
+@import 'barCard.css';
 @import 'report.css';
 @import 'footer.css';
 @import 'offCanvasNav.css';
@@ -57,13 +58,6 @@ h1, h2, h2 {
   padding-bottom: 20px;
   border-radius: 8px !important;
   min-height: 70% !important;
-}
-
-@media only screen and (max-width: 600px) {
-  .card {
-    width: 100% !important;
-  }
-
 }
 .menuButton{
   min-height: 50px !important;

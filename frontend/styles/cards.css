@@ -28,3 +28,10 @@
   padding: 15px !important;
   font-family: 'Ubuntu', sans-serif !important;
 }
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 100% !important;
+  }
+
+}

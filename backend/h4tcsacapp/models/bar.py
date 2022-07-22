@@ -31,8 +31,5 @@ class Bar(models.Model):
     def __str__(self):
         return self.name
 
-    def needs_recertification(self):
-        print(self.certification_date)
-
     class Meta:
         ordering = ['certification_date']

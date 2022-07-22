@@ -1,8 +1,8 @@
-# H4TC 2022 - SafeBar :beers: - The Yelp of SafeBars
+# H4TC 2022: SafeBar :beers: - The Yelp of SafeBars
 
 [Deployed FrontEnd](https://safebar.netlify.app/)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d034434e-3477-4413-a222-df78408355c4/deploy-status)](https://app.netlify.com/sites/safebartn/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c7eff59b-ca51-45a8-b353-86253800bf20/deploy-status)](https://app.netlify.com/sites/safebar/deploys)
 
 ![SafeBar](/images/Safe-Bar-img.png)
 

@@ -1,0 +1,86 @@
+/* 
+.card-width {
+  width: 26rem;
+  height: 18rem;
+}
+
+.card-title {
+  font-family: 'Oswald', sans-serif;
+  font: bold;
+  color: #F1EDF1 !important;
+}
+
+.card-border-radius {
+  border-radius: 25px;
+  border: none;
+}
+
+.card-style::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 103%;
+  height: 100%;
+  overflow: hidden;
+  background-image: radial-gradient(#2B1F47, #001022);
+  opacity: .8;
+  z-index: 1;
+}
+
+.card-style > * {
+  z-index: 100;
+}
+
+.card-style {
+  color: #F1EDF1 !important;
+  margin: 5px;
+  padding-left: 5%;
+  padding-right: 0 !important;
+  height: 300px;
+  background: radial-gradient(#2B1F47, #001022);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cardBodyText {
+  padding: 15px !important;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pos-report,
+.neg-report {
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+.card-text {
+  position: relative;
+  left: 0;
+  width: 26rem;
+  background-color: #2B1F47;
+  margin-left: -35px;
+  margin-right: -18px;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 100% !important;
+  }
+  .card-text {
+    position: relative;
+    left: 0;
+    background-color: #2B1F47;
+    margin-left: -35px;
+    margin-right: -18px;
+    padding: 20px;
+  }
+
+} */

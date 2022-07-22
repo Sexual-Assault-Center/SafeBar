@@ -66,6 +66,7 @@ export default function Report() {
                       type="radio"
                       label={reportObject.name}
                       value={reportObject.uuid}
+                      key={reportObject.uuid}
                       className="text-light"
                       required
                     />

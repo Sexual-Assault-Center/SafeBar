@@ -1,66 +1,105 @@
-// /* eslint-disable camelcase */
-// import Card from 'react-bootstrap/Card';
-// import PropTypes from 'prop-types';
-// import { Button, ButtonGroup } from 'react-bootstrap';
-// import { BsShieldFillCheck } from 'react-icons/bs';
-// import { useRouter } from 'next/router';
+/* eslint-disable consistent-return */
+/* eslint-disable camelcase */
+import Card from 'react-bootstrap/Card';
+import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
+import { BsShieldFillCheck } from 'react-icons/bs';
+import {
+  FaThumbsDown,
+  // FaThumbsUp
+} from 'react-icons/fa';
+import { BiDrink } from 'react-icons/bi';
+import { useRouter } from 'next/router';
+import { removeFavorite } from '../utils/api';
 
-// const FavCard = ({
-//   // img,
-//   uuid,
-//   is_safebar,
-//   name,
-//   street_address,
-//   city,
-//   zip,
-//   phone,
-//   func,
-//   bar_report_count,
-// }) => {
-//   const router = useRouter();
+const FavCard = ({
+  id,
+  uuid,
+  is_safebar,
+  name,
+  street_address,
+  city,
+  zip,
+  phone,
+  getFavs,
+}) => {
+  const router = useRouter();
 
-//   const handleClick = (id) => {
-//     router.push(`/report/${id}`);
-//   };
+  const handleClick = (barId) => {
+    router.push(`/report/${barId}`);
+  };
 
-//   return (
-//     <Card style={{ width: '18rem' }}>
-//       {/* <Card.Img variant="top" src={img} /> */}
-//       <Card.Body>
-//         <Card.Title>
-//           {is_safebar ? <BsShieldFillCheck className="shieldIcon" size={25} /> : ''}{' '}
-//           {name}
-//         </Card.Title>
-//         <Card.Text>
-//           {street_address}, {city} {zip}
-//           <br />
-//           <a href={`tel:${phone}`}>{phone}</a>
-//         </Card.Text>
-//       </Card.Body>
-//     </Card>
-//   );
-// };
+  // const imageUrl = 'https://assets3.thrillist.com/v1/image/3059875/1584x1056/flatten;crop;webp=auto;jpeg_quality=50.jpg';
 
-// export default FavCard;
+  const removeFav = () => {
+    removeFavorite(id).then(getFavs);
+  };
 
-// FavCard.propTypes = {
-//   // img: PropTypes.string,
-//   uuid: PropTypes.string.isRequired,
-//   is_safebar: PropTypes.bool,
-//   name: PropTypes.string.isRequired,
-//   street_address: PropTypes.string,
-//   city: PropTypes.string.isRequired,
-//   zip: PropTypes.string,
-//   phone: PropTypes.string,
-//   func: PropTypes.func.isRequired,
-//   bar_report_count: PropTypes.number,
-// };
+  return (
+    <Card
+      className="card-style"
+      style={{
+        width: '18rem',
+        // backgroundImage: `url(${imageUrl})`,
+      }}
+    >
+      <Card.Body>
+        <Card.Title className="d-flex flex-row no-wrap align-items-center justify-content-between">
+          <div>{name}</div>
+          <div>
+            {is_safebar ? (
+              <BsShieldFillCheck className="shieldIcon me-2" size={25} />
+            ) : (
+              ''
+            )}
+          </div>
+        </Card.Title>
+        <div>
+          {street_address}, {city} {zip}
+          <br />
+          <a href={`tel:${phone}`}>{phone}</a>
+          <div className="d-flex flex-row no-wrap align-items-center mt-2 justify-content-between">
+            <div>
+              {/* <Button
+                className="me-2 outline-style"
+                onClick={() => handleClick(uuid)}
+              >
+                <FaThumbsUp className="mx-1" />
+              </Button> */}
+              <Button
+                className="me-2 outline-style"
+                onClick={() => handleClick(uuid)}
+              >
+                <FaThumbsDown className="mx-1" />
+              </Button>
+            </div>
+            <Button className="me-2 outline-style" onClick={removeFav}>
+              <BiDrink className="me-2" /> REMOVE
+            </Button>
+          </div>
+        </div>
+      </Card.Body>
+    </Card>
+  );
+};
 
-// FavCard.defaultProps = {
-//   // img: '/sac-logo.png',
-//   is_safebar: false,
-//   street_address: '',
-//   zip: '',
-//   phone: '',
-//   bar_report_count: 0,
-// };
+export default FavCard;
+
+FavCard.propTypes = {
+  uuid: PropTypes.string.isRequired,
+  is_safebar: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  street_address: PropTypes.string,
+  city: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  zip: PropTypes.string,
+  phone: PropTypes.string,
+  getFavs: PropTypes.func.isRequired,
+};
+
+FavCard.defaultProps = {
+  is_safebar: false,
+  street_address: '',
+  zip: '',
+  phone: '',
+};
