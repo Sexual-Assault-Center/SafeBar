@@ -36,10 +36,19 @@ class AdminBarSerializer(serializers.ModelSerializer):
             "uuid",
             "name",
             "description",
+            "contact_name",
+            "phone_number",
+            "zip_code",
+            "street_address",
             "city",
             "email",
             "is_safebar",
             "is_approved",
+            "latitude",
+            "longitude",
+            "certification_date",
+            "image",
+            "website",
         ]
 
 
