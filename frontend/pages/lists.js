@@ -13,7 +13,9 @@ export default function Lists() {
   const [loading, setLoading] = useState(true);
 
   const getFavs = () => {
-    if (user.id === undefined) return;
+    if (!Object.keys(user).length) {
+      return;
+    }
     getFavsByUid(user.uid)
       .then((favArray) => {
         setFavs(favArray);
