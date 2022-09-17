@@ -1,4 +1,4 @@
-/* eslint-disable no-nested-ternary */
+/* eslint-disable no-nested-ternary, implicit-arrow-linebreak, operator-linebreak */
 import { useState, useEffect } from 'react';
 import { BsShieldFillCheck } from 'react-icons/bs';
 import { Spinner } from 'react-bootstrap';
@@ -16,26 +16,25 @@ export default function Bars() {
   const [loading, setLoading] = useState(true);
   const { user } = useAuth();
 
-  // TODO: needs to be refactored for pagination
-  const getBars = () => {
-    if (user) {
-      getRequest(`bars/by-uid/${user.uid}`).then((barData) => {
-        const sorted = barData.sort((a, b) => b.is_safebar - a.is_safebar);
-        setAllBars(sorted);
-        setBarsData(sorted);
-      }).then(() => setLoading(false));
-    } else {
-      getRequest('bars').then((barData) => {
-        const sorted = barData.sort((a, b) => b.is_safebar - a.is_safebar);
-        setAllBars(sorted);
-        setBarsData(sorted);
-      }).then(() => setLoading(false));
-    }
-  };
-
   useEffect(() => {
-    getBars();
-  }, []);
+    if (user) {
+      getRequest(`bars/by-uid/${user.uid}`)
+        .then((barData) => {
+          const sorted = barData.sort((a, b) => b.is_safebar - a.is_safebar);
+          setAllBars(sorted);
+          setBarsData(sorted);
+        })
+        .then(() => setLoading(false));
+    } else {
+      getRequest('bars')
+        .then((barData) => {
+          const sorted = barData.sort((a, b) => b.is_safebar - a.is_safebar);
+          setAllBars(sorted);
+          setBarsData(sorted);
+        })
+        .then(() => setLoading(false));
+    }
+  }, [user]);
 
   const search = () => {
     ga.event({
@@ -48,7 +47,9 @@ export default function Bars() {
     // TODO: Needs to be refactored to get search results from API
     setAllBars(
       barsData.filter(
-        (bar) => bar.city.toLowerCase().includes(query.toLowerCase()) || bar.name.toLowerCase().includes(query.toLowerCase()),
+        (bar) =>
+          bar.city.toLowerCase().includes(query.toLowerCase()) ||
+          bar.name.toLowerCase().includes(query.toLowerCase()),
       ),
     );
   };
@@ -83,20 +84,13 @@ export default function Bars() {
           value={query}
           clear={clearSearch}
           placeholder="explore bars by name or city"
-        >
-          Search
-        </Searchbar>
+        />
       </div>
       <div className="card-cont d-flex flex-wrap justify-content-center">
         {loading ? (
           <Spinner animation="border" variant="secondary" />
         ) : allBars.length ? (
-          allBars.map((bar) => (
-            <BarCard
-              key={bar.uuid}
-              {...bar}
-            />
-          ))
+          allBars.map((bar) => <BarCard key={bar.uuid} {...bar} />)
         ) : (
           <h2>No Bars</h2>
         )}
