@@ -23,20 +23,23 @@ export default function Report() {
   useEffect(() => {
     if (user) {
       report.uid = user.uid;
+    } else {
+      report.uid = 'anonymous';
     }
+  }, [user]);
+
+  useEffect(() => {
     getRequest('reporttypes').then(setReportTypes);
     // Get single bar and interpolate
     getRequest(`bars/${id}`).then(setBar);
-  }, [report, user]);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setReport((prevState) => (
-      {
-        ...prevState,
-        [name]: value,
-      }
-    ));
+    setReport((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -47,32 +50,36 @@ export default function Report() {
 
   return (
     <>
-      <HeadDetails title="Resources" description="Making Nightlife Safer for Everyone" />
+      <HeadDetails
+        title="Resources"
+        description="Making Nightlife Safer for Everyone"
+      />
       <div className="m-auto training-style">
         <h2>REPORT A BAR</h2>
-        <p className="report-sub">Did you have an uncomfortable experience or felt unsafe at <span className="bar-name">{bar.name}</span>? Submit a report to the Sexual Assault Center for review. Your report is important to building a safer community and will always be anonymous.</p>
+        <p className="report-sub">
+          Did you have an uncomfortable experience or felt unsafe at{' '}
+          <span className="bar-name">{bar.name}</span>? Submit a report to the
+          Sexual Assault Center for review. Your report is important to building
+          a safer community and will always be anonymous.
+        </p>
         <div className="formContainer">
           <Form onSubmit={handleSubmit}>
             <p>Select an option that best fits your experience:</p>
             <div className="report-radios">
-              {
-                (
-                  reportTypes.map((reportObject) => (
-                    <Form.Check
-                      variant="light"
-                      name="report_type"
-                      id="report_type"
-                      onClick={handleChange}
-                      type="radio"
-                      label={reportObject.name}
-                      value={reportObject.uuid}
-                      key={reportObject.uuid}
-                      className="text-light"
-                      required
-                    />
-                  ))
-                )
-              }
+              {reportTypes.map((reportObject) => (
+                <Form.Check
+                  variant="light"
+                  name="report_type"
+                  id="report_type"
+                  onClick={handleChange}
+                  type="radio"
+                  label={reportObject.name}
+                  value={reportObject.uuid}
+                  key={reportObject.uuid}
+                  className="text-light"
+                  required
+                />
+              ))}
             </div>
             <TextArea
               onChange={(e) => handleChange(e)}
@@ -81,9 +88,16 @@ export default function Report() {
               value={report.comment}
               required
             />
-            <div className="charCounter">{report.comment.length || 0} / 500</div>
+            <div className="charCounter">
+              {report.comment.length || 0} / 500
+            </div>
             <Button type="submit" buttonText="submit report" />
-            <Button type="button" buttonText="Cancel" onClick={() => router.push('/bars')} className="mx-3" />
+            <Button
+              type="button"
+              buttonText="Cancel"
+              onClick={() => router.push('/bars')}
+              className="mx-3"
+            />
           </Form>
         </div>
       </div>
