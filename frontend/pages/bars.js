@@ -50,7 +50,8 @@ export default function Bars() {
       barsData.filter(
         (bar) =>
           bar.city.toLowerCase().includes(query.toLowerCase()) ||
-          bar.name.toLowerCase().includes(query.toLowerCase()),
+          bar.name.toLowerCase().includes(query.toLowerCase()) ||
+          bar.zip_code.toLowerCase().includes(query.toLowerCase()),
       ),
     );
   };

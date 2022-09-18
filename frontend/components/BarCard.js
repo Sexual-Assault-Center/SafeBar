@@ -1,5 +1,6 @@
 /* eslint-disable consistent-return, camelcase */
 import { useState } from 'react';
+import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
@@ -20,7 +21,7 @@ function BarCard({
   name,
   street_address,
   city,
-  zip,
+  zip_code,
   phone,
   favoriteId,
 }) {
@@ -46,7 +47,7 @@ function BarCard({
 
   return (
     <Card
-      className="card-style"
+      className="card-style px-3"
       style={{
         width: '18rem',
       }}
@@ -54,15 +55,7 @@ function BarCard({
       <Card.Body>
         <div>
           <Card.Title className="d-flex flex-row no-wrap align-items-center justify-content-between">
-            <button
-              className="btn btn-link btn-lg"
-              onClick={() => {
-                router.push(`/bar/${uuid}`);
-              }}
-              type="button"
-            >
-              {name}
-            </button>
+            <Link href={`/bar/${uuid}`}>{name}</Link>
             <div>
               {is_safebar ? (
                 <BsShieldFillCheck className="shieldIcon me-2" size={25} />
@@ -73,7 +66,9 @@ function BarCard({
           </Card.Title>
         </div>
         <div>
-          {street_address}, {city} {zip}
+          {street_address},
+          <br />
+          {city} {zip_code}
           <br />
           <a href={`tel:${phone}`}>{phone}</a>
           <div className="d-flex flex-row no-wrap align-items-center mt-2 justify-content-between">
@@ -116,7 +111,7 @@ BarCard.propTypes = {
   name: PropTypes.string.isRequired,
   street_address: PropTypes.string,
   city: PropTypes.string.isRequired,
-  zip: PropTypes.string,
+  zip_code: PropTypes.string,
   phone: PropTypes.string,
   favoriteId: PropTypes.string.isRequired,
 };
@@ -124,6 +119,6 @@ BarCard.propTypes = {
 BarCard.defaultProps = {
   is_safebar: false,
   street_address: '',
-  zip: '',
+  zip_code: '',
   phone: '',
 };
