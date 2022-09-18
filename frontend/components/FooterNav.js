@@ -27,7 +27,9 @@ export default function FooterNav() {
         icon = <FaSearch className="footerIcon" size={20} />;
         break;
       case 'HELP':
-        icon = <BsExclamationCircle className="m-0 footerIcon helpIcon" size={40} />;
+        icon = (
+          <BsExclamationCircle className="m-0 footerIcon helpIcon" size={40} />
+        );
         break;
       case 'saved':
         icon = <BiDrink className="footerIcon" size={27} />;
@@ -55,10 +57,8 @@ export default function FooterNav() {
             <Link href={`/${el.text === 'home' ? '' : el.path}`} passHref>
               <div
                 className={classNames(
-                  `footerBarOption ${
-                    el.path === 'help' ? 'help-nav' : ''
-                  }`,
-                  el.path === 'lists' ? 'list-nav' : '',
+                  `footerBarOption ${el.path === 'help' ? 'help-nav' : ''}`,
+                  el.path === 'saved' ? 'list-nav' : '',
                 )}
               >
                 <div

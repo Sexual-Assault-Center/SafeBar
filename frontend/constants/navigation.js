@@ -13,7 +13,7 @@ const NAVIGATION = {
       text: 'HELP',
     },
     {
-      path: 'lists',
+      path: 'saved',
       text: 'saved',
     },
   ],

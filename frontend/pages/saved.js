@@ -7,7 +7,7 @@ import { useAuth } from '../utils/context/authContext';
 import { getFavsByUid } from '../utils/api';
 import BarCard from '../components/BarCard';
 
-export default function Lists() {
+export default function Saved() {
   const { user } = useAuth();
   const [favs, setFavs] = useState([]);
   const [loading, setLoading] = useState(true);
