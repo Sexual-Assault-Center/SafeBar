@@ -25,8 +25,8 @@ export default function Map({ bars }) {
   };
 
   const mapPosition = {
-    center: { lat: 36.1774465, lng: -86.7042552 },
-    zoom: 7,
+    center: { lat: 35.8074465, lng: -86.2042552 },
+    zoom: 7.5,
   };
 
   if (bars.length === 1) {
