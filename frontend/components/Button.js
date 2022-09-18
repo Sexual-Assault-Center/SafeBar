@@ -1,26 +1,21 @@
+/* eslint-disable object-curly-newline */
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 
-const ButtonComp = ({
-  buttonText, outline, type, onClick, href, className,
-}) => {
-  const hasHref = Boolean(href);
+function ButtonComp({ buttonText, outline, type, onClick, className }) {
   const isOutline = Boolean(outline);
   return (
-    <>
-      {hasHref
-        ? (
-          <Button href={href} onClick={onClick} type={type} className={`${isOutline ? 'outline-style' : 'reg-button-style'} ${className || null}`}>
-            {buttonText.toUpperCase()}{' '}
-          </Button>
-        ) : (
-          <Button onClick={onClick} type={type} className={`${isOutline ? 'outline-style' : 'reg-button-style'} ${className || null}`}>
-            {buttonText.toUpperCase()}{' '}
-          </Button>
-        )}
-    </>
+    <Button
+      onClick={onClick}
+      type={type}
+      className={`${isOutline ? 'outline-style' : 'reg-button-style'} ${
+        className || null
+      }`}
+    >
+      {buttonText.toUpperCase()}{' '}
+    </Button>
   );
-};
+}
 
 export default ButtonComp;
 
@@ -29,7 +24,6 @@ ButtonComp.propTypes = {
   outline: PropTypes.bool,
   type: PropTypes.oneOf(['button', 'submit']),
   onClick: PropTypes.func,
-  href: PropTypes.string,
   className: PropTypes.string,
 };
 
@@ -37,7 +31,6 @@ ButtonComp.defaultProps = {
   buttonText: '',
   outline: false,
   type: 'button',
-  href: '',
-  onClick: () => { },
+  onClick: () => {},
   className: null,
 };

@@ -1,9 +1,8 @@
+/* eslint-disable object-curly-newline */
 import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
 
-const Searchbar = ({
-  value, placeholder, onChange, label, clear,
-}) => {
+function Searchbar({ value, placeholder, onChange, label, clear }) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -25,7 +24,7 @@ const Searchbar = ({
       </Form.Group>
     </Form>
   );
-};
+}
 
 export default Searchbar;
 

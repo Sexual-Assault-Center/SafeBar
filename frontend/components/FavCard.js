@@ -12,7 +12,7 @@ import { BiDrink } from 'react-icons/bi';
 import { useRouter } from 'next/router';
 import { removeFavorite } from '../utils/api';
 
-const FavCard = ({
+function FavCard({
   id,
   uuid,
   is_safebar,
@@ -22,7 +22,7 @@ const FavCard = ({
   zip,
   phone,
   getFavs,
-}) => {
+}) {
   const router = useRouter();
 
   const handleClick = (barId) => {
@@ -81,7 +81,7 @@ const FavCard = ({
       </Card.Body>
     </Card>
   );
-};
+}
 
 export default FavCard;
 

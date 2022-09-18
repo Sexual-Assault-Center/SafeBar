@@ -1,4 +1,4 @@
-/* eslint-disable no-nested-ternary */
+/* eslint-disable no-nested-ternary, react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
 import HeadDetails from '../components/HeadDetails';
@@ -54,9 +54,7 @@ export default function Lists() {
           </div>
         </>
       ) : (
-        <>
-          <Signin title="TO SEE YOUR SAVED BARS" />
-        </>
+        <Signin title="TO SEE YOUR SAVED BARS" />
       )}
     </>
   );

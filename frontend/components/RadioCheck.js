@@ -1,20 +1,21 @@
+/* eslint-disable object-curly-newline */
 import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
 
-const RadioCheck = ({
-  label, id, checked, onChange,
-}) => (
-  <Form className="m-2 radio-form">
-    <Form.Check
-      value={checked}
-      onChange={() => onChange(!checked)}
-      type="radio"
-      label={label}
-      id={id}
-      name={label}
-    />
-  </Form>
-);
+function RadioCheck({ label, id, checked, onChange }) {
+  return (
+    <Form className="m-2 radio-form">
+      <Form.Check
+        value={checked}
+        onChange={() => onChange(!checked)}
+        type="radio"
+        label={label}
+        id={id}
+        name={label}
+      />
+    </Form>
+  );
+}
 
 export default RadioCheck;
 

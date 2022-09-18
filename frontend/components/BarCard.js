@@ -14,7 +14,7 @@ import { useAuth } from '../utils/context/authContext';
 import { addFav, removeFavorite } from '../utils/api';
 import { signInUser } from '../utils/auth';
 
-const BarCard = ({
+function BarCard({
   uuid,
   is_safebar,
   name,
@@ -23,7 +23,7 @@ const BarCard = ({
   zip,
   phone,
   favoriteId,
-}) => {
+}) {
   const router = useRouter();
   const { user } = useAuth();
   const [favId, setFavId] = useState(favoriteId);
@@ -98,7 +98,7 @@ const BarCard = ({
       </Card.Body>
     </Card>
   );
-};
+}
 
 export default BarCard;
 

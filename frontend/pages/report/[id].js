@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Form } from 'react-bootstrap';

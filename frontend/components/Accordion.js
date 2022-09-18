@@ -1,14 +1,16 @@
 import Accordion from 'react-bootstrap/Accordion';
 import PropTypes from 'prop-types';
 
-const AccordionComp = ({ title, children }) => (
-  <Accordion>
-    <Accordion.Item eventKey="0">
-      <Accordion.Header>{title}</Accordion.Header>
-      <Accordion.Body>{children}</Accordion.Body>
-    </Accordion.Item>
-  </Accordion>
-);
+function AccordionComp({ title, children }) {
+  return (
+    <Accordion>
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>{title}</Accordion.Header>
+        <Accordion.Body>{children}</Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
 
 export default AccordionComp;
 

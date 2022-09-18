@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 
-const IconButton = ({ children, onClick, text }) => {
+function IconButton({ children, onClick, text }) {
   const hasText = Boolean(text);
   return (
     <Button variant="link" type="button" onClick={onClick}>
@@ -9,7 +9,7 @@ const IconButton = ({ children, onClick, text }) => {
       {hasText ? <p>{text}</p> : null}
     </Button>
   );
-};
+}
 
 export default IconButton;
 
