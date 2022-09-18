@@ -5,7 +5,7 @@ import HeadDetails from '../components/HeadDetails';
 import Signin from '../components/SignIn';
 import { useAuth } from '../utils/context/authContext';
 import { getFavsByUid } from '../utils/api';
-import FavCard from '../components/FavCard';
+import BarCard from '../components/BarCard';
 
 export default function Lists() {
   const { user } = useAuth();
@@ -41,11 +41,10 @@ export default function Lists() {
               <Spinner animation="border" variant="secondary" />
             ) : favs.length ? (
               favs.map((favObj) => (
-                <FavCard
+                <BarCard
                   key={favObj.uuid}
-                  id={favObj.uuid}
+                  favoriteId={favObj.uuid}
                   {...favObj.bar}
-                  getFavs={getFavs}
                 />
               ))
             ) : (
