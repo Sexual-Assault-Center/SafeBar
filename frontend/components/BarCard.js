@@ -54,7 +54,15 @@ function BarCard({
       <Card.Body>
         <div>
           <Card.Title className="d-flex flex-row no-wrap align-items-center justify-content-between">
-            <div>{name}</div>
+            <button
+              className="btn btn-link btn-lg"
+              onClick={() => {
+                router.push(`/bar/${uuid}`);
+              }}
+              type="button"
+            >
+              {name}
+            </button>
             <div>
               {is_safebar ? (
                 <BsShieldFillCheck className="shieldIcon me-2" size={25} />
