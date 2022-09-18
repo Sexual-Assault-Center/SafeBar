@@ -18,6 +18,7 @@
     ]
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.12.2",
     "@storybook/addon-controls": "^6.3.4",
     "@storybook/addon-viewport": "^6.5.12",
     "bootstrap": "^5.1.3",

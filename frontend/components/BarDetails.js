@@ -9,26 +9,42 @@ function BarDetails({ bar }) {
         <Card.Title>
           <h1>{bar.name}</h1>
         </Card.Title>
-        <Card.Text>
-          <dl className="row">
-            <dt className="col-sm-3">Street Address:</dt>
-            <dd className="col-sm-9">{bar.street_address}</dd>
+        <dl className="row">
+          <dt className="col-sm-3">Street Address:</dt>
+          <dd className="col-sm-9">{bar.street_address}</dd>
 
-            <dt className="col-sm-3">City:</dt>
-            <dd className="col-sm-9">{bar.city}</dd>
+          <dt className="col-sm-3">City:</dt>
+          <dd className="col-sm-9">{bar.city}</dd>
 
-            <dt className="col-sm-3">Description:</dt>
-            <dd className="col-sm-9">{bar.description}</dd>
+          {bar.description ? (
+            <>
+              <dt className="col-sm-3">Description:</dt>
+              <dd className="col-sm-9">{bar.description}</dd>
+            </>
+          ) : (
+            ''
+          )}
 
-            <dt className="col-sm-3">Website:</dt>
-            <dd className="col-sm-9">
-              <a href={bar.website}>{bar.website}</a>
-            </dd>
+          {bar.website ? (
+            <>
+              <dt className="col-sm-3">Website:</dt>
+              <dd className="col-sm-9">
+                <a href={bar.website}>{bar.website}</a>
+              </dd>
+            </>
+          ) : (
+            ''
+          )}
 
-            <dt className="col-sm-3">Phone #:</dt>
-            <dd className="col-sm-9">{bar.phone_number}</dd>
-          </dl>
-        </Card.Text>
+          {bar.phone_number ? (
+            <>
+              <dt className="col-sm-3">Phone #:</dt>
+              <dd className="col-sm-9">{bar.phone_number}</dd>
+            </>
+          ) : (
+            ''
+          )}
+        </dl>
       </Card.Body>
     </Card>
   );
@@ -40,7 +56,7 @@ BarDetails.propTypes = {
   bar: PropTypes.shape({
     name: PropTypes.string,
     street_address: PropTypes.string,
-    phone_number: PropTypes.string,
+    phone_number: PropTypes.number,
     city: PropTypes.string,
     website: PropTypes.string,
     description: PropTypes.string,

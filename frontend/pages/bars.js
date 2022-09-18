@@ -5,6 +5,7 @@ import { Spinner } from 'react-bootstrap';
 import * as ga from '../utils/ga';
 import Searchbar from '../components/Searchbar';
 import BarCard from '../components/BarCard';
+import Map from '../components/Map';
 import HeadDetails from '../components/HeadDetails';
 import { useAuth } from '../utils/context/authContext';
 import { getRequest } from '../utils/api';
@@ -86,6 +87,7 @@ export default function Bars() {
           placeholder="explore bars by name or city"
         />
       </div>
+      <Map bars={allBars} />
       <div className="card-cont d-flex flex-wrap justify-content-center">
         {loading ? (
           <Spinner animation="border" variant="secondary" />

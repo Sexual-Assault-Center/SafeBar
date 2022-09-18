@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import HeadDetails from '../../components/HeadDetails';
 import BarDetails from '../../components/BarDetails';
+import Map from '../../components/Map';
 import { getRequest } from '../../utils/api';
 
 export default function Bar() {
@@ -21,6 +22,7 @@ export default function Bar() {
         description="Making Nightlife Safer for Everyone"
       />
       <h1>Bar Details - {bar.name}</h1>
+      <Map bars={[bar]} />
       <BarDetails bar={bar} />;
     </>
   );

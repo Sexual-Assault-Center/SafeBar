@@ -43,7 +43,7 @@ class BarSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Bar
-        fields = ['uuid', 'is_safebar', 'name', 'street_address', "city", "zip_code", "description", "phone_number", "image", "website"]
+        fields = ['uuid', 'is_safebar', 'name', 'street_address', "city", "zip_code", "latitude", "longitude", "description", "phone_number", "image", "website"]
 
 
 class BarContactSerializer(serializers.ModelSerializer):
