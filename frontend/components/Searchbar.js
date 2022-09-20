@@ -2,27 +2,30 @@
 import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
 
-function Searchbar({ value, placeholder, onChange, label, clear }) {
+function Searchbar({ value, placeholder, onChange, clear }) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="searchForm mb-3" controlId="search">
-        <Form.Label>{label}</Form.Label>
-        <i className="fa fa-search icon" />
-        <Form.Control
-          type="text"
-          className="input-field"
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-        />
-        <button type="button" className="outline-style" onClick={clear}>
-          Clear
-        </button>
-      </Form.Group>
-    </Form>
+    <div className="searchContainer">
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="searchForm mb-3" controlId="search">
+          <div>
+            <i className="fa fa-search icon" />
+          </div>
+          <Form.Control
+            type="text"
+            className="input-field"
+            placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+          />
+          <button type="button" className="outline-style" onClick={clear}>
+            Clear
+          </button>
+        </Form.Group>
+      </Form>
+    </div>
   );
 }
 
@@ -33,12 +36,10 @@ Searchbar.propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   clear: PropTypes.func.isRequired,
-  label: PropTypes.string,
 };
 
 Searchbar.defaultProps = {
   value: '',
   placeholder: '',
   onChange: () => {},
-  label: '',
 };

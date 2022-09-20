@@ -5,9 +5,9 @@
 }
 
 #search {
-  background-color: #38285D;
+  background-color: #38285d;
   border: none !important;
-  color: #C1A6FF !important;
+  color: #c1a6ff !important;
   width: 70%;
   border-radius: 12px;
   font-family: 'Ubuntu', sans-serif;
@@ -27,15 +27,14 @@ form #search:focus {
 }
 
 #search::placeholder {
-  color: #C1A6FF !important;
+  color: #c1a6ff !important;
 }
 .searchContainer i {
   position: absolute;
-  margin-left: -285px;
   margin-top: 0px;
   padding-right: 20px;
   font-size: 21px;
-  color: #C1A6FF;
+  color: #c1a6ff;
 }
 
 .icon {

@@ -80,14 +80,12 @@ export default function Bars() {
         <BsShieldFillCheck className="shieldIcon me-2 mb-2" size={25} />
         <h2>SAFEBAR CERTIFIED BARS</h2>
       </div>
-      <div className="searchContainer">
-        <Searchbar
-          onChange={handleChange}
-          value={query}
-          clear={clearSearch}
-          placeholder="explore bars by name, city, or zip"
-        />
-      </div>
+      <Searchbar
+        onChange={handleChange}
+        value={query}
+        clear={clearSearch}
+        placeholder="explore bars by name, city, or zip"
+      />
       {/* <div class="d-none d-md-block"> */}
       <Map bars={allBars} />
       {/* </div> */}
