@@ -22,7 +22,9 @@ export default function Bar() {
         description="Making Nightlife Safer for Everyone"
       />
       <h1>Bar Details - {bar.name}</h1>
+      {/* <div class="d-none d-md-block"> */}
       <Map bars={[bar]} />
+      {/* </div> */}
       <BarDetails bar={bar} />;
     </>
   );

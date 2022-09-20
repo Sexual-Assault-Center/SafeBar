@@ -85,10 +85,13 @@ export default function Bars() {
           onChange={handleChange}
           value={query}
           clear={clearSearch}
-          placeholder="explore bars by name or city"
+          placeholder="explore bars by name, city, or zip"
         />
       </div>
+      {/* <div class="d-none d-md-block"> */}
       <Map bars={allBars} />
+      {/* </div> */}
+
       <div className="card-cont d-flex flex-wrap justify-content-center">
         {loading ? (
           <Spinner animation="border" variant="secondary" />

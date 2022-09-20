@@ -26,7 +26,7 @@ export default function Map({ bars }) {
 
   const mapPosition = {
     center: { lat: 35.8074465, lng: -86.2042552 },
-    zoom: 7.5,
+    zoom: 7.3,
   };
 
   if (bars.length === 1) {
@@ -41,6 +41,8 @@ export default function Map({ bars }) {
     () => ({
       mapId: '4d30dafbddd30916',
       disableDefaultUI: true,
+      zoomControl: true,
+      streetViewControl: true,
       clickableIcons: false,
       keyboardShortcuts: false,
     }),
@@ -67,6 +69,7 @@ export default function Map({ bars }) {
             key={bar.uuid}
             position={{ lat: Number(bar.latitude), lng: Number(bar.longitude) }}
             onClick={() => handleActiveMarker(bar.uuid)}
+            title={bar.name}
           >
             {activeMarker === bar.uuid ? (
               <InfoWindow onCloseClick={() => setActiveMarker(null)}>

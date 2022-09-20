@@ -1,4 +1,3 @@
-
 /******  FOOTER NAVIGATION  *******/
 
 footer {
@@ -7,8 +6,8 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
-  background-color: #231A42;
-  color: #8570B5;
+  background-color: #231a42;
+  color: #8570b5;
   filter: drop-shadow(0 -1mm 5mm #001022);
 }
 
@@ -19,11 +18,14 @@ footer {
   justify-content: space-between;
   padding-left: 0;
   margin-bottom: 0;
+  margin-left: 20px;
+  margin-right: 20px;
   cursor: pointer;
   padding: 0 5px;
 }
-.helpIcon, .help-title {
-  color: #D899DD;
+.helpIcon,
+.help-title {
+  color: #d899dd;
 }
 p.footerIcon {
   display: flex;
@@ -33,24 +35,23 @@ p.footerIcon {
 }
 
 .footerBarOption {
-  width: 100%
+  width: 100%;
 }
 
-.activeIcon{
-    color: #D899DD;
+.activeIcon {
+  color: #d899dd;
 }
 .activeFooter > .footerBarOption > .footerIcon > .footerSvg {
   filter: invert(30%) sepia(83%) saturate(4273%) hue-rotate(333deg)
     brightness(99%) contrast(87%);
   font-weight: bold;
-  color: #D899DD;
+  color: #d899dd;
 }
 
 .activeFooter > .footerBarOption > .optionTitle,
 .activeFooter > .footerBarOption > .help-title,
-.activeFooter > .footerBarOption > .optionIcon
- {
-  color: #D899DD;
+.activeFooter > .footerBarOption > .optionIcon {
+  color: #d899dd;
   font-weight: bold;
 }
 
@@ -58,11 +59,11 @@ p.footerIcon {
   margin: 0;
   padding-bottom: 10px;
   font-size: 12px;
-  color: #8570B5;
+  color: #8570b5;
 }
 
 .auth-btn {
-  background-color: #231A42 !important;
+  background-color: #231a42 !important;
   border: none !important;
   padding: 0;
   margin: 0;
@@ -81,7 +82,7 @@ p.footerIcon {
   margin-left: auto;
   margin-right: auto;
 
-  background: #231A42;
+  background: #231a42;
 }
 
 .help-title {
@@ -93,11 +94,12 @@ p.footerIcon {
 }
 .help-icon {
   margin-top: 10px;
-  color: #D899DD
+  color: #d899dd;
 }
-.help-icon, .optionIcon {
+.help-icon,
+.optionIcon {
   padding: 10px;
-  color: #8570B5
+  color: #8570b5;
 }
 .list-nav {
   margin-left: 35px;

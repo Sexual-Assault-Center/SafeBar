@@ -68,7 +68,7 @@ function BarCard({
         <div>
           {street_address},
           <br />
-          {city} {zip_code}
+          {city}, TN {zip_code}
           <br />
           <a href={`tel:${phone}`}>{phone}</a>
           <div className="d-flex flex-row no-wrap align-items-center mt-2 justify-content-between">
