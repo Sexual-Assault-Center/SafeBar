@@ -17,24 +17,35 @@ export default function Map({ bars }) {
 
   const [activeMarker, setActiveMarker] = useState(null);
 
-  const handleActiveMarker = (marker) => {
-    if (marker === activeMarker) {
-      return;
-    }
-    setActiveMarker(marker);
-  };
-
   const mapPosition = {
     center: { lat: 35.8074465, lng: -86.2042552 },
     zoom: 7.3,
   };
 
-  if (bars.length === 1) {
+  const setCenter = (lat, lng, zoom) => {
     mapPosition.center = {
-      lat: Number(bars[0].latitude),
-      lng: Number(bars[0].longitude),
+      lat,
+      lng,
     };
-    mapPosition.zoom = 15;
+    mapPosition.zoom = zoom;
+  };
+
+  const handleActiveMarker = (markerUuid) => {
+    if (markerUuid === activeMarker) {
+      return;
+    }
+    if (markerUuid === null) {
+      setCenter(35.8074465, -86.2042552, 7.3);
+    } else {
+      setActiveMarker(markerUuid);
+    }
+  };
+
+  if (bars.length === 1) {
+    setCenter(Number(bars[0].latitude), Number(bars[0].longitude), 15);
+  } else if (activeMarker) {
+    const markerBar = bars.find((bar) => bar.uuid === activeMarker);
+    setCenter(Number(markerBar.latitude), Number(markerBar.longitude), 10);
   }
 
   const options = useMemo(
@@ -45,6 +56,7 @@ export default function Map({ bars }) {
       streetViewControl: true,
       clickableIcons: false,
       keyboardShortcuts: false,
+      gestureHandling: 'greedy',
     }),
     [],
   );
