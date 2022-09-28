@@ -30,7 +30,7 @@ export default function Report() {
   }, [user]);
 
   useEffect(() => {
-    getRequest('reporttypes/negative').then(setReportTypes);
+    getRequest('reporttypes/positive').then(setReportTypes);
     // Get single bar and interpolate
     getRequest(`bars/${id}`).then(setBar);
   }, []);
@@ -45,6 +45,10 @@ export default function Report() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Hard coded report type. Change if more positive reasons are created.
+    report.report_type = reportTypes.find(
+      (reportType) => reportType.name === 'Commend',
+    ).uuid;
     router.push('/bars');
     postRequest('bar-report', report);
   };
@@ -56,16 +60,16 @@ export default function Report() {
         description="Making Nightlife Safer for Everyone"
       />
       <div className="m-auto training-style">
-        <h2>REPORT A BAR</h2>
+        <h2>COMMEND A BAR</h2>
         <p className="report-sub">
-          Did you have an uncomfortable experience or felt unsafe at{' '}
-          <span className="bar-name">{bar.name}</span>? Submit a report to the
-          Sexual Assault Center for review. Your report is important to building
-          a safer community and will always be anonymous.
+          Did you have an awesome and safe experience at{' '}
+          <span className="bar-name">{bar.name}</span>? Submit a commend to the
+          Sexual Assault Center and let us know. The information you provide is
+          important to building a safer community and will always be anonymous.
         </p>
         <div className="formContainer">
           <Form onSubmit={handleSubmit}>
-            <p>Select an option that best fits your experience:</p>
+            {/* <p>Select an option that best fits your experience:</p>
             <div className="report-radios">
               {reportTypes.map((reportObject) => (
                 <Form.Check
@@ -81,7 +85,7 @@ export default function Report() {
                   required
                 />
               ))}
-            </div>
+            </div> */}
             <TextArea
               onChange={(e) => handleChange(e)}
               name="comment"
@@ -92,7 +96,7 @@ export default function Report() {
             <div className="charCounter">
               {report.comment.length || 0} / 500
             </div>
-            <Button type="submit" buttonText="submit report" />
+            <Button type="submit" buttonText="submit Commendation" />
             <Button
               type="button"
               buttonText="Cancel"

@@ -5,10 +5,7 @@ import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 import { BsShieldFillCheck } from 'react-icons/bs';
-import {
-  FaThumbsDown,
-  // FaThumbsUp
-} from 'react-icons/fa';
+import { FaThumbsDown, FaThumbsUp } from 'react-icons/fa';
 import { BiDrink } from 'react-icons/bi';
 import { useRouter } from 'next/router';
 import { useAuth } from '../utils/context/authContext';
@@ -73,14 +70,14 @@ function BarCard({
           <a href={`tel:${phone}`}>{phone}</a>
           <div className="d-flex flex-row no-wrap align-items-center mt-2 justify-content-between">
             <div>
-              {/* <Button
+              <Button
                 className="me-2 outline-style"
                 onClick={() => {
                   router.push(`/commend/${uuid}`);
                 }}
               >
                 <FaThumbsUp className="mx-1" />
-              </Button> */}
+              </Button>
               <Button
                 className="me-2 outline-style"
                 onClick={() => {
