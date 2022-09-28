@@ -56,6 +56,7 @@ class AdminBarReportSerializer(serializers.ModelSerializer):
     bar = serializers.SerializerMethodField()
     report_type = serializers.SerializerMethodField()
     date_submitted = serializers.SerializerMethodField()
+    is_positive = serializers.SerializerMethodField()
 
     class Meta:
         model = BarReport
@@ -66,6 +67,7 @@ class AdminBarReportSerializer(serializers.ModelSerializer):
             'comment',
             'date_submitted',
             'is_visible',
+            'is_positive'
         ]
 
     def get_bar(self, obj):
@@ -73,6 +75,9 @@ class AdminBarReportSerializer(serializers.ModelSerializer):
 
     def get_report_type(self, obj):
         return obj.report_type.name
+
+    def get_is_positive(self, obj):
+        return obj.report_type.is_positive
 
     def get_date_submitted(self, obj):
         y, m, d = str(obj.date_submitted).split(" ")[0].split("-")

@@ -27,13 +27,14 @@ from h4tcsacapp.serializers import BarContactSerializer, BarReportExpandedSerial
 class CustomAdminSite(admin.AdminSite):
 
     def index(self, request, extra_context=None):
-        bar_reports = BarReport.objects.all()
+        bar_negative_reports = BarReport.objects.filter(report_type__is_positive=False)
+        bar_positive_reports = BarReport.objects.filter(report_type__is_positive=True)
         bars = Bar.objects.filter(is_safebar=True)
-        bar_reports_data = BarReportExpandedSerializer(bar_reports, many=True).data[-4:]
+        bar_nagative_reports_data = BarReportExpandedSerializer(bar_negative_reports, many=True).data[-4:]
 
-        for (index, report) in enumerate(bar_reports_data):
+        for (index, report) in enumerate(bar_nagative_reports_data):
             y, m, d = report['date_submitted'].split("T")[0].split("-")
-            bar_reports_data[index]['date_submitted'] = "%s/%s/%s" % (m, d, y)
+            bar_nagative_reports_data[index]['date_submitted'] = "%s/%s/%s" % (m, d, y)
 
         recert_bars = []
 
@@ -57,9 +58,10 @@ class CustomAdminSite(admin.AdminSite):
             context_expired_bars.append(bar_data)
 
         return TemplateResponse(request, self.index_template or 'dashboard/index.html', {
-            "report_count": bar_reports.count(),
+            "negative_report_count": bar_negative_reports.count(),
+            "positive_report_count": bar_positive_reports.count(),
             'safebar_count': bars.count(),
-            "bar_reports_data": bar_reports_data,
+            "bar_reports_data": bar_nagative_reports_data,
             'expired_bars': context_expired_bars,
             'recert_bars': recert_bars
         })
