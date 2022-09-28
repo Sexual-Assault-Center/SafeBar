@@ -6,6 +6,7 @@ import Signin from '../components/SignIn';
 import { useAuth } from '../utils/context/authContext';
 import { getFavsByUid } from '../utils/api';
 import BarCard from '../components/BarCard';
+import Map from '../components/Map';
 
 export default function Saved() {
   const { user } = useAuth();
@@ -36,6 +37,7 @@ export default function Saved() {
       {Object.keys(user).length ? (
         <>
           <h1 className="text-center">SAVED BARS</h1>
+          <Map bars={favs.map((fav) => fav.bar)} />
           <div className="card-cont d-flex flex-wrap justify-content-center">
             {loading ? (
               <Spinner animation="border" variant="secondary" />
