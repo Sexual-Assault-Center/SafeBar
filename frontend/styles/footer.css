@@ -15,11 +15,9 @@ footer {
   display: flex;
   max-width: 100%;
   list-style: none;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-left: 0;
   margin-bottom: 0;
-  margin-left: 20px;
-  margin-right: 20px;
   cursor: pointer;
   padding: 0 5px;
 }
