@@ -45,7 +45,9 @@ export default function Map({ bars }) {
     setCenter(Number(bars[0].latitude), Number(bars[0].longitude), 15);
   } else if (activeMarker) {
     const markerBar = bars.find((bar) => bar.uuid === activeMarker);
-    setCenter(Number(markerBar.latitude), Number(markerBar.longitude), 10);
+    if (markerBar) {
+      setCenter(Number(markerBar.latitude), Number(markerBar.longitude), 10);
+    }
   }
 
   const options = useMemo(
