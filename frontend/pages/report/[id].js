@@ -59,9 +59,10 @@ export default function Report() {
         <h2>REPORT A BAR</h2>
         <p className="report-sub">
           Did you have an uncomfortable experience or felt unsafe at{' '}
-          <span className="bar-name">{bar.name}</span>? Submit a report to the
-          Sexual Assault Center for review. Your report is important to building
-          a safer community and will always be anonymous.
+          <span className="bar-name">{bar.name}</span>? Submit a report to
+          Sexual Assault Center’s Safe Bar team. Your report can help create a
+          safer community and will remain confidential. (Bars do not see reports
+          or receive any of this data.)
         </p>
         <div className="formContainer">
           <Form onSubmit={handleSubmit}>

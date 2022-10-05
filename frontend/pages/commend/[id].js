@@ -63,9 +63,10 @@ export default function Report() {
         <h2>COMMEND A BAR</h2>
         <p className="report-sub">
           Did you have an awesome and safe experience at{' '}
-          <span className="bar-name">{bar.name}</span>? Submit a commend to the
-          Sexual Assault Center and let us know. The information you provide is
-          important to building a safer community and will always be anonymous.
+          <span className="bar-name">{bar.name}</span>? Submit a positive report
+          to Sexual Assault Center’s Safe Bar team. The information you provide
+          will help build a safer community and will always remain confidential.
+          (Bars do not see reports or receive any of this data.)
         </p>
         <div className="formContainer">
           <Form onSubmit={handleSubmit}>
