@@ -19,9 +19,9 @@ class Bar(models.Model):
         max_length=12, blank=True, default=""
     )
     latitude = models.CharField(
-        "Latitude", max_length=10, blank=True, default="")
+        "Latitude", max_length=25, blank=True, default="")
     longitude = models.CharField(
-        "Longitude", max_length=10, blank=True, default="")
+        "Longitude", max_length=25, blank=True, default="")
     certification_date = models.DateField("Certification Date", null=True, blank=True, default=None)
     email = models.EmailField(("Email"), max_length=254, blank=True, default="")
     image = models.URLField(("Image"), max_length=254, blank=True, default="")
