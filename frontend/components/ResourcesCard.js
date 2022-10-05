@@ -8,10 +8,14 @@ function ResourcesCard({ title, description, url }) {
     <Card className="my-2 card-style">
       <Card.Body>
         <Card.Title>{title}</Card.Title>
-        <Card.Text>
-          {description}
-        </Card.Text>
-        <ButtonComp variant="primary" onClick={(e) => { e.PreventDefault(); window.open(url, '_blank'); }} buttonText="Learn More" />
+        <Card.Text>{description}</Card.Text>
+        <ButtonComp
+          variant="primary"
+          onClick={() => {
+            window.open(url, '_blank');
+          }}
+          buttonText="Learn More"
+        />
       </Card.Body>
     </Card>
   );
