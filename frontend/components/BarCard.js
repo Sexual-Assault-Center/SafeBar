@@ -89,9 +89,11 @@ function BarCard({
             </div>
             <Button className="me-2 outline-style" onClick={handleFav}>
               <BiDrink
-                className={`mb-1 ${favId !== '' ? 'text-warning' : ''}`}
+                className={`mb-1 ${
+                  favId && favId !== '' ? 'text-warning' : ''
+                }`}
               />{' '}
-              {favId !== '' ? 'REMOVE' : 'SAVE'}
+              {favId && favId !== '' ? 'REMOVE' : 'SAVE'}
             </Button>
           </div>
         </div>
