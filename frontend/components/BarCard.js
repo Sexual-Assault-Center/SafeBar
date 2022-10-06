@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable consistent-return, camelcase */
 import { useState } from 'react';
 import Link from 'next/link';
@@ -52,7 +53,9 @@ function BarCard({
       <Card.Body>
         <div>
           <Card.Title className="d-flex flex-row no-wrap align-items-center justify-content-between">
-            <Link href={`/bar/${uuid}`}>{name}</Link>
+            <Link href={`/bar/${uuid}`}>
+              <a className="nonstyled-link">{name}</a>
+            </Link>
             <div>
               {is_safebar ? (
                 <BsShieldFillCheck className="shieldIcon me-2" size={25} />

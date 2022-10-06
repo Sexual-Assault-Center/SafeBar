@@ -29,7 +29,9 @@ function BarDetails({ bar }) {
             <>
               <dt className="col-sm-3">Website:</dt>
               <dd className="col-sm-9">
-                <a href={bar.website}>{bar.website}</a>
+                <a href={bar.website} className="nonstyled-link">
+                  {bar.website}
+                </a>
               </dd>
             </>
           ) : (

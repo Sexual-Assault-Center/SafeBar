@@ -21,7 +21,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-image: linear-gradient(#001022, #2B1F47);
+  background-image: linear-gradient(#001022, #2b1f47);
 }
 
 a {
@@ -36,15 +36,17 @@ a {
 p {
   font-family: 'Ubuntu', sans-serif;
 }
-h1, h2, h2 {
-  color: #D899DD;
+h1,
+h2,
+h2 {
+  color: #d899dd;
   font-family: 'Oswald', sans-serif;
   text-align: center;
   padding-top: 2%;
   padding-bottom: 2%;
 }
-.shieldIcon{
-  color: #FFE367;
+.shieldIcon {
+  color: #ffe367;
   size: 25px;
 }
 .layout-cont {
@@ -52,14 +54,14 @@ h1, h2, h2 {
 }
 
 .training-style {
-  background-image: radial-gradient(#2B1F47, #001022);
-  color: #F1EDF1 !important;
+  background-image: radial-gradient(#2b1f47, #001022);
+  color: #f1edf1 !important;
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 8px !important;
   min-height: 70% !important;
 }
-.menuButton{
+.menuButton {
   min-height: 50px !important;
   font-family: 'Ubuntu', sans-serif !important;
 }
@@ -78,11 +80,16 @@ h1, h2, h2 {
 }
 
 .social-banner {
-  background-image: radial-gradient(#8570B5, #2B1F47) !important;
+  background-image: radial-gradient(#8570b5, #2b1f47) !important;
   border-radius: 25px;
   border: none;
   width: 80%;
   height: 5rem;
   margin: auto;
   opacity: 80%;
+}
+
+.nonstyled-link {
+  color: inherit;
+  text-decoration: none;
 }
