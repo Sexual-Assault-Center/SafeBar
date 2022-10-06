@@ -18,6 +18,7 @@ export default function Bars() {
   const { user } = useAuth();
 
   useEffect(() => {
+    setAllBars([]);
     if (user) {
       getRequest(`bars/by-uid/${user.uid}`)
         .then((barData) => {
