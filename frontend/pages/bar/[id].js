@@ -13,7 +13,7 @@ export default function Bar() {
 
   useEffect(() => {
     getRequest(`bars/${id}`).then(setBar);
-  }, [id]);
+  }, []);
 
   return (
     <>
