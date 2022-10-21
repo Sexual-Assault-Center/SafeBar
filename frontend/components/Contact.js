@@ -8,9 +8,16 @@ function Contact({ contact }) {
       <Card.Body>
         <Card.Title>{contact.name}</Card.Title>
         <Card.Text>
-          Contact Name: {contact.contact_name}<br />
-          Email: <a href={`mailto:${contact.email}`}>{contact.email}</a><br />
-          Phone: <a href={`tel:${contact.phone_number}`}>{contact.phone_number}</a>
+          Contact Name: {contact.contact_name}
+          <br />
+          Email: <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          <br />
+          Phone:{' '}
+          <a href={`tel:${contact.phone_number}`}>
+            {contact.phone_number
+              .toString()
+              .replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3')}
+          </a>
         </Card.Text>
       </Card.Body>
     </Card>

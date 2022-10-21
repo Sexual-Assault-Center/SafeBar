@@ -41,7 +41,11 @@ function BarDetails({ bar }) {
           {bar.phone_number ? (
             <>
               <dt className="col-sm-3">Phone #:</dt>
-              <dd className="col-sm-9">{bar.phone_number}</dd>
+              <dd className="col-sm-9">
+                {bar.phone_number
+                  .toString()
+                  .replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3')}
+              </dd>
             </>
           ) : (
             ''
