@@ -8,12 +8,12 @@ import { getRequest } from '../../utils/api';
 
 export default function Bar() {
   const router = useRouter();
-  const { id } = router.query;
   const [bar, setBar] = useState([]);
 
   useEffect(() => {
-    getRequest(`bars/${id}`).then(setBar);
-  }, []);
+    if (!router.isReady) return;
+    getRequest(`bars/${router.query.id}`).then(setBar);
+  }, [router.isReady, router.query.id]);
 
   return (
     <>
