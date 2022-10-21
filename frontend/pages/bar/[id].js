@@ -11,9 +11,13 @@ export default function Bar() {
   const [bar, setBar] = useState([]);
 
   useEffect(() => {
-    if (!router.isReady) return;
-    getRequest(`bars/${router.query.id}`).then(setBar);
-  }, [router.isReady, router.query.id]);
+    if (router.isReady) {
+      const { id } = router.query;
+      if (id) {
+        getRequest(`bars/${id}`).then(setBar);
+      }
+    }
+  }, [router.isReady, router.query]);
 
   return (
     <>
